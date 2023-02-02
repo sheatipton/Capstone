@@ -13,7 +13,7 @@ struct ContentView: View {
                 .padding()
             VStack {
                 Button {
-                    writeData()
+                    //writeData()
                     isShowingPictures = true
                 } label: {
                     Text("Select photos")
