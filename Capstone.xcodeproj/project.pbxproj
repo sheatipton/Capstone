@@ -10,6 +10,7 @@
 		292D1B72298B1439003F7A6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 292D1B71298B1439003F7A6A /* GoogleService-Info.plist */; };
 		292D1B75298B1834003F7A6A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 292D1B74298B1834003F7A6A /* FirebaseFirestore */; };
 		292D1B77298B1834003F7A6A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 292D1B76298B1834003F7A6A /* FirebaseStorage */; };
+		292D1B7B298B33D3003F7A6A /* ImageLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292D1B7A298B33D3003F7A6A /* ImageLibrary.swift */; };
 		37D567F72988596E0004AF45 /* CapstoneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D567F62988596E0004AF45 /* CapstoneApp.swift */; };
 		37D567F92988596E0004AF45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D567F82988596E0004AF45 /* ContentView.swift */; };
 		37D567FB298859720004AF45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37D567FA298859720004AF45 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		292D1B71298B1439003F7A6A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		292D1B7A298B33D3003F7A6A /* ImageLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLibrary.swift; sourceTree = "<group>"; };
 		37D567F32988596E0004AF45 /* Capstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capstone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37D567F62988596E0004AF45 /* CapstoneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapstoneApp.swift; sourceTree = "<group>"; };
 		37D567F82988596E0004AF45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				37D567F82988596E0004AF45 /* ContentView.swift */,
 				37D567FA298859720004AF45 /* Assets.xcassets */,
 				37D567FC298859720004AF45 /* Preview Content */,
+				292D1B7A298B33D3003F7A6A /* ImageLibrary.swift */,
 			);
 			path = Capstone;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37D567F92988596E0004AF45 /* ContentView.swift in Sources */,
+				292D1B7B298B33D3003F7A6A /* ImageLibrary.swift in Sources */,
 				37D567F72988596E0004AF45 /* CapstoneApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
