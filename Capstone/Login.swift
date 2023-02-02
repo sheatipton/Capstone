@@ -2,14 +2,14 @@
 //  Login.swift
 //  Capstone
 //
-//  Created by Shea Tipton on 2/1/23.
+//  Created by Shea Tipton on 2/2/23.
 //
 
 import SwiftUI
 
 struct Login: View {
     var body: some View {
-        Text("Login page coming soon.")
+        Text("Login coming soon.")
     }
 }
 

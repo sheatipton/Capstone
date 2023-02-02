@@ -2,14 +2,14 @@
 //  SignUp.swift
 //  Capstone
 //
-//  Created by Shea Tipton on 2/1/23.
+//  Created by Shea Tipton on 2/2/23.
 //
 
 import SwiftUI
 
 struct SignUp: View {
     var body: some View {
-        Text("Sign up page coming soon.")
+        Text("Sign up coming soon.")
     }
 }
 
