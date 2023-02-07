@@ -32,7 +32,7 @@ struct Login: View {
                     .cornerRadius(20.0)
                 Button("Sign In") {}
                     .font(.headline)
-                    .foregroundColor(.white)
+                    .foregroundColor(.black)
                     .padding()
                     .frame(width: 300, height: 50)
                     .background(Color(red: 244, green: 244, blue: 244))
