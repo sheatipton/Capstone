@@ -20,7 +20,7 @@ struct Login: View {
         
             VStack(alignment: .center, spacing: 25) {
                 Text("Welcome")
-                    .font(.largeTitle).foregroundColor(Color.white)
+                    .font(.largeTitle).foregroundColor(Color.black)
                     .padding([.top, .bottom], 40)
                 TextField("Email", text: self.$email)
                     .padding()
@@ -37,6 +37,7 @@ struct Login: View {
                     .frame(width: 300, height: 50)
                     .background(Color(red: 244, green: 244, blue: 244))
                     .cornerRadius(15.0)
+                    .padding()
                 NavigationLink(destination: SignUp()) {
                     Text("Don't have an account? Sign up here.").underline()
                         .foregroundColor(.black)
