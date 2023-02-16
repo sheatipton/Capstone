@@ -3,58 +3,41 @@ import FirebaseCore
 import FirebaseFirestore
 
 struct ContentView: View {
-    @State var isShowingPictures = false
     var body: some View {
         
-        NavigationView {
-            ZStack {
-                Color(red: 235/255, green: 252/255, blue: 208/255)
-                    .ignoresSafeArea()
-                
-                VStack {
-                    Image(systemName: "globe")
-                        .imageScale(.large)
-                        .foregroundColor(.black)
-                        .font(.system(size: 40))
-                        .padding()
-                    Text("hello, world!")
-                        .font(.system(size: 50))
-                        .foregroundColor(.black)
-                    
-                }
-                
-                // .navigationBarTitleDisplayMode(.inline)
-                // .navigationTitle("TBD")
-                
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button {
-                            //writeData()
-                            isShowingPictures = true
-                        } label: {
-                            Image(systemName: "camera.viewfinder")
-                                .font(.system(size: 30))
-                                .foregroundColor(.black)
-                        }
-                    }
-                    
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink(destination: Login()) {
-                            Text("Login").underline()
-                                .font(.system(size: 20))
-                                .font(.headline)
-                                .foregroundColor(.black)
-                            
-                        }
-                    }
-                }
-            }
+        TabView() {
             
-            .sheet(isPresented: $isShowingPictures, onDismiss: nil) {
-                ImageLibrary()
-                
-                
-            }
+            Home()
+                .font(.system(size: 30, weight: .bold, design: .rounded)) .tabItem {
+                    Image(systemName: "house.fill")
+                    Text("Home")
+                }
+            
+            SignUp()
+                .font(.system(size: 30, weight: .bold, design: .rounded)) .tabItem {
+                    Image(systemName: "camera.viewfinder")
+                    Text("Login")
+                }
+            
+            // camera
+            Home()
+                .font(.system(size: 30, weight: .bold, design: .rounded)) .tabItem {
+                    Image(systemName: "circle.grid.3x3.fill")
+                    Text("Browse")
+                }
+            
+            Login()
+                .font(.system(size: 30, weight: .bold, design: .rounded)) .tabItem {
+                    Image(systemName: "house.fill")
+                    Text("Login")
+                }
+            
+            // profile
+            Profile()
+                .font(.system(size: 30, weight: .bold, design: .rounded)) .tabItem {
+                    Image(systemName: "person.crop.circle")
+                    Text("Profile")
+                }
         }
     }
     
@@ -81,4 +64,4 @@ struct ContentView: View {
         
     }
 }
-    
+

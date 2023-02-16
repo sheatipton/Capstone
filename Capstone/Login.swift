@@ -13,38 +13,57 @@ struct Login: View {
     
     var body: some View {
         
-        NavigationView {
-            ZStack {
-                Color(red: 235/255, green: 252/255, blue: 208/255)
-                    .ignoresSafeArea()
-        
-            VStack(alignment: .center, spacing: 25) {
-                Text("Welcome")
+        ZStack {
+            Color(red: 235/255, green: 252/255, blue: 208/255)
+                .ignoresSafeArea()
+            
+            VStack(alignment: .center, spacing: 30) {
+                Text("Sign in to your account")
                     .font(.largeTitle).foregroundColor(Color.black)
                     .padding([.top, .bottom], 40)
+                Spacer()
+                
+                Image(systemName: "person.crop.circle")
+                    .font(.system(size: 50))
+                
+                
                 TextField("Email", text: self.$email)
                     .padding()
+                    .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
+                    .frame(minWidth: 0, maxWidth: 340)
                     .background(Color(red: 244, green: 244, blue: 244))
                     .cornerRadius(20.0)
+                
                 SecureField("Password", text: self.$password)
                     .padding()
+                    .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
+                    .frame(minWidth: 0, maxWidth: 340)
                     .background(Color(red: 244, green: 244, blue: 244))
                     .cornerRadius(20.0)
-                Button("Sign In") {}
-                    .font(.headline)
-                    .foregroundColor(.black)
+                
+                Button("Login") {}
+                    .font(.system(.body, design: .rounded))
+                    .foregroundColor(.white).bold()
                     .padding()
-                    .frame(width: 300, height: 50)
-                    .background(Color(red: 244, green: 244, blue: 244))
+                    .frame(minWidth: 0, maxWidth: 300)
+                    .background(LinearGradient(gradient: Gradient(colors: [Color(red: 251/255, green: 128/255, blue: 128/255), Color(red: 253/255, green: 193/255, blue: 104/255)]), startPoint: .leading, endPoint: .trailing))
                     .cornerRadius(15.0)
-                    .padding()
-                NavigationLink(destination: SignUp()) {
-                    Text("Don't have an account? Sign up here.").underline()
-                        .foregroundColor(.black)
+                    .padding(.horizontal)
+                
+                
+                HStack {
+                    Text("Don't have an account?")
+                        .font(.system(.body, design: .rounded))
+                        .bold()
+                    
+                    NavigationLink(destination: SignUp()) {
+                        Text("Create one").underline()
+                            .font(.system(.body, design: .rounded)).bold()
+                            .foregroundColor(Color(red: 251/255, green: 128/255, blue: 128/255))
+                    }
                 }
-            } .padding([.leading, .trailing], 27.5)
+            } .padding([.top, .bottom], 50)
         }
-    }
     }
 }
 
