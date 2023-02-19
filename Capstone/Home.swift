@@ -10,6 +10,7 @@ import FirebaseStorage
 import FirebaseFirestore
 
 struct Home: View {
+
     @State var isShowingPictures = false
     @State var pickerPresented = false
     @State var uiImage: UIImage?
@@ -77,23 +78,25 @@ struct Home: View {
                         }
                         .font(.subheadline)
                         .padding()
-                        
-                    }
-                    //                    Image(systemName: "globe")
-                    //                        .imageScale(.large)
-                    //                        .foregroundColor(.black)
-                    //                        .font(.system(size: 40))
-                    //                        .padding()
-                    //                    Text("hello, world!")
-                    //                        .font(.system(size: 50))
-                    //                        .foregroundColor(.black)
+
+
+                    
+                    Text("Welcome, John")
+                        .font(.system(size: 30))
+                        .foregroundColor(.black)
+
                     
                 }
                 
-                // .navigationBarTitleDisplayMode(.inline)
-                // .navigationTitle("TBD")
+                Spacer()
+                
+                
+                
+                
+                
                 
                 .toolbar {
+
                     ToolbarItem(placement: .navigationBarLeading) {
                         Button {
                             //writeData()
@@ -105,12 +108,12 @@ struct Home: View {
                                 .font(.system(size: 30))
                                 .foregroundColor(.black)
                         }
-                    }
+                    
                     
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink(destination: Login()) {
-                            Text("Login").underline()
-                                .font(.system(size: 20))
+                        NavigationLink(destination: Profile()) {
+                            Image(systemName: "person.circle")
+                                .font(.system(size: 40))
                                 .font(.headline)
                                 .foregroundColor(.black)
                             
@@ -129,7 +132,10 @@ struct Home: View {
                     }
                 
             }
+            .navigationBarTitle("Donation")
+            .navigationBarTitleDisplayMode(.inline)
         }
+      
     }
     func uploadPhoto() {
         
