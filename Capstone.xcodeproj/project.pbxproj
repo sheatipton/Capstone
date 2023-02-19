@@ -131,10 +131,10 @@
 				3747CE5C299EA49F00B7B5FA /* Profile.swift */,
 				37CF335F299DB84E005D788E /* Home.swift */,
 				37688EA6298C362B00682F9F /* SignUp.swift */,
-				37D567FA298859720004AF45 /* Assets.xcassets */,
 				37CF3365299DBEB9005D788E /* NonprofitSignUp.swift */,
-				37D567FC298859720004AF45 /* Preview Content */,
 				292D1B7A298B33D3003F7A6A /* ImageLibrary.swift */,
+				37D567FA298859720004AF45 /* Assets.xcassets */,
+				37D567FC298859720004AF45 /* Preview Content */,
 			);
 			path = Capstone;
 			sourceTree = "<group>";

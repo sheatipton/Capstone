@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import FirebaseStorage
+import FirebaseFirestore
 
 struct Home: View {
     @State var isShowingPictures = false
@@ -23,38 +25,38 @@ struct Home: View {
                 
                 VStack {
                     Rectangle()
-                                 //.strokeBorder()
-                                 .foregroundColor(.black)
-                                 .frame(width: 410, height: 500)
-                                 .cornerRadius(20)
-                                 .overlay(
-                                     Group {
-                                         if uiImage != nil {
-                                             Image(uiImage: uiImage!)
-                                                 .resizable()
-                                                 .scaledToFit()
-                                         }
-                                     }
-                                 )
+                    //.strokeBorder()
+                        .foregroundColor(.black)
+                        .frame(width: 410, height: 500)
+                        .cornerRadius(20)
+                        .overlay(
+                            Group {
+                                if uiImage != nil {
+                                    Image(uiImage: uiImage!)
+                                        .resizable()
+                                        .scaledToFit()
+                                }
+                            }
+                        )
                     
                     VStack{
                         
-//                        Button(action: {
-//                            if uiImage != nil {
-//                                classifier.detect(uiImage: uiImage!)
-//                            }
-//                        }) {
-//                            Image(systemName: "bolt.fill")
-//                                .foregroundColor(.orange)
-//                                .font(.title)
-//                        }
-                        
+                        Button(action: {
+                            //                            if uiImage != nil {
+                            //                                classifier.detect(uiImage: uiImage!)
+                            //                            }
+                            uploadPhoto()
+                        }) {
+                            Image(systemName: "bolt.fill")
+                                .foregroundColor(.orange)
+                                .font(.title)
+                        }
                         
                         Group {
                             if let imageClass = classifier.imageClass {
                                 HStack{
                                     Text("Image: ")
-                                        //.font(.caption)
+                                    //.font(.caption)
                                         .font(.system(size:20))
                                         .foregroundColor(.black)
                                     Text(imageClass)
@@ -65,7 +67,7 @@ struct Home: View {
                             } else {
                                 HStack{
                                     Text("Image categories: NA")
-                                        //.font(.caption)
+                                    //.font(.caption)
                                         .font(.system(size:20))
                                         .bold()
                                         .foregroundColor(.black)
@@ -77,16 +79,14 @@ struct Home: View {
                         .padding()
                         
                     }
-//                    Image(systemName: "globe")
-//                        .imageScale(.large)
-//                        .foregroundColor(.black)
-//                        .font(.system(size: 40))
-//                        .padding()
-//                    Text("hello, world!")
-//                        .font(.system(size: 50))
-//                        .foregroundColor(.black)
-                    
-                    
+                    //                    Image(systemName: "globe")
+                    //                        .imageScale(.large)
+                    //                        .foregroundColor(.black)
+                    //                        .font(.system(size: 40))
+                    //                        .padding()
+                    //                    Text("hello, world!")
+                    //                        .font(.system(size: 50))
+                    //                        .foregroundColor(.black)
                     
                 }
                 
@@ -122,15 +122,49 @@ struct Home: View {
             .sheet(isPresented: $pickerPresented, onDismiss: nil) {
                 //ImageLibrary()
                 ImagePicker(uiImage: $uiImage, pickerPresented: $pickerPresented,sourceType: $sourceType)
-                          .onDisappear{
-                              if uiImage != nil {
-                                  classifier.detect(uiImage: uiImage!)
-                              }
-                          }
+                    .onDisappear{
+                        if uiImage != nil {
+                            classifier.detect(uiImage: uiImage!)
+                        }
+                    }
                 
             }
         }
     }
+    func uploadPhoto() {
+        
+        guard uiImage != nil else {
+            return
+        }
+        
+        let storageRef = Storage.storage().reference()
+        
+        let imageData = uiImage!.jpegData(compressionQuality: 0.8)
+        
+        guard imageData != nil else {
+            return
+        }
+        let path = UUID().uuidString
+        let fileRef = storageRef.child("images/\(path).jpg")
+        
+        let uploadTask = fileRef.putData(imageData!, metadata: nil) {
+            metadata,error in
+            
+            if error == nil && metadata != nil {
+                let db = Firestore.firestore()
+                db.collection("images").document().setData(["imgPath":path]) { error in
+                    if error == nil {
+                        DispatchQueue.main.async {
+                            //retrievedImages.append(self.uiImage!)
+                            Profile().appendImage(image: self.uiImage!)
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+    
 }
 
 struct Home_Previews: PreviewProvider {
