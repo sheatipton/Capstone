@@ -8,35 +8,36 @@ struct ContentView: View {
         
         TabView() {
             
-//
             Home(classifier: ImageClassifier())
                 .font(.system(size: 30, weight: .bold, design: .rounded)) .tabItem {
-//
-            Home()
-                .tabItem {
-
                     Image(systemName: "house.fill")
                     Text("Home")
                 }
             
-            Camera()
-                .tabItem {
-                    Image(systemName: "photo")
-                    Text("Images")
-                    
+            SignUp()
+                .font(.system(size: 30, weight: .bold, design: .rounded)) .tabItem {
+                    Image(systemName: "camera.viewfinder")
+                    Text("Login")
                 }
             
-//
             // camera
             Home(classifier: ImageClassifier())
                 .font(.system(size: 30, weight: .bold, design: .rounded)) .tabItem {
-//
-            // to do : create a browse page and link it here in place of "home()"
-            Home()
-                .tabItem {
-
                     Image(systemName: "circle.grid.3x3.fill")
                     Text("Browse")
+                }
+            
+            Login()
+                .font(.system(size: 30, weight: .bold, design: .rounded)) .tabItem {
+                    Image(systemName: "house.fill")
+                    Text("Login")
+                }
+            
+            // profile
+            Profile()
+                .font(.system(size: 30, weight: .bold, design: .rounded)) .tabItem {
+                    Image(systemName: "person.crop.circle")
+                    Text("Profile")
                 }
         }
     }
@@ -47,7 +48,6 @@ struct ContentView: View {
             ContentView()
         }
     }
-    
     func writeData() {
         let db = Firestore.firestore()
         
@@ -62,6 +62,7 @@ struct ContentView: View {
                 print("Document successfully written!")
             }
         }
+        
     }
 }
 
