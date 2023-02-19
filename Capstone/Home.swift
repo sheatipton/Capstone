@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct Home: View {
-    @State var isShowingPictures = false
     
     var body: some View {
         
@@ -18,36 +17,26 @@ struct Home: View {
                     .ignoresSafeArea()
                 
                 VStack {
-                    Image(systemName: "globe")
-                        .imageScale(.large)
-                        .foregroundColor(.black)
-                        .font(.system(size: 40))
-                        .padding()
-                    Text("hello, world!")
-                        .font(.system(size: 50))
+                    
+                    Text("Welcome, John")
+                        .font(.system(size: 30))
                         .foregroundColor(.black)
                     
                 }
                 
-                // .navigationBarTitleDisplayMode(.inline)
-                // .navigationTitle("TBD")
+                Spacer()
+                
+                
+                
+                
+                
                 
                 .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button {
-                            //writeData()
-                            isShowingPictures = true
-                        } label: {
-                            Image(systemName: "camera.viewfinder")
-                                .font(.system(size: 30))
-                                .foregroundColor(.black)
-                        }
-                    }
                     
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink(destination: Login()) {
-                            Text("Login").underline()
-                                .font(.system(size: 20))
+                        NavigationLink(destination: Profile()) {
+                            Image(systemName: "person.circle")
+                                .font(.system(size: 40))
                                 .font(.headline)
                                 .foregroundColor(.black)
                             
@@ -55,13 +44,10 @@ struct Home: View {
                     }
                 }
             }
-            
-            .sheet(isPresented: $isShowingPictures, onDismiss: nil) {
-                ImageLibrary()
-                
-                
-            }
+            .navigationBarTitle("Donation")
+            .navigationBarTitleDisplayMode(.inline)
         }
+      
     }
 }
 

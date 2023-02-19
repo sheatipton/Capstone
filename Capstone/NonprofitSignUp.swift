@@ -17,7 +17,6 @@ struct NonprofitSignUp: View {
     
     var body: some View {
         
-        NavigationView {
             ZStack {
                 Color(red: 235/255, green: 252/255, blue: 208/255)
                     .ignoresSafeArea()
@@ -96,7 +95,6 @@ struct NonprofitSignUp: View {
             }
         }
     }
-}
 
 struct NonprofitSignUp_Previews: PreviewProvider {
     static var previews: some View {

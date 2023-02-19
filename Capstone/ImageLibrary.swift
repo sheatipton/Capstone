@@ -9,15 +9,27 @@ import SwiftUI
 import Foundation
 import UIKit
 
-struct ImageLibrary: UIViewControllerRepresentable{
+struct ImageCameraLibrary: UIViewControllerRepresentable{
 
-    func makeUIViewController(context: Context) -> some UIViewController {
-        let imageLibrary = UIImagePickerController()
-        imageLibrary.sourceType = .photoLibrary
-        return imageLibrary
-    }
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+    @Binding var selectedImage: UIImage?
+    @Environment(\.presentationMode) var isPresented
+        var sourceType: UIImagePickerController.SourceType
+            
+        func makeUIViewController(context: Context) -> UIImagePickerController {
+            let imagePicker = UIImagePickerController()
+            imagePicker.sourceType = self.sourceType
+            return imagePicker
+        }
 
+        func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {
+
+        }
+
+// Connecting the Coordinator class with this struct
+    func makeCoordinator() -> ImageCameraLibraryCoordinator {
+        return ImageCameraLibraryCoordinator(picker: self)
     }
+
 }
+
 
