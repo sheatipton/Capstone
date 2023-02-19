@@ -41,7 +41,9 @@ struct Login: View {
                     .background(Color(red: 244, green: 244, blue: 244))
                     .cornerRadius(20.0)
                 
-                Button("Login") {}
+                Button("Login") {
+                    NavigationLink(destination: Profile()) {}
+                }
                     .font(.system(.body, design: .rounded))
                     .foregroundColor(.white).bold()
                     .padding()

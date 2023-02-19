@@ -1,36 +1,56 @@
 //
-//  Profile.swift
+//  ImagesView.swift
 //  Capstone
 //
-//  Created by Shea Tipton on 2/16/23.
+//  Created by Shea Tipton on 2/19/23.
 //
 
 import SwiftUI
 import FirebaseStorage
 import FirebaseFirestore
 
-struct Profile: View {
+struct ImagesView: View {
     @State var retrievedImages = [UIImage]()
+    
     var body: some View {
         
-        ScrollView(.vertical) {
-            VStack {
-                ForEach(retrievedImages, id: \.self) { image in
-                    Image(uiImage: image)
-                        .resizable()
-                        .frame(width: 200, height: 200)
+        ZStack {
+            Color(red: 235/255, green: 252/255, blue: 208/255)
+                .ignoresSafeArea()
+            
+            ScrollView(.vertical) {
+                VStack {
+                    ForEach(retrievedImages, id: \.self) { image in
+                        Image(uiImage: image)
+                            .resizable()
+                            .frame(width: 200, height: 200)
+                    }       
                 }
-                
-                
-            }
-            .onAppear {
-                retrievePhotos()
+                .onAppear {
+                    retrievePhotos()
+                }
             }
             
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    NavigationLink(destination: ImagesView()) {
+                        Image(systemName: "photo.on.rectangle.angled")
+                            .font(.system(size: 40))
+                            .font(.headline)
+                            .foregroundColor(.black)
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: Profile()) {
+                        Image(systemName: "person.circle")
+                            .font(.system(size: 40))
+                            .font(.headline)
+                            .foregroundColor(.black)
+                    }
+                }
+            }
         }
-        
     }
-    
     
     func retrievePhotos() {
         let db = Firestore.firestore()
@@ -53,18 +73,14 @@ struct Profile: View {
                                 DispatchQueue.main.async {
                                     appendImage(image: image)
                                 }
-                                
-                                
                             }
                         }
-                        
                     }
                 }
-                
-                
             }
         }
     }
+    
     func appendImage(image: UIImage) {
         print("code executed matt!")
         DispatchQueue.main.async {
@@ -73,8 +89,8 @@ struct Profile: View {
     }
 }
 
-struct Profile_Previews: PreviewProvider {
+struct ImagesView_Previews: PreviewProvider {
     static var previews: some View {
-        Profile()
+        ImagesView()
     }
 }
