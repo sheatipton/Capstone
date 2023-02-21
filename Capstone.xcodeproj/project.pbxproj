@@ -27,6 +27,8 @@
 		37D56808298859730004AF45 /* CapstoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D56807298859730004AF45 /* CapstoneTests.swift */; };
 		37D56812298859730004AF45 /* CapstoneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D56811298859730004AF45 /* CapstoneUITests.swift */; };
 		37D56814298859730004AF45 /* CapstoneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D56813298859730004AF45 /* CapstoneUITestsLaunchTests.swift */; };
+		37F0283E29A2AF12006197A2 /* ImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F0283D29A2AF12006197A2 /* ImagesView.swift */; };
+		37F0284029A2AF47006197A2 /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F0283F29A2AF47006197A2 /* UploadView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		37D5680D298859730004AF45 /* CapstoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CapstoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37D56811298859730004AF45 /* CapstoneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapstoneUITests.swift; sourceTree = "<group>"; };
 		37D56813298859730004AF45 /* CapstoneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapstoneUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		37F0283D29A2AF12006197A2 /* ImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesView.swift; sourceTree = "<group>"; };
+		37F0283F29A2AF47006197A2 /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,10 +128,12 @@
 				292D1B71298B1439003F7A6A /* GoogleService-Info.plist */,
 				37D567F62988596E0004AF45 /* CapstoneApp.swift */,
 				37D567F82988596E0004AF45 /* ContentView.swift */,
+				37F0283D29A2AF12006197A2 /* ImagesView.swift */,
 				2962B93529A0C2B900310AFF /* ImageClassifier.swift */,
 				2962B93329A0C1B000310AFF /* Classifier.swift */,
 				2962B92F29A0B9D800310AFF /* ImagePicker.swift */,
 				37688EA4298C361A00682F9F /* Login.swift */,
+				37F0283F29A2AF47006197A2 /* UploadView.swift */,
 				3747CE5C299EA49F00B7B5FA /* Profile.swift */,
 				37CF335F299DB84E005D788E /* Home.swift */,
 				37688EA6298C362B00682F9F /* SignUp.swift */,
@@ -312,6 +318,8 @@
 				37CF3360299DB84E005D788E /* Home.swift in Sources */,
 				2962B93429A0C1B000310AFF /* Classifier.swift in Sources */,
 				37688EA7298C362B00682F9F /* SignUp.swift in Sources */,
+				37F0283E29A2AF12006197A2 /* ImagesView.swift in Sources */,
+				37F0284029A2AF47006197A2 /* UploadView.swift in Sources */,
 				2962B93229A0C18900310AFF /* MobileNetV2.mlmodel in Sources */,
 				37CF3366299DBEB9005D788E /* NonprofitSignUp.swift in Sources */,
 			);
