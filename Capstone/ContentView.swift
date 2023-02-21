@@ -21,7 +21,7 @@ struct ContentView: View {
                 }
             
             // to do : create a browse page and link it here in place of "home()"
-            Profile()
+            Home()
                 .font(.system(size: 30, weight: .bold, design: .rounded)) .tabItem {
                     Image(systemName: "circle.grid.3x3.fill")
                     Text("Browse")

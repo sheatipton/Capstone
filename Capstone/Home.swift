@@ -29,13 +29,15 @@ struct Home: View {
                         
   
                         HStack {
+                            NavigationLink(destination: Profile()) {
                                 Image("ProfilePlaceholder")
                                     .resizable()
                                     .scaledToFit()
                                     .clipShape(Circle())
                                     .padding()
                                     .frame(width: 100, height: 100)
-                                
+                            }
+                                           
                                 Text("Nonprofit A")
                                     .font(.system(size: 25)).bold()
                             
