@@ -74,7 +74,7 @@ struct UploadView: View {
                             .frame(height: 15)
                         Button {
                             uploadPhoto()
-                            uiImage == nil;
+                            uiImage = nil;
                         } label: {
                             Text("Upload")
                                 .font(.system(size: 18))
