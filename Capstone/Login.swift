@@ -37,8 +37,11 @@ struct Login: View {
                 SecureField("Password", text: self.$password)
                     .padding()
                     .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
+                    .foregroundColor(.black)
+                    
                     .frame(minWidth: 0, maxWidth: 340)
                     .background(Color(red: 244, green: 244, blue: 244))
+                   
                     .cornerRadius(20.0)
                 
                 Button("Login") {

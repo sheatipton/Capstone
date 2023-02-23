@@ -1,15 +1,15 @@
 //
-//  Home.swift
+//  Browse.swift
 //  Capstone
 //
-//  Created by Shea Tipton on 2/15/23.
+//  Created by Shea Tipton on 2/23/23.
 //
 
 import SwiftUI
 import FirebaseStorage
 import FirebaseFirestore
 
-struct Home: View {
+struct Browse: View {
     
     
     var body: some View {
@@ -26,7 +26,7 @@ struct Home: View {
                     VStack {
                         
                         // create for each using all nonprofit accounts in our database
-                        Text("News Feed")
+                        Text("Browse Nonprofits")
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .font(.largeTitle).bold()
                             .padding(.leading, 25)
@@ -141,15 +141,14 @@ struct Home: View {
                     }
                 }
             }
-           // .navigationBarHidden(true)
         }
-
+        
     }
     
 }
 
-struct Home_Previews: PreviewProvider {
+struct Browse_Previews: PreviewProvider {
     static var previews: some View {
-        Home()
+        Browse()
     }
 }

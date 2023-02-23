@@ -19,9 +19,8 @@ struct ContentView: View {
                     Image(systemName: "photo")
                     Text("Images")
                 }
-            
-            // to do : create a browse page and link it here in place of "home()"
-            Home()
+
+            Browse()
                 .font(.system(size: 30, weight: .bold, design: .rounded)) .tabItem {
                     Image(systemName: "circle.grid.3x3.fill")
                     Text("Browse")

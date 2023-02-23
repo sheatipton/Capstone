@@ -123,7 +123,7 @@ struct UploadView: View {
                     ToolbarItem(placement: .navigationBarLeading) {
                         NavigationLink(destination: ImagesView()) {
                             Image(systemName: "photo.on.rectangle.angled")
-                                .font(.system(size: 40))
+                                .font(.system(size: 35))
                                 .font(.headline)
                                 .foregroundColor(.black)
                         }
