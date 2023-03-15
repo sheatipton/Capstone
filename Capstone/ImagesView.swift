@@ -14,41 +14,54 @@ struct ImagesView: View {
     
     var body: some View {
         
-        ZStack {
-            Color(red: 235/255, green: 252/255, blue: 208/255)
-                .ignoresSafeArea()
-            
-            ScrollView(.vertical) {
-                VStack {
-                    ForEach(retrievedImages, id: \.self) { image in
-                        Image(uiImage: image)
-                            .resizable()
-                            .frame(width: 200, height: 200)
-                    }       
-                }
-                .onAppear {
-                    retrievePhotos()
-                }
-            }
-            
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    NavigationLink(destination: ImagesView()) {
-                        Image(systemName: "photo.on.rectangle.angled")
-                            .font(.system(size: 40))
-                            .font(.headline)
-                            .foregroundColor(.black)
+        NavigationView {
+        
+            ZStack {
+                Color(red: 235/255, green: 252/255, blue: 208/255)
+                    .ignoresSafeArea()
+                
+                ScrollView(.vertical) {
+                    Spacer()
+                        .frame(height: 40)
+                    
+                    VStack {
+      
+                        Text("Uploaded Images")
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .font(.largeTitle).bold()
+                            .padding(.leading, 25)
+                        
+                        ForEach(retrievedImages, id: \.self) { image in
+                            Image(uiImage: image)
+                                .resizable()
+                                .frame(width: 200, height: 200)
+                        }
+                    }
+                    .onAppear {
+                        retrievePhotos()
                     }
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: Profile()) {
-                        Image(systemName: "person.circle")
-                            .font(.system(size: 40))
-                            .font(.headline)
-                            .foregroundColor(.black)
+                
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        NavigationLink(destination: ImagesView()) {
+                            Image(systemName: "photo.on.rectangle.angled")
+                                .font(.system(size: 35))
+                                .font(.headline)
+                                .foregroundColor(.black)
+                        }
+                    }
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        NavigationLink(destination: Profile()) {
+                            Image(systemName: "person.circle")
+                                .font(.system(size: 35))
+                                .font(.headline)
+                                .foregroundColor(.black)
+                        }
                     }
                 }
             }
+            .navigationBarBackButtonHidden(true)
         }
     }
     

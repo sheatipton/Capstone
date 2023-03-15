@@ -1,17 +1,19 @@
 //
-//  SignUp.swift
+//  DonorSignUp.swift
 //  Capstone
 //
-//  Created by Shea Tipton on 2/2/23.
+//  Created by Shea Tipton on 3/14/23.
 //
 
 import SwiftUI
 
-struct SignUp: View {
+struct DonorSignUp: View {
+    
     @State private var userType = ""
     @State private var username = ""
-    @State private var password = ""
+    @State private var fullName = ""
     @State private var email = ""
+    @State private var password = ""
     @State private var confirmPassword = ""
     @State private var dob = ""
     
@@ -22,10 +24,17 @@ struct SignUp: View {
                 .ignoresSafeArea()
             
             VStack(alignment: .center, spacing: 30) {
-                Text("Create an account")
+                Text("Create an Account")
                     .font(.largeTitle).foregroundColor(Color.black)
                     .padding([.bottom], 0)
                 Spacer()
+                
+                TextField("Full Name", text: self.$fullName)
+                    .padding()
+                    .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
+                    .frame(minWidth: 0, maxWidth: 340)
+                    .background(Color(red: 244, green: 244, blue: 244))
+                    .cornerRadius(20.0)
                 
                 TextField("Username", text: self.$username)
                     .padding()
@@ -96,10 +105,8 @@ struct SignUp: View {
     }
 }
 
-struct SignUp_Previews: PreviewProvider {
+struct DonorSignUp_Previews: PreviewProvider {
     static var previews: some View {
-        SignUp()
+        DonorSignUp()
     }
 }
-
-

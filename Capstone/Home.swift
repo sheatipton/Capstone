@@ -22,7 +22,8 @@ struct Home: View {
                 
                 ScrollView {
                     Spacer()
-                        .frame(height: 25)
+                        .frame(height: 40)
+                    
                     VStack {
                         
                         // create for each using all nonprofit accounts in our database
@@ -122,7 +123,7 @@ struct Home: View {
                 }
                 
                 .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
+                    ToolbarItem(placement: .navigationBarTrailing) {
                         NavigationLink(destination: ImagesView()) {
                             Image(systemName: "photo.on.rectangle.angled")
                                 .font(.system(size: 35))
@@ -130,10 +131,10 @@ struct Home: View {
                         }
                     }
                     
-                    ToolbarItem(placement: .navigationBarTrailing) {
+                    ToolbarItem(placement: .navigationBarLeading) {
                         NavigationLink(destination: Login()) {
                             Image(systemName: "person.circle")
-                                .font(.system(size: 40))
+                                .font(.system(size: 35))
                                 .font(.headline)
                                 .foregroundColor(.black)
                             

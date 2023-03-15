@@ -11,8 +11,10 @@ import FirebaseFirestore
 
 struct UploadView: View {
     
+    @State var isShowingSubmitScreen = false
     @State var isShowingPictures = false
     @State var pickerPresented = false
+    
     @State var uiImage: UIImage?
     @State var sourceType: UIImagePickerController.SourceType = .photoLibrary
     @ObservedObject var classifier: ImageClassifier
@@ -41,9 +43,9 @@ struct UploadView: View {
                         else {
                             Image("ImagePlaceholder")
                                 .resizable()
-                                .scaledToFit()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 300, height: 350)
+                            //.scaledToFit()
+                            //.aspectRatio(contentMode: .fit)
+                                .frame(width: 375, height: 475)
                         }
                     }
                     
@@ -68,12 +70,13 @@ struct UploadView: View {
                                 .frame(height: 20)
                         }
                     }
-                      
+                    
                     if uiImage != nil {
                         Spacer()
                             .frame(height: 15)
                         Button {
-                            uploadPhoto()
+                            isShowingSubmitScreen = true
+                            //uploadPhoto()
                             //uiImage = nil;
                         } label: {
                             Text("Upload")
@@ -120,7 +123,7 @@ struct UploadView: View {
                 }
                 
                 .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
+                    ToolbarItem(placement: .navigationBarTrailing) {
                         NavigationLink(destination: ImagesView()) {
                             Image(systemName: "photo.on.rectangle.angled")
                                 .font(.system(size: 35))
@@ -128,15 +131,22 @@ struct UploadView: View {
                                 .foregroundColor(.black)
                         }
                     }
-                    ToolbarItem(placement: .navigationBarTrailing) {
+                    ToolbarItem(placement: .navigationBarLeading) {
                         NavigationLink(destination: Profile()) {
                             Image(systemName: "person.circle")
-                                .font(.system(size: 40))
+                                .font(.system(size: 35))
                                 .font(.headline)
                                 .foregroundColor(.black)
                         }
                     }
                 }
+            }
+            
+            .sheet(isPresented: $isShowingSubmitScreen, onDismiss: nil) {
+                Text("Submitting")
+                    .onDisappear{
+                        uploadPhoto()
+                    }
             }
             
             .sheet(isPresented: $pickerPresented, onDismiss: nil) {
@@ -149,7 +159,7 @@ struct UploadView: View {
             }
         }
     }
-    
+
     func uploadPhoto() {
         
         guard uiImage != nil else {
@@ -180,6 +190,7 @@ struct UploadView: View {
                     }
                 }
             }
+            isShowingSubmitScreen = false
         }
     }
 }

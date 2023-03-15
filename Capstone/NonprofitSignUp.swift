@@ -10,10 +10,9 @@ import SwiftUI
 struct NonprofitSignUp: View {
     @State private var userType = ""
     @State private var username = ""
-    @State private var password = ""
     @State private var email = ""
+    @State private var password = ""
     @State private var confirmPassword = ""
-    @State private var dob = ""
     
     var body: some View {
         
@@ -23,7 +22,7 @@ struct NonprofitSignUp: View {
                     .ignoresSafeArea()
                 
                 VStack(alignment: .center, spacing: 30) {
-                    Text("Register a Nonprofit")
+                    Text("Register as Nonprofit")
                         .font(.largeTitle).foregroundColor(Color.black)
                         .padding([.bottom], 0)
                     Spacer()
@@ -80,11 +79,11 @@ struct NonprofitSignUp: View {
                     }
                     
                     HStack {
-                        Text("Are you a regular user?")
+                        Text("Are you a donor?")
                             .font(.system(.body, design: .rounded))
                             .bold()
                         
-                        NavigationLink(destination: SignUp()) {
+                        NavigationLink(destination: DonorSignUp()) {
                             Text("Sign up here").underline()
                                 .font(.system(.body, design: .rounded)).bold()
                                 .foregroundColor(Color(red: 251/255, green: 128/255, blue: 128/255))

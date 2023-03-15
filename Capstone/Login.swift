@@ -22,10 +22,7 @@ struct Login: View {
                     .font(.largeTitle).foregroundColor(Color.black)
                     .padding([.top, .bottom], 40)
                 Spacer()
-                
-                Image(systemName: "person.crop.circle")
-                    .font(.system(size: 50))
-                
+                    .frame(height: 70)
                 
                 TextField("Email", text: self.$email)
                     .padding()
@@ -41,10 +38,12 @@ struct Login: View {
                     
                     .frame(minWidth: 0, maxWidth: 340)
                     .background(Color(red: 244, green: 244, blue: 244))
-                   
                     .cornerRadius(20.0)
                 
                 Button("Login") {
+                    
+                    // add login functionality here
+                    // change navigation link to home()
                     NavigationLink(destination: Profile()) {}
                 }
                     .font(.system(.body, design: .rounded))
@@ -55,13 +54,15 @@ struct Login: View {
                     .cornerRadius(15.0)
                     .padding(.horizontal)
                 
+                Spacer()
+                    .frame(height: 50)
                 
                 HStack {
                     Text("Don't have an account?")
                         .font(.system(.body, design: .rounded))
                         .bold()
                     
-                    NavigationLink(destination: SignUp()) {
+                    NavigationLink(destination: DonorSignUp()) {
                         Text("Create one").underline()
                             .font(.system(.body, design: .rounded)).bold()
                             .foregroundColor(Color(red: 251/255, green: 128/255, blue: 128/255))
