@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct DonorProfile: View {
+    
+@State private var selected = 0
+    
     var body: some View {
         
         NavigationView {
@@ -25,7 +28,7 @@ struct DonorProfile: View {
                             .clipShape(Circle())
                             .scaledToFit()
                             .frame(width: 150, height: 140, alignment: .center)
-                            .offset(x: 105, y: 0)
+                            .offset(x: -50, y: 0)
                         
                         Spacer()
                             .frame(width: 40)
@@ -43,12 +46,39 @@ struct DonorProfile: View {
                     Text("Image Uploads")
                     // tab view
                     
+                    Picker("Image Uploads", selection: $selected) {
+                        Text("Currently Needed").tag(0)
+                            .font(.system(size: 16))
+                        Text("Not Needed").tag(1)
+                        Text("Donated").tag(2)
+                    }
+                    .pickerStyle(.segmented)
+                    .frame(height: 60)
+                    .scaleEffect(CGSize(width: 1, height: 1))
+                    .scaledToFit()
+                    
+                    if (selected == 0) {
+                        Text("Currently Needed")
+                    }
+                    
+                    if (selected == 1) {
+                        VStack {
+                            Text("Not Currently Needed")
+                            Text("We will notify you when an organization needs your item")
+                        }
+                    }
+                    
+                    if (selected == 3) {
+                        Text("Donated Items")
+                    }
+                    
                     
                 }
+                .padding(15)
                 
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink(destination: ImagesView()) {
+                        NavigationLink(destination: ProfileSettings()) {
                             Image(systemName: "gearshape.fill")
                                 .font(.system(size: 35))
                                 .foregroundColor(.black)
