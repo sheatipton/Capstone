@@ -21,6 +21,7 @@
 		37BD935A29C141E0003F01D9 /* DonorSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD935929C141E0003F01D9 /* DonorSignUp.swift */; };
 		37BD935C29C1449D003F01D9 /* ItemDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD935B29C1449D003F01D9 /* ItemDescription.swift */; };
 		37BD935E29C148F7003F01D9 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD935D29C148F7003F01D9 /* Results.swift */; };
+		37BD936029C24420003F01D9 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD935F29C24420003F01D9 /* TagView.swift */; };
 		37BFE20F29B111A90065979D /* OrganizationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BFE20E29B111A90065979D /* OrganizationListView.swift */; };
 		37BFE21129B122510065979D /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BFE21029B122510065979D /* TagListView.swift */; };
 		37BFE21929BFE7010065979D /* DonorProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BFE21829BFE7010065979D /* DonorProfile.swift */; };
@@ -68,6 +69,7 @@
 		37BD935929C141E0003F01D9 /* DonorSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorSignUp.swift; sourceTree = "<group>"; };
 		37BD935B29C1449D003F01D9 /* ItemDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDescription.swift; sourceTree = "<group>"; };
 		37BD935D29C148F7003F01D9 /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
+		37BD935F29C24420003F01D9 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		37BFE20E29B111A90065979D /* OrganizationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationListView.swift; sourceTree = "<group>"; };
 		37BFE21029B122510065979D /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
 		37BFE21829BFE7010065979D /* DonorProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorProfile.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				37BFE20E29B111A90065979D /* OrganizationListView.swift */,
 				37BFE21029B122510065979D /* TagListView.swift */,
 				37F0283F29A2AF47006197A2 /* UploadView.swift */,
+				37BD935F29C24420003F01D9 /* TagView.swift */,
 				37BD935D29C148F7003F01D9 /* Results.swift */,
 				37BD935B29C1449D003F01D9 /* ItemDescription.swift */,
 				374BE89B29A7DF4100C425B4 /* Browse.swift */,
@@ -358,6 +361,7 @@
 				37CF3360299DB84E005D788E /* Home.swift in Sources */,
 				37BFE21B29BFE72C0065979D /* NonprofitProfile.swift in Sources */,
 				37BD935C29C1449D003F01D9 /* ItemDescription.swift in Sources */,
+				37BD936029C24420003F01D9 /* TagView.swift in Sources */,
 				2962B93429A0C1B000310AFF /* Classifier.swift in Sources */,
 				37BFE21129B122510065979D /* TagListView.swift in Sources */,
 				37F0283E29A2AF12006197A2 /* ImagesView.swift in Sources */,

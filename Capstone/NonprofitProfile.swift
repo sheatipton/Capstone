@@ -9,6 +9,9 @@ import SwiftUI
 import MapKit
 
 struct NonprofitProfile: View {
+    @State private var address = "123 Spring Street Athens, GA 30605"
+    
+    
     var body: some View {
         
         ZStack {
@@ -40,8 +43,7 @@ struct NonprofitProfile: View {
                     Form {
                         
                         Section(header: Text("Location")) {
-                            Text("123 Spring Street")
-                            Text("City, State 12345")
+                            Text(address)
                         }
                         
                         Section(header: Text("About")) {
@@ -52,9 +54,6 @@ struct NonprofitProfile: View {
                             Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
                         }
                         
-                        Section(header: Text("Contact")) {
-                            Text("1-800-545-GIVE")
-                        }
                     }
                 }
             }

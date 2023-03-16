@@ -7,54 +7,63 @@
 
 import SwiftUI
 
-struct DonorProfileTemporary: View {
+struct DonorProfile: View {
     var body: some View {
         
-        ZStack {
-            Color(red: 235/255, green: 252/255, blue: 208/255)
-                .ignoresSafeArea()
-            
-            NavigationView {
+        NavigationView {
+            ZStack {
+                Color(red: 235/255, green: 252/255, blue: 208/255)
+                    .ignoresSafeArea()
                 
                 VStack {
                     
-                    ZStack {
-                        Spacer()
-                            .frame(width: .infinity, height: 200)
+                    HStack {
                         
-                        HStack {
-                            Image("ProfilePlaceholder")
-                                .resizable()
-                                .clipped()
-                                .scaledToFit()
-                                .frame(width: 130, height: 130, alignment: .center)
-                                .offset(x: -150, y: 53)
+                        
+                        Image("ProfilePlaceholder")
+                            .resizable()
+                            .clipShape(Circle())
+                            .scaledToFit()
+                            .frame(width: 150, height: 140, alignment: .center)
+                            .offset(x: 105, y: 0)
+                        
+                        Spacer()
+                            .frame(width: 40)
+                        VStack {
+                            Text("Name")
+                                .font(.system(size: 25)).bold()
                             
-                            VStack {
-                                Text("Name")
-                                    .font(.system(size: 25)).bold()
-                                    .offset(x: 50, y: 90)
-                                
-                                Text("Username")
-                                    .font(.system(size: 25)).bold()
-                                    .offset(x: 50, y: 90)
-                            }
+                            
+                            Text("Username")
+                                .font(.system(size: 25)).bold()
                         }
+                        
                     }
                     
                     Text("Image Uploads")
+                    // tab view
                     
-                    // create tab view
                     
+                }
+                
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        NavigationLink(destination: ImagesView()) {
+                            Image(systemName: "gearshape.fill")
+                                .font(.system(size: 35))
+                                .foregroundColor(.black)
+                            
+                        }
+                    }
                 }
             }
         }
     }
 }
 
-struct DonorProfileTemporary_Previews: PreviewProvider {
+struct DonorProfile_Previews: PreviewProvider {
     static var previews: some View {
-        DonorProfileTemporary()
+        DonorProfile()
     }
 }
 
