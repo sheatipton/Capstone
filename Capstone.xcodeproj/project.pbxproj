@@ -19,12 +19,15 @@
 		374BE89C29A7DF4100C425B4 /* Browse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374BE89B29A7DF4100C425B4 /* Browse.swift */; };
 		37688EA5298C361A00682F9F /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37688EA4298C361A00682F9F /* Login.swift */; };
 		37BD935A29C141E0003F01D9 /* DonorSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD935929C141E0003F01D9 /* DonorSignUp.swift */; };
-		37BD935C29C1449D003F01D9 /* ItemDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD935B29C1449D003F01D9 /* ItemDescription.swift */; };
 		37BD935E29C148F7003F01D9 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD935D29C148F7003F01D9 /* Results.swift */; };
 		37BD936029C24420003F01D9 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD935F29C24420003F01D9 /* TagView.swift */; };
 		37BD936229C37F3E003F01D9 /* ProfileSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD936129C37F3E003F01D9 /* ProfileSettings.swift */; };
 		37BD936429C37FEB003F01D9 /* EditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD936329C37FEB003F01D9 /* EditProfile.swift */; };
 		37BD936629C3A02D003F01D9 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD936529C3A02D003F01D9 /* ItemView.swift */; };
+		37BD936829C3AA50003F01D9 /* PostUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD936729C3AA50003F01D9 /* PostUpload.swift */; };
+		37BD936A29C3ADE6003F01D9 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD936929C3ADE6003F01D9 /* PostView.swift */; };
+		37BD937029C7776C003F01D9 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD936F29C7776C003F01D9 /* WelcomeScreen.swift */; };
+		37BD937229C7970F003F01D9 /* ItemDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD937129C7970E003F01D9 /* ItemDescription.swift */; };
 		37BFE20F29B111A90065979D /* OrganizationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BFE20E29B111A90065979D /* OrganizationListView.swift */; };
 		37BFE21129B122510065979D /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BFE21029B122510065979D /* TagListView.swift */; };
 		37BFE21929BFE7010065979D /* DonorProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BFE21829BFE7010065979D /* DonorProfile.swift */; };
@@ -70,12 +73,15 @@
 		374BE89B29A7DF4100C425B4 /* Browse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Browse.swift; sourceTree = "<group>"; };
 		37688EA4298C361A00682F9F /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		37BD935929C141E0003F01D9 /* DonorSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorSignUp.swift; sourceTree = "<group>"; };
-		37BD935B29C1449D003F01D9 /* ItemDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDescription.swift; sourceTree = "<group>"; };
 		37BD935D29C148F7003F01D9 /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		37BD935F29C24420003F01D9 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		37BD936129C37F3E003F01D9 /* ProfileSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettings.swift; sourceTree = "<group>"; };
 		37BD936329C37FEB003F01D9 /* EditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfile.swift; sourceTree = "<group>"; };
 		37BD936529C3A02D003F01D9 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		37BD936729C3AA50003F01D9 /* PostUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUpload.swift; sourceTree = "<group>"; };
+		37BD936929C3ADE6003F01D9 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		37BD936F29C7776C003F01D9 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
+		37BD937129C7970E003F01D9 /* ItemDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDescription.swift; sourceTree = "<group>"; };
 		37BFE20E29B111A90065979D /* OrganizationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationListView.swift; sourceTree = "<group>"; };
 		37BFE21029B122510065979D /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
 		37BFE21829BFE7010065979D /* DonorProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorProfile.swift; sourceTree = "<group>"; };
@@ -123,10 +129,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37BD937329C7B595003F01D9 /* Browsing */ = {
+			isa = PBXGroup;
+			children = (
+				37BFE20E29B111A90065979D /* OrganizationListView.swift */,
+				374BE89B29A7DF4100C425B4 /* Browse.swift */,
+				37BD935F29C24420003F01D9 /* TagView.swift */,
+				37BFE21029B122510065979D /* TagListView.swift */,
+			);
+			name = Browsing;
+			sourceTree = "<group>";
+		};
 		37BFE21629BFE6BA0065979D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				37F0283F29A2AF47006197A2 /* UploadView.swift */,
 				2962B92F29A0B9D800310AFF /* ImagePicker.swift */,
+				37BD936529C3A02D003F01D9 /* ItemView.swift */,
+				37BD937129C7970E003F01D9 /* ItemDescription.swift */,
 				2962B93329A0C1B000310AFF /* Classifier.swift */,
 				292D1B7A298B33D3003F7A6A /* ImageLibrary.swift */,
 				37F0283D29A2AF12006197A2 /* ImagesView.swift */,
@@ -139,8 +159,10 @@
 			isa = PBXGroup;
 			children = (
 				37CF3365299DBEB9005D788E /* NonprofitSignUp.swift */,
+				37BD936129C37F3E003F01D9 /* ProfileSettings.swift */,
 				37BD935929C141E0003F01D9 /* DonorSignUp.swift */,
 				37688EA4298C361A00682F9F /* Login.swift */,
+				37BD936329C37FEB003F01D9 /* EditProfile.swift */,
 				37BFE21829BFE7010065979D /* DonorProfile.swift */,
 				3747CE5C299EA49F00B7B5FA /* Profile.swift */,
 				37BFE21A29BFE72C0065979D /* NonprofitProfile.swift */,
@@ -175,17 +197,12 @@
 				292D1B71298B1439003F7A6A /* GoogleService-Info.plist */,
 				37D567F62988596E0004AF45 /* CapstoneApp.swift */,
 				37D567F82988596E0004AF45 /* ContentView.swift */,
-				37BFE20E29B111A90065979D /* OrganizationListView.swift */,
-				37BFE21029B122510065979D /* TagListView.swift */,
-				37F0283F29A2AF47006197A2 /* UploadView.swift */,
-				37BD935F29C24420003F01D9 /* TagView.swift */,
-				37BD935D29C148F7003F01D9 /* Results.swift */,
-				37BD936529C3A02D003F01D9 /* ItemView.swift */,
-				37BD936129C37F3E003F01D9 /* ProfileSettings.swift */,
-				37BD935B29C1449D003F01D9 /* ItemDescription.swift */,
-				37BD936329C37FEB003F01D9 /* EditProfile.swift */,
-				374BE89B29A7DF4100C425B4 /* Browse.swift */,
 				37CF335F299DB84E005D788E /* Home.swift */,
+				37BD935D29C148F7003F01D9 /* Results.swift */,
+				37BD936F29C7776C003F01D9 /* WelcomeScreen.swift */,
+				37BD936729C3AA50003F01D9 /* PostUpload.swift */,
+				37BD936929C3ADE6003F01D9 /* PostView.swift */,
+				37BD937329C7B595003F01D9 /* Browsing */,
 				37BFE21629BFE6BA0065979D /* Images */,
 				37BFE21729BFE6DB0065979D /* Users */,
 				37D567FA298859720004AF45 /* Assets.xcassets */,
@@ -363,6 +380,7 @@
 				37BD935E29C148F7003F01D9 /* Results.swift in Sources */,
 				3747CE5D299EA49F00B7B5FA /* Profile.swift in Sources */,
 				292D1B7B298B33D3003F7A6A /* ImageLibrary.swift in Sources */,
+				37BD936829C3AA50003F01D9 /* PostUpload.swift in Sources */,
 				2962B93029A0B9D800310AFF /* ImagePicker.swift in Sources */,
 				2962B93629A0C2B900310AFF /* ImageClassifier.swift in Sources */,
 				37BD936629C3A02D003F01D9 /* ItemView.swift in Sources */,
@@ -371,9 +389,10 @@
 				37CF3360299DB84E005D788E /* Home.swift in Sources */,
 				37BD936429C37FEB003F01D9 /* EditProfile.swift in Sources */,
 				37BFE21B29BFE72C0065979D /* NonprofitProfile.swift in Sources */,
-				37BD935C29C1449D003F01D9 /* ItemDescription.swift in Sources */,
+				37BD937229C7970F003F01D9 /* ItemDescription.swift in Sources */,
 				37BD936029C24420003F01D9 /* TagView.swift in Sources */,
 				2962B93429A0C1B000310AFF /* Classifier.swift in Sources */,
+				37BD937029C7776C003F01D9 /* WelcomeScreen.swift in Sources */,
 				37BFE21129B122510065979D /* TagListView.swift in Sources */,
 				37F0283E29A2AF12006197A2 /* ImagesView.swift in Sources */,
 				37BD936229C37F3E003F01D9 /* ProfileSettings.swift in Sources */,
@@ -381,6 +400,7 @@
 				37BD935A29C141E0003F01D9 /* DonorSignUp.swift in Sources */,
 				2962B93229A0C18900310AFF /* MobileNetV2.mlmodel in Sources */,
 				374BE89C29A7DF4100C425B4 /* Browse.swift in Sources */,
+				37BD936A29C3ADE6003F01D9 /* PostView.swift in Sources */,
 				37CF3366299DBEB9005D788E /* NonprofitSignUp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

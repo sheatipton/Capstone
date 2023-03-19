@@ -11,14 +11,14 @@ import FirebaseFirestore
 
 struct UploadView: View {
     
-    @State var isShowingSubmitScreen = false
+    // Popover Screens
     @State var isShowingPictures = false
     @State var pickerPresented = false
     
+    // Images
     @State var uiImage: UIImage?
     @State var sourceType: UIImagePickerController.SourceType = .photoLibrary
     @ObservedObject var classifier: ImageClassifier
-    
     @State private var selectedImage: UIImage?
     @State private var isImagePickerDisplay = false
     
@@ -32,23 +32,35 @@ struct UploadView: View {
                 
                 VStack {
                     
+                    Spacer()
+                        .frame(height: 40)
+                    
+                    Text("Upload an Item")
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .font(.largeTitle).bold()
+                    
+                    Spacer()
+                        .frame(height: 50)
+                    
+                    // image
                     Group {
                         if uiImage != nil {
                             Image(uiImage: uiImage!)
                                 .resizable()
-                                .scaledToFit()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 300, height: 350)
+                            //.scaledToFit()
+                            //.aspectRatio(contentMode: .fit)
+                                .frame(width: 350, height: 420)
                         }
                         else {
                             Image("ImagePlaceholder")
                                 .resizable()
                             //.scaledToFit()
                             //.aspectRatio(contentMode: .fit)
-                                .frame(width: 375, height: 475)
+                                .frame(width: 350, height: 420)
                         }
                     }
                     
+                    // scanner
                     Group {
                         if let imageClass = classifier.imageClass {
                             Spacer()
@@ -58,6 +70,7 @@ struct UploadView: View {
                                 //.font(.caption)
                                     .font(.system(size:20))
                                     .foregroundColor(.black)
+                                // matthew : can you upload this ai generated description into the "item" table in the database
                                 Text(imageClass)
                                     .bold()
                                     .font(.system(size:20))
@@ -71,14 +84,28 @@ struct UploadView: View {
                         }
                     }
                     
+                    // no photo chosen
+                    if uiImage == nil {
+                        Spacer()
+                            .frame(height: 20)
+                        Text("instructions: take or upload a ").font(.system(size: 20))
+                        Text("photo of the item to be donated").font(.system(size: 20))
+                        Spacer()
+                            .frame(height: 50)
+                    } else {
+                        Spacer()
+                            .frame(height: 10)
+                    }
+                    
+                    // photo chosen
                     if uiImage != nil {
                         Spacer()
-                            .frame(height: 15)
-                        Button {
-                            isShowingSubmitScreen = true
-                            //uploadPhoto()
-                            //uiImage = nil;
-                        } label: {
+                            .frame(height: 10)
+                        
+                        
+                        NavigationLink(destination: ItemDescription().onAppear {
+                            uploadPhoto()
+                        }) {
                             Text("Upload")
                                 .font(.system(size: 18))
                                 .foregroundColor(.white).bold()
@@ -86,18 +113,9 @@ struct UploadView: View {
                                 .background(LinearGradient(gradient: Gradient(colors: [Color(red: 251/255, green: 128/255, blue: 128/255), Color(red: 253/255, green: 193/255, blue: 104/255)]), startPoint: .leading, endPoint: .trailing))
                                 .cornerRadius(15.0)
                         }
+                        
                         Spacer()
                             .frame(height: 40)
-                    }
-                    
-                    if uiImage == nil {
-                        Text("take or upload a photo of ").font(.system(size: 20))
-                        Text("the item you wish to donate").font(.system(size: 20))
-                        Spacer()
-                            .frame(height: 50)
-                    } else {
-                        Spacer()
-                            .frame(height: 10)
                     }
                     
                     HStack(spacing: 30) {
@@ -122,6 +140,7 @@ struct UploadView: View {
                     }
                 }
                 
+                // toolbar
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         NavigationLink(destination: ImagesView()) {
@@ -139,14 +158,7 @@ struct UploadView: View {
                                 .foregroundColor(.black)
                         }
                     }
-                }
-            }
-            
-            .sheet(isPresented: $isShowingSubmitScreen, onDismiss: nil) {
-                Text("Submitting")
-                    .onDisappear{
-                        uploadPhoto()
-                    }
+                } // end toolbar
             }
             
             .sheet(isPresented: $pickerPresented, onDismiss: nil) {
@@ -159,7 +171,7 @@ struct UploadView: View {
             }
         }
     }
-
+    
     func uploadPhoto() {
         
         guard uiImage != nil else {
@@ -190,9 +202,8 @@ struct UploadView: View {
                     }
                 }
             }
-            isShowingSubmitScreen = false
         }
-    }
+    } // uploadPhoto()
 }
 
 struct UploadView_Previews: PreviewProvider {

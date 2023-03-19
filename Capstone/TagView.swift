@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct TagView: View {
+    
+    @State private var id = ""
+    @State private var tag = "Clothing" // matthew : pull from tag database
+    
     var body: some View {
         
         NavigationView {
@@ -18,12 +22,52 @@ struct TagView: View {
                 
                 VStack {
                     
-                    Text("TAG Name : Clothing")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .font(.largeTitle).bold()
-                        .padding(.leading, 25)
+                    HStack {
+                        Text("TAG Name : ")
+                        Text(tag)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .font(.largeTitle).bold()
                     
-                    Text("Organization accepting the item")
+                    Spacer()
+                        .frame(height: 50)
+                    
+                    Text("Organizations accepting the item(s):")
+                        .font(.system(size: 20))
+                    
+                    Spacer()
+                        .frame(height: 50)
+                    
+                    // for each organization in the results array, show this
+                    NavigationLink(destination: NonprofitProfile()) {
+                        HStack {
+                            Text("Organization 1").bold()
+                                .font(.system(size: 20))
+                                .foregroundColor(Color.black)
+                                //.offset(x: -75)
+                            Image(systemName: "arrow.forward")
+                                .foregroundColor(.black)
+                                .font(.system(size: 20))
+                                //.offset(x: -75)
+                        }
+                    }
+                    
+                    Spacer()
+                        .frame(height: 30)
+                    
+                    // replace with loop
+                    NavigationLink(destination: NonprofitProfile()) {
+                        HStack {
+                            Text("Organization 1").bold()
+                                .font(.system(size: 20))
+                                .foregroundColor(Color.black)
+                                //.offset(x: -75)
+                            Image(systemName: "arrow.forward")
+                                .foregroundColor(.black)
+                                .font(.system(size: 20))
+                                //.offset(x: -75)
+                        }
+                    }// replace
                     
                 }
                 

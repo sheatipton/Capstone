@@ -30,7 +30,7 @@ struct Home: View {
                         Text("News Feed")
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .font(.largeTitle).bold()
-                            .padding(.leading, 25)
+                            .padding(.leading, 35)
   
                         HStack {
                             NavigationLink(destination: Profile()) {
@@ -49,11 +49,15 @@ struct Home: View {
                                 .frame(width: .infinity, height: 0)
                             }
                         
-                        Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua")
-                            .font(.headline)
-                            .padding(.leading, 40)
-                            .padding(.trailing, 25)
-                            .padding(.bottom, 20)
+                        NavigationLink(destination: PostView()) {
+                            Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...")
+                                .padding(30)
+                                .border(Color.gray.opacity(0.5), width: 1)
+                                .foregroundColor(.black)
+                                .font(.headline)
+                                .padding(.leading, 20)
+                                .padding(.trailing, 20)
+                        }
                         
                         HStack {
                                 Image("ProfilePlaceholder")
@@ -70,11 +74,15 @@ struct Home: View {
                                 .frame(width: .infinity, height: 0)
                             }
                         
-                        Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua")
-                            .font(.headline)
-                            .padding(.leading, 40)
-                            .padding(.trailing, 25)
-                            .padding(.bottom, 20)
+                        NavigationLink(destination: PostView()) {
+                            Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...")
+                                .padding(30)
+                                .border(Color.gray.opacity(0.5), width: 1)
+                                .foregroundColor(.black)
+                                .font(.headline)
+                                .padding(.leading, 20)
+                                .padding(.trailing, 20)
+                        }
                         
                         HStack {
                                 Image("ProfilePlaceholder")
@@ -91,11 +99,15 @@ struct Home: View {
                                 .frame(width: .infinity, height: 0)
                             }
                         
-                        Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua")
-                            .font(.headline)
-                            .padding(.leading, 40)
-                            .padding(.trailing, 25)
-                            .padding(.bottom, 20)
+                        NavigationLink(destination: PostView()) {
+                            Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...")
+                                .padding(30)
+                                .border(Color.gray.opacity(0.5), width: 1)
+                                .foregroundColor(.black)
+                                .font(.headline)
+                                .padding(.leading, 20)
+                                .padding(.trailing, 20)
+                        }
                         
                         HStack {
                                 Image("ProfilePlaceholder")
@@ -112,11 +124,15 @@ struct Home: View {
                                 .frame(width: .infinity, height: 0)
                             }
                         
-                        Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua")
-                            .font(.headline)
-                            .padding(.leading, 40)
-                            .padding(.trailing, 25)
-                            .padding(.bottom, 20)
+                        NavigationLink(destination: PostView()) {
+                            Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...")
+                                .padding(30)
+                                .border(Color.gray.opacity(0.5), width: 1)
+                                .foregroundColor(.black)
+                                .font(.headline)
+                                .padding(.leading, 20)
+                                .padding(.trailing, 20)
+                        }
                         
                         
                     }

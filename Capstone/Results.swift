@@ -9,6 +9,8 @@ import SwiftUI
 
 struct Results: View {
     
+    // create results array
+    
     var body: some View {
         
         NavigationView {
@@ -17,36 +19,39 @@ struct Results: View {
                 Color(red: 235/255, green: 252/255, blue: 208/255)
                     .ignoresSafeArea()
                 
-                // if results
-                Text("Organizations that are accepting your item")
-                // list
-                
-                // if no results
                 VStack {
+                    // if there are results
+                    //Text("Organizations that are accepting your item")
+                    // list
+                    
+
+                    // if results array == nil
                     VStack {
                         Text("Results")
-                            .font(.largeTitle).foregroundColor(Color.black)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .font(.largeTitle).bold()
+                        
                         Spacer()
-                            .frame(height: 50)
+                            .frame(height: 100)
                         
                         Text("There are no organizations accepting that item right now.")
+                            .font(.system(size: 16))
+                        
                         Spacer()
                             .frame(height: 20)
                         
                         Text("We will notify you when an organization is in need of that item.")
+                            .font(.system(size: 16))
+                            
                         Spacer()
-                            .frame(height: 20)
-                        
-                        Text("Browse organizations or tags to view what items are currently needed.")
-                        Spacer()
-                            .frame(height: 20)
-                        
+                            .frame(height: 50)
                     }
                     
                     VStack {
+                        
                         NavigationLink(destination: OrganizationListView()) {
-                            Text("Browse Nonprofits")
-                                .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
+                            Text("Browse Organizations")
+                                .frame(minWidth: 170,  maxWidth: 200, minHeight: 85,  maxHeight: 85)
                                 .font(.system(size: 18))
                                 .foregroundColor(.black)
                                 .border(Color.black, width: 1)
@@ -57,7 +62,7 @@ struct Results: View {
                         
                         NavigationLink(destination: TagListView()) {
                             Text("Browse Items Needed")
-                                .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
+                                .frame(minWidth: 170,  maxWidth: 200, minHeight: 85,  maxHeight: 85)
                                 .font(.system(size: 18))
                                 .foregroundColor(.black)
                                 .border(Color.black, width: 1)

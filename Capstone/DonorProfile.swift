@@ -20,6 +20,11 @@ struct DonorProfile: View {
                 
                 VStack {
                     
+                    Text("Profile")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .font(.largeTitle).bold()
+                        .padding(.leading, 25)
+                    
                     HStack {
                         
                         
@@ -43,8 +48,12 @@ struct DonorProfile: View {
                         
                     }
                     
+                    Spacer()
+                        .frame(height: 50)
+                    
                     Text("Image Uploads")
-                    // tab view
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 25)
                     
                     Picker("Image Uploads", selection: $selected) {
                         Text("Currently Needed").tag(0)
@@ -68,7 +77,7 @@ struct DonorProfile: View {
                         }
                     }
                     
-                    if (selected == 3) {
+                    if (selected == 2) {
                         Text("Donated Items")
                     }
                     

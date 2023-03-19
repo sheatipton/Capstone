@@ -26,9 +26,8 @@ struct Browse: View {
                     
                     VStack {
                         Text("Browse")
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .frame(maxWidth: .infinity, alignment: .center)
                             .font(.largeTitle).bold()
-                            .padding(.leading, 25)
                         
                         Spacer()
                             .frame(height: 20)
@@ -68,7 +67,7 @@ struct Browse: View {
                             
                             
                             // tag 1
-                            NavigationLink(destination: Login()) {
+                            NavigationLink(destination: TagView()) {
                                 Text("Tag")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
@@ -80,7 +79,7 @@ struct Browse: View {
                                 .frame(width: 35)
                             
                             // tag 2
-                            NavigationLink(destination: Login()) {
+                            NavigationLink(destination: TagView()) {
                                 Text("Tag")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
@@ -96,7 +95,7 @@ struct Browse: View {
                         HStack {
                             
                             // tag 3
-                            NavigationLink(destination: Login()) {
+                            NavigationLink(destination: TagView()) {
                                 Text("Tag")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
@@ -108,7 +107,7 @@ struct Browse: View {
                                 .frame(width: 35)
                             
                             // tag 4
-                            NavigationLink(destination: Login()) {
+                            NavigationLink(destination: TagView()) {
                                 Text("Tag")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
@@ -124,7 +123,7 @@ struct Browse: View {
                         HStack {
                             
                             // tag 5
-                            NavigationLink(destination: Login()) {
+                            NavigationLink(destination: TagView()) {
                                 Text("Tag")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
@@ -136,7 +135,7 @@ struct Browse: View {
                                 .frame(width: 35)
                             
                             // tag 6
-                            NavigationLink(destination: Login()) {
+                            NavigationLink(destination: TagView()) {
                                 Text("Tag")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
@@ -152,7 +151,7 @@ struct Browse: View {
                         HStack {
                             
                             // tag 7
-                            NavigationLink(destination: Login()) {
+                            NavigationLink(destination: TagView()) {
                                 Text("Tag")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
@@ -164,7 +163,7 @@ struct Browse: View {
                                 .frame(width: 35)
                             
                             // tag 8
-                            NavigationLink(destination: Login()) {
+                            NavigationLink(destination: TagView()) {
                                 Text("Tag")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))

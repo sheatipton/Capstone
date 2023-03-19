@@ -2,80 +2,97 @@
 //  ItemDescription.swift
 //  Capstone
 //
-//  Created by Shea Tipton on 3/14/23.
+//  Created by Shea Tipton on 3/19/23.
 //
 
 import SwiftUI
 
 struct ItemDescription: View {
     
-    @State private var id = ""
-    @State private var item = ""
+    // matthew : can you add these vars to the images database?
+    @State private var id = "" // auto increment variable?
+    // maybe move id to upload view so it is easier to identify on this view
+    
+    @State private var item = "" // can you pull this variable from the ai generated name from UploadView?
+    @State private var imgPath = "ImagePlaceholder" // pull from db
     @State private var color = ""
     @State private var size = ""
     @State private var condition = ""
+    @State private var date = Date()
+    @State private var status = false // this will be false for not donated, true for donated
     
     var body: some View {
         
-        ZStack {
-            Color(red: 235/255, green: 252/255, blue: 208/255)
-                .ignoresSafeArea()
-            
-            VStack {
+        NavigationView {
+        
+            ZStack {
+                Color(red: 235/255, green: 252/255, blue: 208/255)
+                    .ignoresSafeArea()
                 
-                Text("Item Information")
-                    .font(.largeTitle).foregroundColor(Color.black)
-                    .padding([.top, .bottom], 40)
-                
-                Image("ImagePlaceholder")
-                    .resizable()
-                    .frame(width: 200, height: 200)
-                
-                Spacer()
-                    .frame(height: 50)
-    
-                // pull from ai generated name
-                TextField("Item", text: self.$item)
-                    .padding()
-                    .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
-                    .frame(minWidth: 0, maxWidth: 340)
-                    .background(Color(red: 244, green: 244, blue: 244))
-                
-                TextField("Color", text: self.$color)
-                    .padding()
-                    .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
-                    .frame(minWidth: 0, maxWidth: 340)
-                    .background(Color(red: 244, green: 244, blue: 244))
-                
-                TextField("Size", text: self.$size)
-                    .padding()
-                    .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
-                    .frame(minWidth: 0, maxWidth: 340)
-                    .background(Color(red: 244, green: 244, blue: 244))
-                
-                TextField("Condition", text: self.$condition)
-                    .padding()
-                    .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
-                    .frame(minWidth: 0, maxWidth: 340)
-                    .background(Color(red: 244, green: 244, blue: 244))
-
-                Spacer()
-                    .frame(height: 50)
-                
-                Button("Continue") {
-                  // move to results or no results page
-                    NavigationLink(destination: Profile()) {}
+                VStack {
+                    
+                    Text("Item Information")
+                        .font(.largeTitle).foregroundColor(Color.black)
+                        .padding([.top, .bottom], 40)
+                    
+                    Image(imgPath)
+                        .resizable()
+                        .frame(width: 250, height: 300)
+                    
+                    Spacer()
+                        .frame(height: 50)
+                    
+                    TextField("Item", text: self.$item)
+                        .padding()
+                        .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
+                        .frame(minWidth: 0, maxWidth: 340)
+                        .background(Color(red: 244, green: 244, blue: 244))
+                    
+                    TextField("Color", text: self.$color)
+                        .padding()
+                        .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
+                        .frame(minWidth: 0, maxWidth: 340)
+                        .background(Color(red: 244, green: 244, blue: 244))
+                    
+                    TextField("Size", text: self.$size)
+                        .padding()
+                        .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
+                        .frame(minWidth: 0, maxWidth: 340)
+                        .background(Color(red: 244, green: 244, blue: 244))
+                    
+                    TextField("Condition", text: self.$condition)
+                        .padding()
+                        .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
+                        .frame(minWidth: 0, maxWidth: 340)
+                        .background(Color(red: 244, green: 244, blue: 244))
+                    
+                    Spacer()
+                        .frame(height: 50)
+                    
+                    NavigationLink(destination: Results().onAppear {
+                        uploadData()
+                        getResults()}) {
+                        Text("Continue")
+                            .font(.system(.body, design: .rounded))
+                            .foregroundColor(.white).bold()
+                            .padding()
+                            .frame(minWidth: 0, maxWidth: 150)
+                            .background(LinearGradient(gradient: Gradient(colors: [Color(red: 251/255, green: 128/255, blue: 128/255), Color(red: 253/255, green: 193/255, blue: 104/255)]), startPoint: .leading, endPoint: .trailing))
+                            .cornerRadius(30.0)
+                            .padding(.horizontal)
+                    }
                 }
-                    .font(.system(.body, design: .rounded))
-                    .foregroundColor(.white).bold()
-                    .padding()
-                    .frame(minWidth: 0, maxWidth: 150)
-                    .background(LinearGradient(gradient: Gradient(colors: [Color(red: 251/255, green: 128/255, blue: 128/255), Color(red: 253/255, green: 193/255, blue: 104/255)]), startPoint: .leading, endPoint: .trailing))
-                    .cornerRadius(30.0)
-                    .padding(.horizontal)
-                
             }
         }
+    }
+    
+    func uploadData () {
+        // matthew : can you upload the other data to the database?
+        // ex: item, color, size, condition
+    }
+    
+    func getResults() {
+        // todo : get results
     }
 }
 

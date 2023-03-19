@@ -22,19 +22,22 @@ struct ImagesView: View {
                 
                 ScrollView(.vertical) {
                     Spacer()
-                        .frame(height: 40)
+                        .frame(height: 30)
                     
                     VStack {
       
-                        Text("Uploaded Images")
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                        Text("Uploaded Items")
+                            .frame(maxWidth: .infinity, alignment: .center)
                             .font(.largeTitle).bold()
-                            .padding(.leading, 25)
+                            
                         
                         ForEach(retrievedImages, id: \.self) { image in
-                            Image(uiImage: image)
-                                .resizable()
-                                .frame(width: 200, height: 200)
+                            NavigationLink(destination: ItemView()) {
+                                Image(uiImage: image)
+                                    .resizable()
+                                    .frame(width: 200, height: 200)
+                                    .padding()
+                            }
                         }
                     }
                     .onAppear {
@@ -75,6 +78,7 @@ struct ImagesView: View {
                 for doc in snapshot!.documents {
                     paths.append(doc["imgPath"] as! String)
                 }
+                
                 for path in paths {
                     
                     let storageRef = Storage.storage().reference()

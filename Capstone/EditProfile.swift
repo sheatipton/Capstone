@@ -22,6 +22,11 @@ struct EditProfile: View {
                 
                 VStack {
                     
+                    Text("Edit Profile")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .font(.largeTitle).bold()
+                        .padding(.leading, 25)
+                    
                     Image("ProfilePlaceholder")
                         .resizable()
                         .clipShape(Circle())

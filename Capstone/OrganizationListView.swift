@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct OrganizationListView: View {
+    
+    // matthew : pull the list of nonprofits from nonprofits database, put into nonprofits array
+    
     var body: some View {
+        
         NavigationView {
             
             ZStack {
@@ -20,18 +24,17 @@ struct OrganizationListView: View {
                         .frame(height: 40)
                     
                     VStack {
-                        HStack {
+                        /*HStack {
                             NavigationLink(destination: Browse()) {
                                 Image(systemName: "arrow.uturn.backward")
                                     .foregroundColor(.black)
                                     .font(.system(size: 28))
                                     .padding(.leading, 20)
-                            }
+                            }*/
                             Text("Browse Nonprofits")
-                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .frame(maxWidth: .infinity, alignment: .center)
                                 .font(.largeTitle).bold()
-                                .padding(.leading, 15)
-                        }
+                       // }
                         
                         Spacer()
                             .frame(height: 50)
@@ -40,12 +43,9 @@ struct OrganizationListView: View {
                     VStack {
                         HStack {
                             
-                            // to do: remove tag code and replace with for loop
-                            // change destination to tag view
-                            
-                            
+                            // loop to list each nonprofit
                             // org 1
-                            NavigationLink(destination: Login()) {
+                            NavigationLink(destination: NonprofitProfile()) {
                                 Text("Nonprofit")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
@@ -57,6 +57,7 @@ struct OrganizationListView: View {
                             Spacer()
                                 .frame(width: 35)
                             
+                            // remove all code below
                             // org 2
                             NavigationLink(destination: Login()) {
                                 Text("Nonprofit")
@@ -182,7 +183,6 @@ struct OrganizationListView: View {
                        
                     }
                 }
-                
                 
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
