@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TagListView: View {
     
+    @Environment(\.dismiss) private var dismiss
+    
     // matthew : pull the list of tags from tags database, put into tag array
     
     var body: some View {
@@ -45,7 +47,7 @@ struct TagListView: View {
                             
                             // loop to list each tag
                             // tag 1
-                            NavigationLink(destination: TagView()) {
+                            NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("Tag")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
@@ -58,7 +60,7 @@ struct TagListView: View {
                             
                             // remove code below
                             // tag 2
-                            NavigationLink(destination: TagView()) {
+                            NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("Tag")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
@@ -74,7 +76,7 @@ struct TagListView: View {
                         HStack {
                             
                             // tag 3
-                            NavigationLink(destination: TagView()) {
+                            NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("Tag")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
@@ -86,7 +88,7 @@ struct TagListView: View {
                                 .frame(width: 35)
                             
                             // tag 4
-                            NavigationLink(destination: TagView()) {
+                            NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("Tag")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
@@ -102,7 +104,7 @@ struct TagListView: View {
                         HStack {
                             
                             // tag 5
-                            NavigationLink(destination: TagView()) {
+                            NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("Tag")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
@@ -114,7 +116,7 @@ struct TagListView: View {
                                 .frame(width: 35)
                             
                             // tag 6
-                            NavigationLink(destination: TagView()) {
+                            NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("Tag")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
@@ -130,7 +132,7 @@ struct TagListView: View {
                         HStack {
                             
                             // tag 7
-                            NavigationLink(destination: TagView()) {
+                            NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("Tag")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
@@ -142,7 +144,7 @@ struct TagListView: View {
                                 .frame(width: 35)
                             
                             // tag 8
-                            NavigationLink(destination: TagView()) {
+                            NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("Tag")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
@@ -154,26 +156,19 @@ struct TagListView: View {
                 }
                 
                 .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink(destination: ImagesView()) {
-                            Image(systemName: "photo.on.rectangle.angled")
-                                .font(.system(size: 35))
-                                .foregroundColor(.black)
-                        }
-                    }
-                    
                     ToolbarItem(placement: .navigationBarLeading) {
-                        NavigationLink(destination: Login()) {
-                            Image(systemName: "person.circle")
-                                .font(.system(size: 35))
-                                .font(.headline)
+                        Button {
+                            dismiss()
+                            
+                        } label: {
+                            Image(systemName: "arrow.uturn.backward")
+                                .font(.system(size: 30))
                                 .foregroundColor(.black)
                         }
                     }
                 }
             }
         }
-        .navigationBarBackButtonHidden(true)
     }
 }
 

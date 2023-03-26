@@ -9,6 +9,8 @@ import SwiftUI
 
 struct OrganizationListView: View {
     
+    @Environment(\.dismiss) private var dismiss
+    
     // matthew : pull the list of nonprofits from nonprofits database, put into nonprofits array
     
     var body: some View {
@@ -25,33 +27,33 @@ struct OrganizationListView: View {
                     
                     VStack {
                         /*HStack {
-                            NavigationLink(destination: Browse()) {
-                                Image(systemName: "arrow.uturn.backward")
-                                    .foregroundColor(.black)
-                                    .font(.system(size: 28))
-                                    .padding(.leading, 20)
-                            }*/
-                            Text("Browse Nonprofits")
-                                .frame(maxWidth: .infinity, alignment: .center)
-                                .font(.largeTitle).bold()
-                       // }
+                         NavigationLink(destination: Browse()) {
+                         Image(systemName: "arrow.uturn.backward")
+                         .foregroundColor(.black)
+                         .font(.system(size: 28))
+                         .padding(.leading, 20)
+                         }*/
+                        Text("Browse Nonprofits")
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .font(.largeTitle).bold()
+                        // }
                         
                         Spacer()
                             .frame(height: 50)
-                        }
+                    }
                     
                     VStack {
                         HStack {
                             
                             // loop to list each nonprofit
                             // org 1
-                            NavigationLink(destination: NonprofitProfile()) {
+                            NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
                                 Text("Nonprofit")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)
                                     .border(Color.black, width: 1)
-                                    
+                                
                             } // end org 1
                             
                             Spacer()
@@ -59,7 +61,7 @@ struct OrganizationListView: View {
                             
                             // remove all code below
                             // org 2
-                            NavigationLink(destination: Login()) {
+                            NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
                                 Text("Nonprofit")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
@@ -75,20 +77,20 @@ struct OrganizationListView: View {
                         HStack {
                             
                             // org 3
-                            NavigationLink(destination: Login()) {
+                            NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
                                 Text("Nonprofit")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)
                                     .border(Color.black, width: 1)
-                                    
+                                
                             } // end org 3
                             
                             Spacer()
                                 .frame(width: 35)
                             
                             // org 4
-                            NavigationLink(destination: Login()) {
+                            NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
                                 Text("Nonprofit")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
@@ -103,20 +105,20 @@ struct OrganizationListView: View {
                         HStack {
                             
                             // org 5
-                            NavigationLink(destination: Login()) {
+                            NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
                                 Text("Nonprofit")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)
                                     .border(Color.black, width: 1)
-                                    
+                                
                             } // end org 5
                             
                             Spacer()
                                 .frame(width: 35)
                             
                             // org 6
-                            NavigationLink(destination: Login()) {
+                            NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
                                 Text("Nonprofit")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
@@ -131,20 +133,19 @@ struct OrganizationListView: View {
                         HStack {
                             
                             // org 7
-                            NavigationLink(destination: Login()) {
+                            NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
                                 Text("Nonprofit")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)
                                     .border(Color.black, width: 1)
-                                    
                             } // end org 7
                             
                             Spacer()
                                 .frame(width: 35)
                             
                             // org 8
-                            NavigationLink(destination: Login()) {
+                            NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
                                 Text("Nonprofit")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
@@ -159,20 +160,20 @@ struct OrganizationListView: View {
                         HStack {
                             
                             // tag 1
-                            NavigationLink(destination: Login()) {
+                            NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
                                 Text("Nonprofit")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)
                                     .border(Color.black, width: 1)
-                                    
+                                
                             } // end tag 1
                             
                             Spacer()
                                 .frame(width: 35)
                             
                             // tag 2
-                            NavigationLink(destination: Login()) {
+                            NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
                                 Text("Nonprofit")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
@@ -180,32 +181,23 @@ struct OrganizationListView: View {
                                     .border(Color.black, width: 1)
                             } // end tag 2
                         }
-                       
+                        
                     }
                 }
-                
                 .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink(destination: ImagesView()) {
-                            Image(systemName: "photo.on.rectangle.angled")
-                                .font(.system(size: 35))
-                                .foregroundColor(.black)
-                        }
-                    }
-                    
                     ToolbarItem(placement: .navigationBarLeading) {
-                        NavigationLink(destination: Login()) {
-                            Image(systemName: "person.circle")
-                                .font(.system(size: 35))
-                                .font(.headline)
-                                .foregroundColor(.black)
+                        Button {
+                            dismiss()
                             
+                        } label: {
+                            Image(systemName: "arrow.uturn.backward")
+                                .font(.system(size: 30))
+                                .foregroundColor(.black)
                         }
                     }
                 }
             }
         }
-        .navigationBarBackButtonHidden(true)
     }
 }
 

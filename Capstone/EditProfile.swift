@@ -9,6 +9,8 @@ import SwiftUI
 
 struct EditProfile: View {
     
+    @Environment(\.dismiss) private var dismiss
+    
     @State private var fullName = ""
     @State private var username = ""
     
@@ -47,13 +49,22 @@ struct EditProfile: View {
                         .frame(minWidth: 0, maxWidth: 340)
                         .background(Color(red: 244, green: 244, blue: 244))
                         .cornerRadius(10.0)
-                    
-                   
-                    
+                     
                 }
             }
         }
-        
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    dismiss()
+                    
+                } label: {
+                    Image(systemName: "arrow.uturn.backward")
+                        .font(.system(size: 30))
+                        .foregroundColor(.black)
+                }
+            }
+        }
     }
 }
 

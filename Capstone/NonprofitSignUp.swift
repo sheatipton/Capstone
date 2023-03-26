@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NonprofitSignUp: View {
+    
     @State private var userType = ""
     @State private var username = ""
     @State private var email = ""
@@ -70,7 +71,7 @@ struct NonprofitSignUp: View {
                             .font(.system(.body, design: .rounded))
                             .bold()
                         
-                        NavigationLink(destination: Login()) {
+                        NavigationLink(destination: Login().navigationBarBackButtonHidden(true)) {
                             Text("Sign in").underline()
                                 .font(.system(.body, design: .rounded)).bold()
                                 .foregroundColor(Color(red: 251/255, green: 128/255, blue: 128/255))
@@ -83,7 +84,7 @@ struct NonprofitSignUp: View {
                             .font(.system(.body, design: .rounded))
                             .bold()
                         
-                        NavigationLink(destination: DonorSignUp()) {
+                        NavigationLink(destination: DonorSignUp().navigationBarBackButtonHidden(true)) {
                             Text("Sign up here").underline()
                                 .font(.system(.body, design: .rounded)).bold()
                                 .foregroundColor(Color(red: 251/255, green: 128/255, blue: 128/255))

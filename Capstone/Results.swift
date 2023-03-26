@@ -9,6 +9,9 @@ import SwiftUI
 
 struct Results: View {
     
+    @Environment(\.dismiss) private var dismiss
+
+    
     // create results array
     
     var body: some View {
@@ -49,7 +52,7 @@ struct Results: View {
                     
                     VStack {
                         
-                        NavigationLink(destination: OrganizationListView()) {
+                        NavigationLink(destination: OrganizationListView().navigationBarBackButtonHidden(true)) {
                             Text("Browse Organizations")
                                 .frame(minWidth: 170,  maxWidth: 200, minHeight: 85,  maxHeight: 85)
                                 .font(.system(size: 18))
@@ -60,12 +63,24 @@ struct Results: View {
                         Spacer()
                             .frame(height: 20)
                         
-                        NavigationLink(destination: TagListView()) {
+                        NavigationLink(destination: TagListView().navigationBarBackButtonHidden(true)) {
                             Text("Browse Items Needed")
                                 .frame(minWidth: 170,  maxWidth: 200, minHeight: 85,  maxHeight: 85)
                                 .font(.system(size: 18))
                                 .foregroundColor(.black)
                                 .border(Color.black, width: 1)
+                        }
+                    }
+                }
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button {
+                            dismiss()
+                            
+                        } label: {
+                            Image(systemName: "arrow.uturn.backward")
+                                .font(.system(size: 30))
+                                .foregroundColor(.black)
                         }
                     }
                 }

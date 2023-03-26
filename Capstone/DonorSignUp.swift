@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DonorSignUp: View {
-    
+        
     @State private var userType = ""
     @State private var username = ""
     @State private var fullName = ""
@@ -92,7 +92,7 @@ struct DonorSignUp: View {
                         .font(.system(.body, design: .rounded))
                         .bold()
                     
-                    NavigationLink(destination: NonprofitSignUp()) {
+                    NavigationLink(destination: NonprofitSignUp().navigationBarBackButtonHidden(true)) {
                         Text("Register here").underline()
                             .font(.system(.body, design: .rounded)).bold()
                             .foregroundColor(Color(red: 251/255, green: 128/255, blue: 128/255))

@@ -9,9 +9,14 @@ import SwiftUI
 import MapKit
 
 struct NonprofitProfile: View {
+    
+    @Environment(\.dismiss) private var dismiss
+    
+        // matthew : pull vars from nonprofit db
+    @State private var name = "Nonprofit"
     @State private var address = "123 Spring Street Athens, GA 30605"
-    
-    
+    @State private var imgPath = "ProfilePlaceholder"
+
     var body: some View {
         
         ZStack {
@@ -27,16 +32,17 @@ struct NonprofitProfile: View {
                             .frame(width: .infinity, height: 200)
                             .ignoresSafeArea()
                         
-                        Image("ProfilePlaceholder")
+                        Image(imgPath)
                             .resizable()
                             .clipped()
                             .scaledToFit()
                             .frame(width: 130, height: 130, alignment: .center)
                             .offset(x: -150, y: 53)
                         
-                        Text("Nonprofit")
+                        Text(name)
                             .font(.system(size: 25)).bold()
-                            .offset(x: 50, y: 90)
+                            .offset(x: 0, y: 90)
+                        
                         
                     }
                     
@@ -54,6 +60,18 @@ struct NonprofitProfile: View {
                             Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
                         }
                         
+                    }
+                }
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button {
+                            dismiss()
+                            
+                        } label: {
+                            Image(systemName: "arrow.uturn.backward")
+                                .font(.system(size: 30))
+                                .foregroundColor(.black)
+                        }
                     }
                 }
             }

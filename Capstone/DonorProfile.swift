@@ -9,7 +9,9 @@ import SwiftUI
 
 struct DonorProfile: View {
     
-@State private var selected = 0
+    @Environment(\.dismiss) private var dismiss
+    
+    @State private var selected = 0
     
     var body: some View {
         
@@ -86,8 +88,19 @@ struct DonorProfile: View {
                 .padding(15)
                 
                 .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button {
+                            dismiss()
+                            
+                        } label: {
+                            Image(systemName: "arrow.uturn.backward")
+                                .font(.system(size: 30))
+                                .foregroundColor(.black)
+                        }
+                    }
+                    
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink(destination: ProfileSettings()) {
+                        NavigationLink(destination: ProfileSettings().navigationBarBackButtonHidden()) {
                             Image(systemName: "gearshape.fill")
                                 .font(.system(size: 35))
                                 .foregroundColor(.black)

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TagView: View {
     
+    @Environment(\.dismiss) private var dismiss
+    
     @State private var id = ""
     @State private var tag = "Clothing" // matthew : pull from tag database
     
@@ -39,7 +41,7 @@ struct TagView: View {
                         .frame(height: 50)
                     
                     // for each organization in the results array, show this
-                    NavigationLink(destination: NonprofitProfile()) {
+                    NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
                         HStack {
                             Text("Organization 1").bold()
                                 .font(.system(size: 20))
@@ -56,7 +58,7 @@ struct TagView: View {
                         .frame(height: 30)
                     
                     // replace with loop
-                    NavigationLink(destination: NonprofitProfile()) {
+                    NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
                         HStack {
                             Text("Organization 1").bold()
                                 .font(.system(size: 20))
@@ -72,7 +74,19 @@ struct TagView: View {
                 }
                 
             }
-            
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        dismiss()
+                        
+                    } label: {
+                        Image(systemName: "arrow.uturn.backward")
+                            .font(.system(size: 30))
+                            .foregroundColor(.black)
+                    }
+                }
+            }
+        .navigationBarBackButtonHidden(true)
         }
     }
 }

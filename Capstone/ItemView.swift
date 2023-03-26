@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ItemView: View {
     
+    @Environment(\.dismiss) private var dismiss
+    
     @State private var item = "item" // matthew : pull item name from database
     @State private var imgPath = "ImagePlaceholder" // pull imgPath from db
     @State private var date = "03/19/2023" // pull date from db
@@ -79,6 +81,17 @@ struct ItemView: View {
             }
             
             .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        dismiss()
+                        
+                    } label: {
+                        Image(systemName: "arrow.uturn.backward")
+                            .font(.system(size: 30))
+                            .foregroundColor(.black)
+                    }
+                }
+                
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         isShowingConfirmDelete = true

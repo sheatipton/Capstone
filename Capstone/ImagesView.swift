@@ -10,6 +10,9 @@ import FirebaseStorage
 import FirebaseFirestore
 
 struct ImagesView: View {
+    
+    @Environment(\.dismiss) private var dismiss
+    
     @State var retrievedImages = [UIImage]()
     
     var body: some View {
@@ -25,11 +28,11 @@ struct ImagesView: View {
                         .frame(height: 30)
                     
                     VStack {
-      
+                        
                         Text("Uploaded Items")
                             .frame(maxWidth: .infinity, alignment: .center)
                             .font(.largeTitle).bold()
-                            
+                        
                         
                         ForEach(retrievedImages, id: \.self) { image in
                             NavigationLink(destination: ItemView()) {
@@ -46,25 +49,19 @@ struct ImagesView: View {
                 }
                 
                 .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink(destination: ImagesView()) {
-                            Image(systemName: "photo.on.rectangle.angled")
-                                .font(.system(size: 35))
-                                .font(.headline)
-                                .foregroundColor(.black)
-                        }
-                    }
                     ToolbarItem(placement: .navigationBarLeading) {
-                        NavigationLink(destination: Profile()) {
-                            Image(systemName: "person.circle")
-                                .font(.system(size: 35))
-                                .font(.headline)
+                        Button {
+                            dismiss()
+                            
+                        } label: {
+                            Image(systemName: "arrow.uturn.backward")
+                                .font(.system(size: 30))
                                 .foregroundColor(.black)
                         }
                     }
                 }
             }
-            .navigationBarBackButtonHidden(true)
+            
         }
     }
     

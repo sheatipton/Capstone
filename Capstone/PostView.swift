@@ -9,14 +9,16 @@ import SwiftUI
 
 struct PostView: View {
     
+    @Environment(\.dismiss) private var dismiss
+    
     var body: some View {
         
-        NavigationView {
-            
-            ZStack {
-                Color(red: 235/255, green: 252/255, blue: 208/255)
-                    .ignoresSafeArea()
+            NavigationView {
                 
+                ZStack {
+                    Color(red: 235/255, green: 252/255, blue: 208/255)
+                        .ignoresSafeArea()
+  
                 VStack {
                     
                     Text("Post Details")
@@ -28,7 +30,7 @@ struct PostView: View {
                         .frame(height: 75)
                     
                     Text("Organization Name")
-                       // .frame(alignment: .leading)
+                    // .frame(alignment: .leading)
                     
                     Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua")
                         .font(.headline)
@@ -49,11 +51,23 @@ struct PostView: View {
                 // toolbar with delete button
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink(destination: ImagesView()) {
+                        NavigationLink(destination: ImagesView().navigationBarBackButtonHidden(true)) {
                             Image(systemName: "trash.fill")
                                 .font(.system(size: 25))
                                 .foregroundColor(.black)
                         }
+                    }
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        dismiss()
+                        
+                    } label: {
+                        Image(systemName: "arrow.uturn.backward")
+                            .font(.system(size: 30))
+                            .foregroundColor(.black)
                     }
                 }
             }

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ProfileSettings: View {
+    
+    @Environment(\.dismiss) private var dismiss
+    
     var body: some View {
         
         NavigationView {
@@ -26,7 +29,7 @@ struct ProfileSettings: View {
                     Spacer()
                         .frame(height: 50)
                     
-                    NavigationLink(destination: EditProfile()) {
+                    NavigationLink(destination: EditProfile().navigationBarBackButtonHidden(true)) {
                         HStack {
                             Image(systemName: "person.fill")
                                 .font(.system(size: 35))
@@ -50,6 +53,18 @@ struct ProfileSettings: View {
                     
                 }
                 
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        dismiss()
+                        
+                    } label: {
+                        Image(systemName: "arrow.uturn.backward")
+                            .font(.system(size: 30))
+                            .foregroundColor(.black)
+                    }
+                }
             }
         }
     }

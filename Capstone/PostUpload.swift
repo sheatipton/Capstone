@@ -9,6 +9,8 @@ import SwiftUI
 
 struct PostUpload: View {
     
+    @Environment(\.dismiss) private var dismiss
+    
     var body: some View {
         
         NavigationView {
@@ -40,6 +42,18 @@ struct PostUpload: View {
                             .font(.system(size: 25))
                         
                     }
+                }
+            }
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    dismiss()
+                    
+                } label: {
+                    Image(systemName: "arrow.uturn.backward")
+                        .font(.system(size: 30))
+                        .foregroundColor(.black)
                 }
             }
         }

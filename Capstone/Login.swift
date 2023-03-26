@@ -42,9 +42,8 @@ struct Login: View {
                 
                 Button("Login") {
                     
-                    // add login functionality here
-                    // change navigation link to home()
-                    NavigationLink(destination: Profile()) {}
+                    // matthew : add login functionality here
+                    NavigationLink(destination: Home()) {}
                 }
                     .font(.system(.body, design: .rounded))
                     .foregroundColor(.white).bold()

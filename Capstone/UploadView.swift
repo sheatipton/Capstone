@@ -143,7 +143,7 @@ struct UploadView: View {
                 // toolbar
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink(destination: ImagesView()) {
+                        NavigationLink(destination: ImagesView().navigationBarBackButtonHidden(true)) {
                             Image(systemName: "photo.on.rectangle.angled")
                                 .font(.system(size: 35))
                                 .font(.headline)
@@ -151,7 +151,7 @@ struct UploadView: View {
                         }
                     }
                     ToolbarItem(placement: .navigationBarLeading) {
-                        NavigationLink(destination: Profile()) {
+                        NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
                             Image(systemName: "person.circle")
                                 .font(.system(size: 35))
                                 .font(.headline)

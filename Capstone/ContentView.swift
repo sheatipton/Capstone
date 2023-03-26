@@ -17,7 +17,7 @@ struct ContentView: View {
             UploadView(classifier: ImageClassifier())
                 .font(.system(size: 30, weight: .bold, design: .rounded)) .tabItem {
                     Image(systemName: "photo")
-                    Text("Images")
+                    Text("Upload")
                 }
 
             Browse()

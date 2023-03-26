@@ -42,7 +42,7 @@ struct Browse: View {
                         Spacer()
                             .frame(height: 30)
                         
-                        NavigationLink(destination: OrganizationListView()) {
+                        NavigationLink(destination: OrganizationListView().navigationBarBackButtonHidden(true)) {
                             HStack {
                                 Text("Browse Organizations").bold()
                                     .font(.headline)
@@ -67,7 +67,7 @@ struct Browse: View {
                             
                             
                             // tag 1
-                            NavigationLink(destination: TagView()) {
+                            NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("Tag")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
@@ -79,7 +79,7 @@ struct Browse: View {
                                 .frame(width: 35)
                             
                             // tag 2
-                            NavigationLink(destination: TagView()) {
+                            NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("Tag")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
@@ -95,7 +95,7 @@ struct Browse: View {
                         HStack {
                             
                             // tag 3
-                            NavigationLink(destination: TagView()) {
+                            NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("Tag")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
@@ -107,7 +107,7 @@ struct Browse: View {
                                 .frame(width: 35)
                             
                             // tag 4
-                            NavigationLink(destination: TagView()) {
+                            NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("Tag")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
@@ -123,7 +123,7 @@ struct Browse: View {
                         HStack {
                             
                             // tag 5
-                            NavigationLink(destination: TagView()) {
+                            NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("Tag")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
@@ -135,7 +135,7 @@ struct Browse: View {
                                 .frame(width: 35)
                             
                             // tag 6
-                            NavigationLink(destination: TagView()) {
+                            NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("Tag")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
@@ -151,7 +151,7 @@ struct Browse: View {
                         HStack {
                             
                             // tag 7
-                            NavigationLink(destination: TagView()) {
+                            NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("Tag")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
@@ -163,7 +163,7 @@ struct Browse: View {
                                 .frame(width: 35)
                             
                             // tag 8
-                            NavigationLink(destination: TagView()) {
+                            NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("Tag")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
@@ -177,7 +177,7 @@ struct Browse: View {
                 
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink(destination: ImagesView()) {
+                        NavigationLink(destination: ImagesView().navigationBarBackButtonHidden(true)) {
                             Image(systemName: "photo.on.rectangle.angled")
                                 .font(.system(size: 35))
                                 .foregroundColor(.black)
@@ -185,10 +185,9 @@ struct Browse: View {
                     }
                     
                     ToolbarItem(placement: .navigationBarLeading) {
-                        NavigationLink(destination: Login()) {
+                        NavigationLink(destination: DonorProfile().navigationBarBackButtonHidden(true)) {
                             Image(systemName: "person.circle")
                                 .font(.system(size: 35))
-                                .font(.headline)
                                 .foregroundColor(.black)
                             
                         }
@@ -196,7 +195,6 @@ struct Browse: View {
                 }
             }
         }
-        .navigationBarBackButtonHidden(true)
     }
 }
 

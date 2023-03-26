@@ -15,7 +15,6 @@
 		2962B93229A0C18900310AFF /* MobileNetV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2962B93129A0C18900310AFF /* MobileNetV2.mlmodel */; };
 		2962B93429A0C1B000310AFF /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2962B93329A0C1B000310AFF /* Classifier.swift */; };
 		2962B93629A0C2B900310AFF /* ImageClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2962B93529A0C2B900310AFF /* ImageClassifier.swift */; };
-		3747CE5D299EA49F00B7B5FA /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3747CE5C299EA49F00B7B5FA /* Profile.swift */; };
 		374BE89C29A7DF4100C425B4 /* Browse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374BE89B29A7DF4100C425B4 /* Browse.swift */; };
 		37688EA5298C361A00682F9F /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37688EA4298C361A00682F9F /* Login.swift */; };
 		37BD935A29C141E0003F01D9 /* DonorSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BD935929C141E0003F01D9 /* DonorSignUp.swift */; };
@@ -69,7 +68,6 @@
 		2962B93129A0C18900310AFF /* MobileNetV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2.mlmodel; sourceTree = "<group>"; };
 		2962B93329A0C1B000310AFF /* Classifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classifier.swift; sourceTree = "<group>"; };
 		2962B93529A0C2B900310AFF /* ImageClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassifier.swift; sourceTree = "<group>"; };
-		3747CE5C299EA49F00B7B5FA /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		374BE89B29A7DF4100C425B4 /* Browse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Browse.swift; sourceTree = "<group>"; };
 		37688EA4298C361A00682F9F /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		37BD935929C141E0003F01D9 /* DonorSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorSignUp.swift; sourceTree = "<group>"; };
@@ -140,17 +138,24 @@
 			name = Browsing;
 			sourceTree = "<group>";
 		};
+		37BD937529D0E6BB003F01D9 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				2962B93329A0C1B000310AFF /* Classifier.swift */,
+				2962B92F29A0B9D800310AFF /* ImagePicker.swift */,
+				292D1B7A298B33D3003F7A6A /* ImageLibrary.swift */,
+				2962B93529A0C2B900310AFF /* ImageClassifier.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		37BFE21629BFE6BA0065979D /* Images */ = {
 			isa = PBXGroup;
 			children = (
 				37F0283F29A2AF47006197A2 /* UploadView.swift */,
-				2962B92F29A0B9D800310AFF /* ImagePicker.swift */,
 				37BD936529C3A02D003F01D9 /* ItemView.swift */,
 				37BD937129C7970E003F01D9 /* ItemDescription.swift */,
-				2962B93329A0C1B000310AFF /* Classifier.swift */,
-				292D1B7A298B33D3003F7A6A /* ImageLibrary.swift */,
 				37F0283D29A2AF12006197A2 /* ImagesView.swift */,
-				2962B93529A0C2B900310AFF /* ImageClassifier.swift */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -164,8 +169,8 @@
 				37688EA4298C361A00682F9F /* Login.swift */,
 				37BD936329C37FEB003F01D9 /* EditProfile.swift */,
 				37BFE21829BFE7010065979D /* DonorProfile.swift */,
-				3747CE5C299EA49F00B7B5FA /* Profile.swift */,
 				37BFE21A29BFE72C0065979D /* NonprofitProfile.swift */,
+				37BD937529D0E6BB003F01D9 /* Utilities */,
 			);
 			name = Users;
 			sourceTree = "<group>";
@@ -378,7 +383,6 @@
 				37BFE21929BFE7010065979D /* DonorProfile.swift in Sources */,
 				37BFE20F29B111A90065979D /* OrganizationListView.swift in Sources */,
 				37BD935E29C148F7003F01D9 /* Results.swift in Sources */,
-				3747CE5D299EA49F00B7B5FA /* Profile.swift in Sources */,
 				292D1B7B298B33D3003F7A6A /* ImageLibrary.swift in Sources */,
 				37BD936829C3AA50003F01D9 /* PostUpload.swift in Sources */,
 				2962B93029A0B9D800310AFF /* ImagePicker.swift in Sources */,
