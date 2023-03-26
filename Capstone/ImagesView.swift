@@ -61,7 +61,6 @@ struct ImagesView: View {
                     }
                 }
             }
-            
         }
     }
     
@@ -96,7 +95,7 @@ struct ImagesView: View {
     }
     
     func appendImage(image: UIImage) {
-        print("code executed matt!")
+        //print("code executed matt!")
         DispatchQueue.main.async {
             self.retrievedImages.append(image)
         }

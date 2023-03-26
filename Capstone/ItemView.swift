@@ -10,13 +10,12 @@ import SwiftUI
 struct ItemView: View {
     
     @Environment(\.dismiss) private var dismiss
+    @State private var isShowingConfirmDelete = false
     
     @State private var item = "item" // matthew : pull item name from database
     @State private var imgPath = "ImagePlaceholder" // pull imgPath from db
     @State private var date = "03/19/2023" // pull date from db
     @State private var status = false // pull status from db
-    
-    @State private var isShowingConfirmDelete = false
     
     var body: some View {
         
@@ -108,6 +107,7 @@ struct ItemView: View {
                     title: Text("Are you sure you want to delete this item?"),
                     primaryButton: .destructive(Text("Delete")) {
                         // matthew : delete the item from the database
+                        dismiss()
                     },
                     secondaryButton: .cancel())
             }
