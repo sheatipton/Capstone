@@ -10,15 +10,16 @@ import SwiftUI
 struct PostView: View {
     
     @Environment(\.dismiss) private var dismiss
+    @State private var isShowingConfirmDelete = false
     
     var body: some View {
         
-            NavigationView {
+        NavigationView {
+            
+            ZStack {
+                Color(red: 235/255, green: 252/255, blue: 208/255)
+                    .ignoresSafeArea()
                 
-                ZStack {
-                    Color(red: 235/255, green: 252/255, blue: 208/255)
-                        .ignoresSafeArea()
-  
                 VStack {
                     
                     Text("Post Details")
@@ -36,6 +37,7 @@ struct PostView: View {
                         .font(.headline)
                         .padding(.leading, 40)
                         .padding(.trailing, 25)
+                        .padding(.top, 20)
                         .padding(.bottom, 20)
                     
                     Spacer()
@@ -47,28 +49,36 @@ struct PostView: View {
                     
                 }
                 
-                // if user is a nonprofit
-                // toolbar with delete button
                 .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button {
+                            dismiss()
+                            
+                        } label: {
+                            Image(systemName: "arrow.uturn.backward")
+                                .font(.system(size: 30))
+                                .foregroundColor(.black)
+                        }
+                    }
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        NavigationLink(destination: ImagesView().navigationBarBackButtonHidden(true)) {
+                        Button {
+                            isShowingConfirmDelete = true
+                        } label: {
                             Image(systemName: "trash.fill")
                                 .font(.system(size: 25))
                                 .foregroundColor(.black)
                         }
                     }
+                    
                 }
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        dismiss()
-                        
-                    } label: {
-                        Image(systemName: "arrow.uturn.backward")
-                            .font(.system(size: 30))
-                            .foregroundColor(.black)
-                    }
+                .alert(isPresented: $isShowingConfirmDelete) {
+                    Alert(
+                        title: Text("Are you sure you want to delete this item?"),
+                        primaryButton: .destructive(Text("Delete")) {
+                            // matthew : delete the post from the database
+                            dismiss()
+                        },
+                        secondaryButton: .cancel())
                 }
             }
         }
