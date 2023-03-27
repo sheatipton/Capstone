@@ -65,7 +65,15 @@ struct DonorSignUp: View {
                     .background(Color(red: 244, green: 244, blue: 244))
                     .cornerRadius(20.0)
                 
-                Button("Sign Up") {}
+                Button("Sign Up") {
+                    registerDonor(email: email,password: password,userName: username,fullName: fullName)
+                    
+                    self.fullName = ""
+                    self.username = ""
+                    self.email = ""
+                    self.password = ""
+                    self.confirmPassword = ""
+                }
                     .font(.system(.body, design: .rounded))
                     .foregroundColor(.white).bold()
                     .padding()
