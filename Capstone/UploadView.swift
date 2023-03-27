@@ -27,32 +27,25 @@ struct UploadView: View {
         NavigationView {
             
             ZStack {
-                Color(red: 235/255, green: 252/255, blue: 208/255)
+                Color(red: 230/255, green: 190/255, blue: 150/255).opacity(0.6)
                     .ignoresSafeArea()
                 
                 VStack {
-                    
+
                     Spacer()
                         .frame(height: 40)
-                    
-                    Text("Upload an Item")
-                        .frame(maxWidth: .infinity, alignment: .center)
-                        .font(.largeTitle).bold()
-                    
-                    Spacer()
-                        .frame(height: 50)
                     
                     // image
                     Group {
                         if uiImage != nil {
                             Image(uiImage: uiImage!)
                                 .resizable()
-                            //.scaledToFit()
+                                .scaledToFit()
                             //.aspectRatio(contentMode: .fit)
                                 .frame(width: 350, height: 420)
                         }
                         else {
-                            Image("ImagePlaceholder")
+                            Image("Instructions")
                                 .resizable()
                             //.scaledToFit()
                             //.aspectRatio(contentMode: .fit)
@@ -64,7 +57,7 @@ struct UploadView: View {
                     Group {
                         if let imageClass = classifier.imageClass {
                             Spacer()
-                                .frame(height: 5)
+                                .frame(height: 15)
                             HStack{
                                 Text("Item Scanned: ")
                                 //.font(.caption)
@@ -80,23 +73,11 @@ struct UploadView: View {
                                 .frame(height: 20)
                         } else {
                             Spacer()
-                                .frame(height: 20)
+                                .frame(height: 40)
                         }
                     }
-                    
-                    // no photo chosen
-                    if uiImage == nil {
-                        Spacer()
-                            .frame(height: 20)
-                        Text("instructions: take or upload a ").font(.system(size: 20))
-                        Text("photo of the item to be donated").font(.system(size: 20))
-                        Spacer()
-                            .frame(height: 50)
-                    } else {
-                        Spacer()
-                            .frame(height: 10)
-                    }
-                    
+    
+                        
                     // photo chosen
                     if uiImage != nil {
                         Spacer()

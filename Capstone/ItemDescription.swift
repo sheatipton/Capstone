@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ItemDescription: View {
     
+    @Environment(\.dismiss) private var dismiss
+    
     // matthew : can you add these vars to the images database?
     @State private var id = "" // auto increment variable?
     // maybe move id to upload view so it is easier to identify on this view
@@ -26,7 +28,7 @@ struct ItemDescription: View {
         NavigationView {
         
             ZStack {
-                Color(red: 235/255, green: 252/255, blue: 208/255)
+                Color(red: 230/255, green: 190/255, blue: 150/255).opacity(0.6)
                     .ignoresSafeArea()
                 
                 VStack {
@@ -69,7 +71,7 @@ struct ItemDescription: View {
                     Spacer()
                         .frame(height: 50)
                     
-                    NavigationLink(destination: Results().onAppear {
+                    NavigationLink(destination: Results().navigationBarBackButtonHidden(true).onAppear {
                         uploadData()
                         getResults()}) {
                         Text("Continue")
@@ -80,6 +82,18 @@ struct ItemDescription: View {
                             .background(LinearGradient(gradient: Gradient(colors: [Color(red: 251/255, green: 128/255, blue: 128/255), Color(red: 253/255, green: 193/255, blue: 104/255)]), startPoint: .leading, endPoint: .trailing))
                             .cornerRadius(30.0)
                             .padding(.horizontal)
+                    }
+                }
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button {
+                            dismiss()
+                            
+                        } label: {
+                            Image(systemName: "arrow.uturn.backward")
+                                .font(.system(size: 30))
+                                .foregroundColor(.black)
+                        }
                     }
                 }
             }

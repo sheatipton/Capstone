@@ -19,7 +19,7 @@ struct NonprofitSignUp: View {
         
         NavigationView {
             ZStack {
-                Color(red: 235/255, green: 252/255, blue: 208/255)
+                Color(red: 230/255, green: 190/255, blue: 150/255).opacity(0.6)
                     .ignoresSafeArea()
                 
                 VStack(alignment: .center, spacing: 30) {

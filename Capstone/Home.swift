@@ -17,24 +17,20 @@ struct Home: View {
         NavigationView {
             
             ZStack {
-                Color(red: 235/255, green: 252/255, blue: 208/255)
-                //Color(red: 248/255, green: 190/255, blue: 169/255)
-                    .opacity(0.6)
+                Color(red: 230/255, green: 190/255, blue: 150/255).opacity(0.6)
                     .ignoresSafeArea()
                 
                 ScrollView {
                     Spacer()
-                        .frame(height: 40)
+                        .frame(height: 50)
+                    Divider()
+                    Spacer()
+                        .frame(height: 10)
                     
                     VStack {
                         
                         // create for each using all nonprofit accounts in our database
-                        Text("News Feed")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .font(.largeTitle).bold()
-                            //.foregroundColor(Color(red: 86/255, green: 23/255, blue: 0/255))
-                            .padding(.leading, 35)
-  
+                        
                         HStack {
                             NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
                                 Image("ProfilePlaceholder")
@@ -44,12 +40,12 @@ struct Home: View {
                                     .padding()
                                     .frame(width: 100, height: 100)
                             }
-                                           
-                                Text("Project Hope")
-                                    .font(.system(size: 25)).bold()
-
+                            
+                            Text("Project Hope")
+                                .font(.system(size: 25)).bold()
+                            
                             Spacer()
-                            }
+                        }
                         
                         NavigationLink(destination: PostView().navigationBarBackButtonHidden(true)) {
                             Text("Help after the Hurricane! Project HOPE is taking donations for water, food, and general emergency supplies to those affected by Hurricane Ida. Donations are being accepted at our Athens location until the end of this month.")
@@ -78,7 +74,7 @@ struct Home: View {
                             }
                             
                             Spacer()
-                            }
+                        }
                         
                         NavigationLink(destination: PostView().navigationBarBackButtonHidden(true)) {
                             Text("Now until December 31 we are offering FREE adult dog adoptions! The Humane Society’s Athens location is at capacity, so adopt a pup today to bring them to a home for the holidays.")
@@ -106,7 +102,7 @@ struct Home: View {
                             }
                             
                             Spacer()
-                            }
+                        }
                         
                         NavigationLink(destination: PostView().navigationBarBackButtonHidden(true)) {
                             Text("Have extra pencils and paper? The Kids in Need Foundation is holding a back-to-school drive in your area! Donate school supplies to our backpack drive to directly support the surrounding public schools.")
@@ -134,7 +130,7 @@ struct Home: View {
                             }
                             
                             Spacer()
-                            }
+                        }
                         
                         NavigationLink(destination: PostView().navigationBarBackButtonHidden(true)) {
                             Text("Help ensure every child gets a gift this Christmas! Toys for Tots is providing a toy drive from now until December 24 at our Athens location. Drop off new and used toys to make a positive impact on the children who need it most in the community!")
@@ -146,30 +142,52 @@ struct Home: View {
                                 .padding(.trailing, 20)
                                 .padding(.bottom, 10)
                         }
+                        
+                    }
                     
+                    VStack {
+                        Spacer()
+                            .frame(height: 25)
                         Text("You're all caught up!")
                             .font(.system(size: 25)).bold()
                             .padding(.top, 20)
-                           
+                        Spacer()
+                            .frame(height: 25)
+                        Image(systemName: "checkmark")
+                            .font(.system(size: 35))
+                            .foregroundColor(Color(red: 196/255, green: 87/255, blue: 47/255))
+                        Spacer()
+                            .frame(height: 25)
                     }
                 }
                 
                 .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        NavigationLink(destination: Home().navigationBarBackButtonHidden(true)) {
+                            Image("FawnLogo")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 150, height: 750)
+                                .padding(.top, 25)
+                                .padding(.leading, 5)
+                        }
+                    }
+                    
                     ToolbarItem(placement: .navigationBarTrailing) {
                         NavigationLink(destination: ImagesView().navigationBarBackButtonHidden(true)) {
                             Image(systemName: "photo.on.rectangle.angled")
-                                .font(.system(size: 35))
+                                .font(.system(size: 30))
+                                .padding(.top, 30)
                                 .foregroundColor(.black)
                         }
                     }
                     
-                    ToolbarItem(placement: .navigationBarLeading) {
+                    ToolbarItem(placement: .navigationBarTrailing) {
                         NavigationLink(destination: DonorProfile().navigationBarBackButtonHidden(true)) {
                             Image(systemName: "person.circle")
                                 .font(.system(size: 35))
-                                .font(.headline)
+                                .padding(.top, 30)
                                 .foregroundColor(.black)
-                            
                         }
                     }
                 }

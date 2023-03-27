@@ -12,15 +12,16 @@ import FirebaseFirestore
 struct ImagesView: View {
     
     @Environment(\.dismiss) private var dismiss
-    
+   
     @State var retrievedImages = [UIImage]()
+    @State private var count = 0
     
     var body: some View {
         
         NavigationView {
         
             ZStack {
-                Color(red: 235/255, green: 252/255, blue: 208/255)
+                Color(red: 230/255, green: 190/255, blue: 150/255).opacity(0.6)
                     .ignoresSafeArea()
                 
                 ScrollView(.vertical) {
@@ -33,13 +34,13 @@ struct ImagesView: View {
                             .frame(maxWidth: .infinity, alignment: .center)
                             .font(.largeTitle).bold()
                         
-                        
                         ForEach(retrievedImages, id: \.self) { image in
-                            NavigationLink(destination: ItemView()) {
-                                Image(uiImage: image)
-                                    .resizable()
-                                    .frame(width: 200, height: 200)
-                                    .padding()
+                            
+                                NavigationLink(destination: ItemView().navigationBarBackButtonHidden(true)) {
+                                    Image(uiImage: image)
+                                        .resizable()
+                                        .frame(width: 200, height: 200)
+                                        .padding()
                             }
                         }
                     }
