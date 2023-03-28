@@ -12,7 +12,7 @@ struct TagView: View {
     @Environment(\.dismiss) private var dismiss
     
     @State private var id = ""
-    @State private var tag = "Clothing" // matthew : pull from tag database
+    @State private var tag = "Medical Supplies" // matthew : pull from tag database
     
     var body: some View {
         
@@ -58,7 +58,7 @@ struct TagView: View {
                     
                     NavigationLink(destination: OrganizationListView().navigationBarBackButtonHidden(true)) {
                         HStack {
-                            Text("Athens C").bold()
+                            Text("Athens Community Council on Aging").bold()
                                 .font(.headline)
                                 .foregroundColor(Color.black)
                                 .offset(x: -75)
