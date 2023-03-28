@@ -21,8 +21,15 @@ struct Home: View {
                     .ignoresSafeArea()
                 
                 ScrollView {
-                    Spacer()
-                        .frame(height: 50)
+                    
+                    NavigationLink(destination: Home().navigationBarBackButtonHidden(true)) {
+                        Image("FawnLogo")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 150)
+                            .offset(x: 0, y: -15)
+                    }
+                    
                     Divider()
                     Spacer()
                         .frame(height: 10)
@@ -162,31 +169,19 @@ struct Home: View {
                 }
                 
                 .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        NavigationLink(destination: Home().navigationBarBackButtonHidden(true)) {
-                            Image("FawnLogo")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 150, height: 750)
-                                .padding(.top, 25)
-                                .padding(.leading, 5)
-                        }
-                    }
                     
                     ToolbarItem(placement: .navigationBarTrailing) {
                         NavigationLink(destination: ImagesView().navigationBarBackButtonHidden(true)) {
                             Image(systemName: "photo.on.rectangle.angled")
                                 .font(.system(size: 30))
-                                .padding(.top, 30)
                                 .foregroundColor(.black)
                         }
                     }
                     
-                    ToolbarItem(placement: .navigationBarTrailing) {
+                    ToolbarItem(placement: .navigationBarLeading) {
                         NavigationLink(destination: DonorProfile().navigationBarBackButtonHidden(true)) {
                             Image(systemName: "person.circle")
                                 .font(.system(size: 35))
-                                .padding(.top, 30)
                                 .foregroundColor(.black)
                         }
                     }
