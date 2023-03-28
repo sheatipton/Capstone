@@ -10,13 +10,14 @@ import SwiftUI
 struct ItemDescription: View {
     
     @Environment(\.dismiss) private var dismiss
+    @State var uiImage: UIImage?
+    @State private var item: String?
     
     // matthew : can you add these vars to the images database?
     @State private var id = "" // auto increment variable?
     // maybe move id to upload view so it is easier to identify on this view
     
-    @State private var item = "" // can you pull this variable from the ai generated name from UploadView?
-    @State private var imgPath = "ImagePlaceholder" // pull from db
+    @State var imageString: String?// can you pull this variable from the ai generated
     @State private var color = ""
     @State private var size = ""
     @State private var condition = ""
@@ -35,16 +36,18 @@ struct ItemDescription: View {
                     
                     Text("Item Information")
                         .font(.largeTitle).foregroundColor(Color.black)
-                        .padding([.top, .bottom], 40)
+                        .padding(.top, 20)
                     
-                    Image(imgPath)
+                    Image(uiImage: uiImage!)
+                    //Image("ImagePlaceholder")
                         .resizable()
-                        .frame(width: 250, height: 300)
+                        .frame(width: 200, height: 250)
+                        //.padding(.top, 10)
                     
                     Spacer()
-                        .frame(height: 50)
+                        .frame(height: 30)
                     
-                    TextField("Item", text: self.$item)
+                    Text(imageString!)
                         .padding()
                         .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
                         .frame(minWidth: 0, maxWidth: 340)
@@ -69,7 +72,7 @@ struct ItemDescription: View {
                         .background(Color(red: 244, green: 244, blue: 244))
                     
                     Spacer()
-                        .frame(height: 50)
+                        .frame(height: 40)
                     
                     NavigationLink(destination: Results().navigationBarBackButtonHidden(true).onAppear {
                         uploadData()
@@ -83,6 +86,7 @@ struct ItemDescription: View {
                             .cornerRadius(30.0)
                             .padding(.horizontal)
                     }
+                    Spacer()
                 }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
