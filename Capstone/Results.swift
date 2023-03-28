@@ -23,21 +23,65 @@ struct Results: View {
                     .ignoresSafeArea()
                 
                 VStack {
-                    // if there are results
-                    //Text("Organizations that are accepting your item")
-                    // list
+                    // if no results
+                    /*Text("There are no organizations accepting that item right now.")
+                        .font(.system(size: 16))
+                    
+                    Spacer()
+                        .frame(height: 20)
+                    
+                    Text("We will notify you when an organization is in need of that item.")
+                        .font(.system(size: 16))
+                        
+                    Spacer()
+                        .frame(height: 50)
+                     */
                     
 
-                    // if results array == nil
+                    // if results array != nil
+                    Spacer()
+                        .frame(height: 30)
+                    
                     VStack {
                         Text("Results")
                             .frame(maxWidth: .infinity, alignment: .center)
                             .font(.largeTitle).bold()
                         
                         Spacer()
-                            .frame(height: 100)
+                            .frame(height: 50)
                         
-                        Text("There are no organizations accepting that item right now.")
+                        NavigationLink(destination: OrganizationListView().navigationBarBackButtonHidden(true)) {
+                            HStack {
+                                Text("Browse Organizations").bold()
+                                    .font(.headline)
+                                    .foregroundColor(Color.black)
+                                    .offset(x: -75)
+                                Image(systemName: "arrow.forward")
+                                    .foregroundColor(.black)
+                                    .font(.system(size: 20))
+                                    .offset(x: -75)
+                            }
+                        }
+                        
+                        Spacer()
+                            .frame(height: 20)
+                        
+                        NavigationLink(destination: OrganizationListView().navigationBarBackButtonHidden(true)) {
+                            HStack {
+                                Text("Browse Organizations").bold()
+                                    .font(.headline)
+                                    .foregroundColor(Color.black)
+                                    .offset(x: -75)
+                                Image(systemName: "arrow.forward")
+                                    .foregroundColor(.black)
+                                    .font(.system(size: 20))
+                                    .offset(x: -75)
+                            }
+                        }
+                        Spacer()
+                            .frame(height: 70)
+                        
+                        /*Text("There are no organizations accepting that item right now.")
                             .font(.system(size: 16))
                         
                         Spacer()
@@ -48,6 +92,7 @@ struct Results: View {
                             
                         Spacer()
                             .frame(height: 50)
+                         */
                     }
                     
                     VStack {
@@ -71,6 +116,7 @@ struct Results: View {
                                 .border(Color.black, width: 1)
                         }
                     }
+                    Spacer()
                 }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {

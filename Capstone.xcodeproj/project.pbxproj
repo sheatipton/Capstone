@@ -143,7 +143,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		37BD937329C7B595003F01D9 /* Browsing */ = {
+		37BD937329C7B595003F01D9 /* Browsing Pages */ = {
 			isa = PBXGroup;
 			children = (
 				37BFE20E29B111A90065979D /* OrganizationListView.swift */,
@@ -151,12 +151,15 @@
 				37BD935F29C24420003F01D9 /* TagView.swift */,
 				37BFE21029B122510065979D /* TagListView.swift */,
 			);
-			name = Browsing;
+			name = "Browsing Pages";
 			sourceTree = "<group>";
 		};
 		37BD937529D0E6BB003F01D9 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				2940246B29D0F8830000E263 /* User.swift */,
+				2940246629D0F0220000E263 /* Registration.swift */,
+				2940246F29D165BD0000E263 /* Authenticate.swift */,
 				2962B93329A0C1B000310AFF /* Classifier.swift */,
 				2962B92F29A0B9D800310AFF /* ImagePicker.swift */,
 				292D1B7A298B33D3003F7A6A /* ImageLibrary.swift */,
@@ -165,7 +168,7 @@
 			name = Utilities;
 			sourceTree = "<group>";
 		};
-		37BFE21629BFE6BA0065979D /* Images */ = {
+		37BFE21629BFE6BA0065979D /* Item Pages */ = {
 			isa = PBXGroup;
 			children = (
 				37F0283F29A2AF47006197A2 /* UploadView.swift */,
@@ -173,15 +176,13 @@
 				37BD937129C7970E003F01D9 /* ItemDescription.swift */,
 				37F0283D29A2AF12006197A2 /* ImagesView.swift */,
 			);
-			name = Images;
+			name = "Item Pages";
 			sourceTree = "<group>";
 		};
-		37BFE21729BFE6DB0065979D /* Users */ = {
+		37BFE21729BFE6DB0065979D /* Login Pages */ = {
 			isa = PBXGroup;
 			children = (
 				37CF3365299DBEB9005D788E /* NonprofitSignUp.swift */,
-				2940246B29D0F8830000E263 /* User.swift */,
-				2940246629D0F0220000E263 /* Registration.swift */,
 				37BD936129C37F3E003F01D9 /* ProfileSettings.swift */,
 				37BD935929C141E0003F01D9 /* DonorSignUp.swift */,
 				37688EA4298C361A00682F9F /* Login.swift */,
@@ -189,9 +190,8 @@
 				37BFE21829BFE7010065979D /* DonorProfile.swift */,
 				37BFE21A29BFE72C0065979D /* NonprofitProfile.swift */,
 				37BD937529D0E6BB003F01D9 /* Utilities */,
-				2940246F29D165BD0000E263 /* Authenticate.swift */,
 			);
-			name = Users;
+			name = "Login Pages";
 			sourceTree = "<group>";
 		};
 		37D567EA2988596E0004AF45 = {
@@ -227,9 +227,9 @@
 				37BD935D29C148F7003F01D9 /* Results.swift */,
 				37BD936729C3AA50003F01D9 /* PostUpload.swift */,
 				37BD936929C3ADE6003F01D9 /* PostView.swift */,
-				37BD937329C7B595003F01D9 /* Browsing */,
-				37BFE21629BFE6BA0065979D /* Images */,
-				37BFE21729BFE6DB0065979D /* Users */,
+				37BD937329C7B595003F01D9 /* Browsing Pages */,
+				37BFE21629BFE6BA0065979D /* Item Pages */,
+				37BFE21729BFE6DB0065979D /* Login Pages */,
 				37D567FA298859720004AF45 /* Assets.xcassets */,
 				37D567FC298859720004AF45 /* Preview Content */,
 			);

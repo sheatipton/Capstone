@@ -26,17 +26,18 @@ struct OrganizationListView: View {
                         .frame(height: 40)
                     
                     VStack {
-                        /*HStack {
-                         NavigationLink(destination: Browse()) {
-                         Image(systemName: "arrow.uturn.backward")
-                         .foregroundColor(.black)
-                         .font(.system(size: 28))
-                         .padding(.leading, 20)
-                         }*/
+                       
                         Text("Browse Nonprofits")
                             .frame(maxWidth: .infinity, alignment: .center)
                             .font(.largeTitle).bold()
-                        // }
+                        
+                        HStack {
+                            Text("in your area: ")
+                            Text("Athens, GA").bold()
+                        }
+                        //.font(.headline)
+                        .font(.system(size: 20))
+                        .padding(.top, 5)
                         
                         Spacer()
                             .frame(height: 50)
