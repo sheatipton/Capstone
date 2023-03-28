@@ -12,7 +12,7 @@ struct TagView: View {
     @Environment(\.dismiss) private var dismiss
     
     @State private var id = ""
-    @State private var tag = "Clothing" // matthew : pull from tag database
+    @State private var tag = "Medical Supplies" // matthew : pull from tag database
     
     var body: some View {
         
@@ -25,7 +25,7 @@ struct TagView: View {
                 VStack {
                     
                     HStack {
-                        Text("TAG Name : ")
+                        Text("TAG  : ")
                         Text(tag)
                     }
                     .frame(maxWidth: .infinity, alignment: .center)
@@ -38,55 +38,79 @@ struct TagView: View {
                         .font(.system(size: 20))
                     
                     Spacer()
-                        .frame(height: 50)
+                        .frame(height: 40)
                     
-                    // for each organization in the results array, show this
-                    NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
+                    NavigationLink(destination: OrganizationListView().navigationBarBackButtonHidden(true)) {
                         HStack {
-                            Text("Organization 1").bold()
-                                .font(.system(size: 20))
+                            Text("Mercy Health Center").bold()
+                                .font(.headline)
                                 .foregroundColor(Color.black)
-                                //.offset(x: -75)
+                                .offset(x: -75)
                             Image(systemName: "arrow.forward")
                                 .foregroundColor(.black)
                                 .font(.system(size: 20))
-                                //.offset(x: -75)
+                                .offset(x: -75)
                         }
                     }
                     
                     Spacer()
-                        .frame(height: 30)
+                        .frame(height: 20)
                     
-                    // replace with loop
-                    NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
+                    NavigationLink(destination: OrganizationListView().navigationBarBackButtonHidden(true)) {
                         HStack {
-                            Text("Organization 1").bold()
-                                .font(.system(size: 20))
+                            Text("Athens Community Council on Aging").bold()
+                                .font(.headline)
                                 .foregroundColor(Color.black)
-                                //.offset(x: -75)
+                                .offset(x: -75)
                             Image(systemName: "arrow.forward")
                                 .foregroundColor(.black)
                                 .font(.system(size: 20))
-                                //.offset(x: -75)
+                                .offset(x: -75)
                         }
-                    }// replace
+                    }
+                    
+                    Spacer()
+                        .frame(height: 70)
+                
+                VStack {
+                    
+                    NavigationLink(destination: TagListView().navigationBarBackButtonHidden(true)) {
+                        Text("Browse More Tags")
+                            .frame(minWidth: 170,  maxWidth: 200, minHeight: 85,  maxHeight: 85)
+                            .font(.system(size: 18))
+                            .foregroundColor(.black)
+                            .border(Color.black, width: 1)
+                    }
+                    
+                    Spacer()
+                        .frame(height: 20)
+                    
+                    NavigationLink(destination: OrganizationListView().navigationBarBackButtonHidden(true)) {
+                        Text("Browse Organizations")
+                            .frame(minWidth: 170,  maxWidth: 200, minHeight: 85,  maxHeight: 85)
+                            .font(.system(size: 18))
+                            .foregroundColor(.black)
+                            .border(Color.black, width: 1)
+                    }
                     
                 }
+                    Spacer()
+            }
                 
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        dismiss()
-                        
-                    } label: {
-                        Image(systemName: "arrow.uturn.backward")
-                            .font(.system(size: 30))
-                            .foregroundColor(.black)
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            Button {
+                                dismiss()
+                                
+                            } label: {
+                                Image(systemName: "arrow.uturn.backward")
+                                    .font(.system(size: 30))
+                                    .foregroundColor(.black)
+                            }
+                        }
                     }
-                }
+                    .navigationBarBackButtonHidden(true)
             }
-        .navigationBarBackButtonHidden(true)
         }
     }
 }

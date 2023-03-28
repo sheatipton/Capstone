@@ -11,7 +11,7 @@ struct OrganizationListView: View {
     
     @Environment(\.dismiss) private var dismiss
     
-    // matthew : pull the list of nonprofits from nonprofits database, put into nonprofits array
+    // matthew : pull the list of nonprofits from nonprofits database, put into nonprofits array and display in a loop. (or we can hard code it)
     
     var body: some View {
         
@@ -26,17 +26,17 @@ struct OrganizationListView: View {
                         .frame(height: 40)
                     
                     VStack {
-                        /*HStack {
-                         NavigationLink(destination: Browse()) {
-                         Image(systemName: "arrow.uturn.backward")
-                         .foregroundColor(.black)
-                         .font(.system(size: 28))
-                         .padding(.leading, 20)
-                         }*/
+                       
                         Text("Browse Nonprofits")
                             .frame(maxWidth: .infinity, alignment: .center)
                             .font(.largeTitle).bold()
-                        // }
+                        
+                        HStack {
+                            Text("in your area: ")
+                            Text("Athens, GA").bold()
+                        }
+                        .font(.system(size: 20))
+                        .padding(.top, 5)
                         
                         Spacer()
                             .frame(height: 50)
@@ -48,11 +48,12 @@ struct OrganizationListView: View {
                             // loop to list each nonprofit
                             // org 1
                             NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
-                                Text("Nonprofit")
+                                Text("Books for Keeps")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)
                                     .border(Color.black, width: 1)
+                                
                                 
                             } // end org 1
                             
@@ -62,7 +63,7 @@ struct OrganizationListView: View {
                             // remove all code below
                             // org 2
                             NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
-                                Text("Nonprofit")
+                                Text("Project Safe")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)
@@ -78,7 +79,7 @@ struct OrganizationListView: View {
                             
                             // org 3
                             NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
-                                Text("Nonprofit")
+                                Text("Acceptance Recovery Center")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)
@@ -91,7 +92,7 @@ struct OrganizationListView: View {
                             
                             // org 4
                             NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
-                                Text("Nonprofit")
+                                Text("Family Promise")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)
@@ -106,7 +107,7 @@ struct OrganizationListView: View {
                             
                             // org 5
                             NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
-                                Text("Nonprofit")
+                                Text("Athens Land Trust")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)
@@ -119,7 +120,7 @@ struct OrganizationListView: View {
                             
                             // org 6
                             NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
-                                Text("Nonprofit")
+                                Text("Mercy Health")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)
@@ -134,7 +135,7 @@ struct OrganizationListView: View {
                             
                             // org 7
                             NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
-                                Text("Nonprofit")
+                                Text("Athens Area Homeless Shelter")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)
@@ -146,7 +147,7 @@ struct OrganizationListView: View {
                             
                             // org 8
                             NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
-                                Text("Nonprofit")
+                                Text("Athens Regional Library System")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)
@@ -161,7 +162,7 @@ struct OrganizationListView: View {
                             
                             // tag 1
                             NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
-                                Text("Nonprofit")
+                                Text("College Factory")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)
@@ -174,7 +175,7 @@ struct OrganizationListView: View {
                             
                             // tag 2
                             NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
-                                Text("Nonprofit")
+                                Text("Athens Community Council on Aging")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)

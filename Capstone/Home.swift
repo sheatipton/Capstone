@@ -21,8 +21,15 @@ struct Home: View {
                     .ignoresSafeArea()
                 
                 ScrollView {
-                    Spacer()
-                        .frame(height: 50)
+                    
+                    NavigationLink(destination: Home().navigationBarBackButtonHidden(true)) {
+                        Image("FawnLogo")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 150)
+                            .offset(x: 0, y: -15)
+                    }
+                    
                     Divider()
                     Spacer()
                         .frame(height: 10)
@@ -48,7 +55,7 @@ struct Home: View {
                         }
                         
                         NavigationLink(destination: PostView().navigationBarBackButtonHidden(true)) {
-                            Text("Help after the Hurricane! Project HOPE is taking donations for water, food, and general emergency supplies to those affected by Hurricane Ida. Donations are being accepted at our Athens location until the end of this month.")
+                            Text("Help after the Hurricane! Project HOPE is taking donations for...")
                                 .padding(30)
                                 .border(Color.gray.opacity(0.5), width: 1)
                                 .foregroundColor(.black)
@@ -77,7 +84,8 @@ struct Home: View {
                         }
                         
                         NavigationLink(destination: PostView().navigationBarBackButtonHidden(true)) {
-                            Text("Now until December 31 we are offering FREE adult dog adoptions! The Humane Society’s Athens location is at capacity, so adopt a pup today to bring them to a home for the holidays.")
+                            Text("Now until December 31 we are offering FREE adult dog adoptions!")
+                            //The Humane Society’s Athens location is at capacity, so adopt a pup today to bring them to a home for the holidays.")
                                 .padding(30)
                                 .border(Color.gray.opacity(0.5), width: 1)
                                 .foregroundColor(.black)
@@ -105,7 +113,8 @@ struct Home: View {
                         }
                         
                         NavigationLink(destination: PostView().navigationBarBackButtonHidden(true)) {
-                            Text("Have extra pencils and paper? The Kids in Need Foundation is holding a back-to-school drive in your area! Donate school supplies to our backpack drive to directly support the surrounding public schools.")
+                            Text("Have extra pencils and paper?")
+                                 //The Kids in Need Foundation is holding a back-to-school drive in your area! Donate school supplies to our backpack drive to directly support the surrounding public schools.")
                                 .padding(30)
                                 .border(Color.gray.opacity(0.5), width: 1)
                                 .foregroundColor(.black)
@@ -133,7 +142,8 @@ struct Home: View {
                         }
                         
                         NavigationLink(destination: PostView().navigationBarBackButtonHidden(true)) {
-                            Text("Help ensure every child gets a gift this Christmas! Toys for Tots is providing a toy drive from now until December 24 at our Athens location. Drop off new and used toys to make a positive impact on the children who need it most in the community!")
+                            Text("Help ensure every child gets a gift this Christmas!")
+                                 //Toys for Tots is providing a toy drive from now until December 24 at our Athens location. Drop off new and used toys to make a positive impact on the children who need it most in the community!")
                                 .padding(30)
                                 .border(Color.gray.opacity(0.5), width: 1)
                                 .foregroundColor(.black)
@@ -162,31 +172,19 @@ struct Home: View {
                 }
                 
                 .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        NavigationLink(destination: Home().navigationBarBackButtonHidden(true)) {
-                            Image("FawnLogo")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 150, height: 750)
-                                .padding(.top, 25)
-                                .padding(.leading, 5)
-                        }
-                    }
                     
                     ToolbarItem(placement: .navigationBarTrailing) {
                         NavigationLink(destination: ImagesView().navigationBarBackButtonHidden(true)) {
                             Image(systemName: "photo.on.rectangle.angled")
                                 .font(.system(size: 30))
-                                .padding(.top, 30)
                                 .foregroundColor(.black)
                         }
                     }
                     
-                    ToolbarItem(placement: .navigationBarTrailing) {
+                    ToolbarItem(placement: .navigationBarLeading) {
                         NavigationLink(destination: DonorProfile().navigationBarBackButtonHidden(true)) {
                             Image(systemName: "person.circle")
                                 .font(.system(size: 35))
-                                .padding(.top, 30)
                                 .foregroundColor(.black)
                         }
                     }

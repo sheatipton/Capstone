@@ -33,7 +33,7 @@ struct UploadView: View {
                 VStack {
 
                     Spacer()
-                        .frame(height: 40)
+                        .frame(height: 50)
                     
                     // image
                     Group {
@@ -45,10 +45,9 @@ struct UploadView: View {
                                 .frame(width: 350, height: 420)
                         }
                         else {
-                            Image("Instructions")
+                            Image("ImagePlaceholder")
                                 .resizable()
-                            //.scaledToFit()
-                            //.aspectRatio(contentMode: .fit)
+                                .scaledToFit()
                                 .frame(width: 350, height: 420)
                         }
                     }
@@ -73,16 +72,14 @@ struct UploadView: View {
                                 .frame(height: 20)
                         } else {
                             Spacer()
-                                .frame(height: 40)
+                                .frame(height: 10)
                         }
                     }
     
-                        
                     // photo chosen
                     if uiImage != nil {
                         Spacer()
                             .frame(height: 10)
-                        
                         
                         NavigationLink(destination: ItemDescription().onAppear {
                             uploadPhoto()
@@ -95,6 +92,14 @@ struct UploadView: View {
                                 .cornerRadius(15.0)
                         }
                         
+                        Spacer()
+                            .frame(height: 10)
+                        
+                    } else {
+                        Text("Take or upload a clear photo")
+                            .font(.system(size: 18))
+                        Text("of the item you want to donate")
+                            .font(.system(size: 18))
                         Spacer()
                             .frame(height: 40)
                     }
@@ -119,6 +124,7 @@ struct UploadView: View {
                                 .foregroundColor(.black)
                         }
                     }
+                    Spacer()
                 }
                 
                 // toolbar
@@ -132,7 +138,7 @@ struct UploadView: View {
                         }
                     }
                     ToolbarItem(placement: .navigationBarLeading) {
-                        NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
+                        NavigationLink(destination: DonorProfile().navigationBarBackButtonHidden(true)) {
                             Image(systemName: "person.circle")
                                 .font(.system(size: 35))
                                 .font(.headline)
