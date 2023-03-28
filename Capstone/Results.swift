@@ -56,34 +56,51 @@ struct Results: View {
                         Spacer()
                             .frame(height: 40)
                         
-                        NavigationLink(destination: OrganizationListView().navigationBarBackButtonHidden(true)) {
+                        NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
                             HStack {
-                                Text("Browse Organizations").bold()
+                                Text("BooksForKeeps").bold()
                                     .font(.headline)
                                     .foregroundColor(Color.black)
-                                    .offset(x: -75)
+                                    //.offset(x: -75)
                                 Image(systemName: "arrow.forward")
                                     .foregroundColor(.black)
                                     .font(.system(size: 20))
-                                    .offset(x: -75)
+                                   // .offset(x: -75)
                             }
                         }
                         
                         Spacer()
                             .frame(height: 20)
                         
-                        NavigationLink(destination: OrganizationListView().navigationBarBackButtonHidden(true)) {
+                        NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
                             HStack {
-                                Text("Browse Organizations").bold()
+                                Text("Athens Community Council on Aging").bold()
                                     .font(.headline)
                                     .foregroundColor(Color.black)
-                                    .offset(x: -75)
+                                    //.offset(x: -75)
                                 Image(systemName: "arrow.forward")
                                     .foregroundColor(.black)
                                     .font(.system(size: 20))
-                                    .offset(x: -75)
+                                    //.offset(x: -75)
                             }
                         }
+                        
+                        Spacer()
+                            .frame(height: 20)
+                        
+                        NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
+                            HStack {
+                                Text("Acceptance Recovery Center").bold()
+                                    .font(.headline)
+                                    .foregroundColor(Color.black)
+                                   
+                                Image(systemName: "arrow.forward")
+                                    .foregroundColor(.black)
+                                    .font(.system(size: 20))
+                                    //.offset(x: -75)
+                            }
+                        }
+                   
                         Spacer()
                             .frame(height: 70)
                         

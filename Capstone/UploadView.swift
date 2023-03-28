@@ -21,6 +21,7 @@ struct UploadView: View {
     @ObservedObject var classifier: ImageClassifier
     @State private var selectedImage: UIImage?
     @State private var isImagePickerDisplay = false
+    @State var imageString: String?
     
     var body: some View {
         
@@ -68,6 +69,9 @@ struct UploadView: View {
                                     .font(.system(size:20))
                                     .foregroundColor(.black)
                             }
+                            .onAppear{
+                                self.imageString = imageClass
+                            }
                             Spacer()
                                 .frame(height: 20)
                         } else {
@@ -81,7 +85,7 @@ struct UploadView: View {
                         Spacer()
                             .frame(height: 10)
                         
-                        NavigationLink(destination: ItemDescription().onAppear {
+                        NavigationLink(destination: ItemDescription(uiImage: uiImage, imageString: imageString).navigationBarBackButtonHidden(true).onAppear {
                             uploadPhoto()
                         }) {
                             Text("Upload")
@@ -93,7 +97,7 @@ struct UploadView: View {
                         }
                         
                         Spacer()
-                            .frame(height: 10)
+                            .frame(height: 35)
                         
                     } else {
                         Text("Take or upload a clear photo")
@@ -160,7 +164,6 @@ struct UploadView: View {
     }
     
     func uploadPhoto() {
-        
         guard uiImage != nil else {
             return
         }
