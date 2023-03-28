@@ -48,7 +48,13 @@ struct Results: View {
                             .font(.largeTitle).bold()
                         
                         Spacer()
-                            .frame(height: 50)
+                            .frame(height: 40)
+                        
+                        Text("Organizations accepting your item:")
+                            .font(.system(size: 20))
+                        
+                        Spacer()
+                            .frame(height: 40)
                         
                         NavigationLink(destination: OrganizationListView().navigationBarBackButtonHidden(true)) {
                             HStack {
@@ -109,7 +115,7 @@ struct Results: View {
                             .frame(height: 20)
                         
                         NavigationLink(destination: TagListView().navigationBarBackButtonHidden(true)) {
-                            Text("Browse Items Needed")
+                            Text("Browse Tags")
                                 .frame(minWidth: 170,  maxWidth: 200, minHeight: 85,  maxHeight: 85)
                                 .font(.system(size: 18))
                                 .foregroundColor(.black)

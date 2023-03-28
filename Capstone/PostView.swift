@@ -44,8 +44,9 @@ struct PostView: View {
                     Spacer()
                         .frame(height: 50)
                     
-                    Image("ImagePlaceholder")
+                    Image("PostImage")
                         .resizable()
+                        .scaledToFit()
                         .frame(width: 350, height: 350)
                     Spacer()
                 }
