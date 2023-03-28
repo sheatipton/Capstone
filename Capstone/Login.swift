@@ -10,7 +10,7 @@ import SwiftUI
 struct Login: View {
     @State private var email = ""
     @State private var password = ""
-    
+    @Environment(\.dismiss) private var dismiss
     var body: some View {
         
         ZStack {
@@ -43,7 +43,10 @@ struct Login: View {
                 Button("Login") {
                     
                     // matthew : add login functionality here
-                    NavigationLink(destination: Home()) {}
+                    //NavigationLink(destination: Home()) {}
+                        signInDonor(email: email, password: password)
+                    
+                    dismiss()
                 }
                     .font(.system(.body, design: .rounded))
                     .foregroundColor(.white).bold()
@@ -68,6 +71,18 @@ struct Login: View {
                     }
                 }
             } .padding([.top, .bottom], 50)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button {
+                            dismiss()
+                            
+                        } label: {
+                            Image(systemName: "arrow.uturn.backward")
+                                .font(.system(size: 30))
+                                .foregroundColor(.black)
+                        }
+                    }
+                }
         }
     }
 }

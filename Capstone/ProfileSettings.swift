@@ -24,7 +24,8 @@ struct ProfileSettings: View {
                     Text("Settings")
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .font(.largeTitle).bold()
-                        .padding(.leading, 25)
+                        .padding(.leading, 40)
+                        .padding(.top, 30)
                     
                     Spacer()
                         .frame(height: 50)
@@ -33,11 +34,11 @@ struct ProfileSettings: View {
                         HStack {
                             Image(systemName: "person.fill")
                                 .font(.system(size: 35))
-                            
                             Text("Edit Profile")
+                                .font(.system(size: 22))
                         }
                         .foregroundColor(.black)
-                        .padding(.leading, 30)
+                        .padding(.leading, 40)
                     }
                     
                     Spacer()
@@ -46,13 +47,32 @@ struct ProfileSettings: View {
                     HStack {
                         Image(systemName: "bell.fill")
                             .font(.system(size: 35))
-                        
                         Text("Notifications")
+                            .font(.system(size: 22))
                     }
-                    .padding(.leading, 30)
+                    .padding(.leading, 40)
                     
+                    Spacer()
+                        .frame(height: 20)
+                    
+                    HStack {
+                        NavigationLink(destination:
+                            homeNavigator()
+                            .navigationBarBackButtonHidden(true)
+                        
+                        ) {
+                            Image(systemName: "rectangle.portrait.and.arrow.right")
+                                .font(.system(size: 35))
+                            Text("Logout")
+                                .font(.system(size: 22))
+                            
+                        }
+                        .foregroundColor(.black)
+                    }
+                    .padding(.leading, 40)
+                    Spacer()
                 }
-                
+
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -68,6 +88,14 @@ struct ProfileSettings: View {
             }
         }
     }
+}
+@ViewBuilder
+func homeNavigator() -> some View {
+    if signOutDonor() {
+        Home()
+    }
+  
+    
 }
 
 struct ProfileSettings_Previews: PreviewProvider {

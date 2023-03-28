@@ -8,9 +8,10 @@
 import SwiftUI
 import FirebaseStorage
 import FirebaseFirestore
+import FirebaseAuth
 
 struct Home: View {
-    
+    @State var mybool = false
     
     var body: some View {
         
@@ -182,7 +183,8 @@ struct Home: View {
                     }
                     
                     ToolbarItem(placement: .navigationBarLeading) {
-                        NavigationLink(destination: DonorProfile().navigationBarBackButtonHidden(true)) {
+                        
+                        NavigationLink(destination: setProfileIconDest(thebool: mybool).navigationBarBackButtonHidden(true)) {
                             Image(systemName: "person.circle")
                                 .font(.system(size: 35))
                                 .foregroundColor(.black)
@@ -191,7 +193,55 @@ struct Home: View {
                 }
             }
         }
+//        .onAppear {
+//            Auth.auth().addStateDidChangeListener { auth, user in
+//              // ...
+//                if user != nil {
+//                    self.mybool = true
+//                  // User is signed in. Show home screen
+//
+//                } else {
+//                    self.mybool = false
+//                  // No User is signed in. Show user the login screen
+//                }
+//
+//            }
+//        }
     }
+}
+
+@ViewBuilder
+func setProfileIconDest(thebool : Bool) -> some View {
+        
+    if Auth.auth().currentUser != nil  {
+            // User is signed in.
+            // ...
+            DonorProfile()
+
+        } else {
+            // No user is signed in.
+            Login()
+    }
+    
+}
+
+func checkAuthState()  ->  Bool {
+    var myVar = false
+    Auth.auth().addStateDidChangeListener { auth, user in
+      // ...
+        if user != nil {
+            myVar = true
+          // User is signed in. Show home screen
+         
+        } else {
+          // No User is signed in. Show user the login screen
+            myVar = false
+        }
+        
+    }
+
+    return myVar
+    
 }
 
 struct Home_Previews: PreviewProvider {

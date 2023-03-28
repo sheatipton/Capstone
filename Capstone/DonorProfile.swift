@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import FirebaseCore
+import FirebaseFirestore
+
 
 struct DonorProfile: View {
     
     @Environment(\.dismiss) private var dismiss
     
     @State private var selected = 0
+    @State private var name = ""
+    @State private var userName = ""
     
     var body: some View {
         
@@ -23,9 +29,8 @@ struct DonorProfile: View {
                 VStack {
                     
                     Text("Profile")
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .frame(maxWidth: .infinity, alignment: .center)
                         .font(.largeTitle).bold()
-                        .padding(.leading, 25)
                     
                     HStack {
                         
@@ -83,7 +88,7 @@ struct DonorProfile: View {
                         Text("Donated Items")
                     }
                     
-                    
+                    Spacer()
                 }
                 .padding(15)
                 

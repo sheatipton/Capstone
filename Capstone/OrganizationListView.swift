@@ -48,7 +48,7 @@ struct OrganizationListView: View {
                             // loop to list each nonprofit
                             // org 1
                             NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
-                                Text("Books for Keeps")
+                                Text("Toys for Tots")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)

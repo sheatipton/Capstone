@@ -13,9 +13,9 @@ struct NonprofitProfile: View {
     @Environment(\.dismiss) private var dismiss
     
         // matthew : pull vars from nonprofit db
-    @State private var name = "Nonprofit"
+    @State private var name = "Toys For Tots"
     @State private var address = "123 Spring Street Athens, GA 30605"
-    @State private var imgPath = "ProfilePlaceholder"
+    @State private var imgPath = "ToysForTots"
 
     var body: some View {
         
@@ -37,11 +37,11 @@ struct NonprofitProfile: View {
                             .clipped()
                             .scaledToFit()
                             .frame(width: 130, height: 130, alignment: .center)
-                            .offset(x: -150, y: 53)
+                            .offset(x: -140, y: 53)
                         
                         Text(name)
                             .font(.system(size: 25)).bold()
-                            .offset(x: 0, y: 90)
+                            .offset(x: 20, y: 80)
                         
                         
                     }
@@ -53,11 +53,11 @@ struct NonprofitProfile: View {
                         }
                         
                         Section(header: Text("About")) {
-                            Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+                            Text("97% of your donation goes to our mission of providing toys, books and other gifts to less fortunate children. The 3% spent on support principally covers fundraising expenses – not one donated dollar goes to pay for salaries or any other manpower costs.")
                         }
                         
                         Section(header: Text("Looking for...")) {
-                            Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+                            Text("Children's clothing, shoes, toys, etc.")
                         }
                         
                     }

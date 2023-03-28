@@ -23,7 +23,7 @@ struct TagListView: View {
                 
                 ScrollView {
                     Spacer()
-                        .frame(height: 40)
+                        .frame(height: 30)
                     
                     VStack {
                         /*HStack {
@@ -48,7 +48,7 @@ struct TagListView: View {
                             // loop to list each tag
                             // tag 1
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
-                                Text("Tag")
+                                Text("Men's Clothing")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)
@@ -61,7 +61,7 @@ struct TagListView: View {
                             // remove code below
                             // tag 2
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
-                                Text("Tag")
+                                Text("Women's Clothing")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)
@@ -77,7 +77,7 @@ struct TagListView: View {
                             
                             // tag 3
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
-                                Text("Tag")
+                                Text("Shoes")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)
@@ -89,7 +89,7 @@ struct TagListView: View {
                             
                             // tag 4
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
-                                Text("Tag")
+                                Text("Home")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)
@@ -105,7 +105,7 @@ struct TagListView: View {
                             
                             // tag 5
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
-                                Text("Tag")
+                                Text("Accessories")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)
@@ -117,7 +117,7 @@ struct TagListView: View {
                             
                             // tag 6
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
-                                Text("Tag")
+                                Text("Arts & Crafts")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)
@@ -133,7 +133,7 @@ struct TagListView: View {
                             
                             // tag 7
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
-                                Text("Tag")
+                                Text("Toys & Games")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)
@@ -145,7 +145,34 @@ struct TagListView: View {
                             
                             // tag 8
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
-                                Text("Tag")
+                                Text("Kitchen Items")
+                                    .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
+                                    .font(.system(size: 18))
+                                    .foregroundColor(.black)
+                                    .border(Color.black, width: 1)
+                            } // end tag 8
+                        }
+                        
+                        Spacer()
+                            .frame(height: 25)
+                        
+                        HStack {
+                            
+                            // tag 7
+                            NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
+                                Text("Hygiene")
+                                    .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
+                                    .font(.system(size: 18))
+                                    .foregroundColor(.black)
+                                    .border(Color.black, width: 1)
+                            } // end tag 7
+                            
+                            Spacer()
+                                .frame(width: 35)
+                            
+                            // tag 8
+                            NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
+                                Text("Baby")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)

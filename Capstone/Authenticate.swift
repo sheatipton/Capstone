@@ -22,3 +22,15 @@ func signInDonor (email: String, password: String) -> Bool {
     }
     return success
 }
+
+func signOutDonor() -> Bool {
+    let firebaseAuth = Auth.auth()
+    do {
+      try firebaseAuth.signOut()
+    } catch let signOutError as NSError {
+      print("Error signing out: %@", signOutError)
+    }
+    return true
+    
+}
+

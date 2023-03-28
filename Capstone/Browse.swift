@@ -11,6 +11,7 @@ import FirebaseFirestore
 
 struct Browse: View {
     
+    @State private var search = ""
     
     var body: some View {
         
@@ -22,7 +23,7 @@ struct Browse: View {
                 
                 ScrollView {
                     Spacer()
-                        .frame(height: 40)
+                        .frame(height: 30)
                     
                     VStack {
                         Text("Browse")
@@ -32,12 +33,22 @@ struct Browse: View {
                         Spacer()
                             .frame(height: 20)
                         
-                        Text("Search by item, organization, ...                    ")
-                            .font(.headline)
-                            .padding(20)
-                            .border(Color.black, width: 1)
-                            .frame(maxWidth: .infinity)
-                            .padding()
+                        HStack {
+                            TextField("Search by item, organization, ...                    ", text: $search)
+                                .font(.headline)
+                                .padding(20)
+                                .border(Color.black, width: 1)
+                                .frame(maxWidth: 300)
+                                .padding()
+                            
+                            NavigationLink(destination: Results().navigationBarBackButtonHidden(true)) {
+                                Image(systemName: "arrow.right.circle")
+                                    .font(.system(size: 35))
+                                    .foregroundColor(.black)
+                                    .padding(.trailing, 20)
+                            }
+                            
+                        }
                         
                         Spacer()
                             .frame(height: 30)
@@ -68,7 +79,7 @@ struct Browse: View {
                             
                             // tag 1
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
-                                Text("Tag")
+                                Text("Men's Clothing")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)
@@ -80,7 +91,7 @@ struct Browse: View {
                             
                             // tag 2
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
-                                Text("Tag")
+                                Text("Women's Clothing")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)
@@ -96,7 +107,7 @@ struct Browse: View {
                             
                             // tag 3
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
-                                Text("Tag")
+                                Text("Shoes")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)
@@ -108,7 +119,7 @@ struct Browse: View {
                             
                             // tag 4
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
-                                Text("Tag")
+                                Text("Home")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)
@@ -124,7 +135,7 @@ struct Browse: View {
                             
                             // tag 5
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
-                                Text("Tag")
+                                Text("Accessories")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)
@@ -136,7 +147,7 @@ struct Browse: View {
                             
                             // tag 6
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
-                                Text("Tag")
+                                Text("Arts & Crafts")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)
@@ -152,7 +163,7 @@ struct Browse: View {
                             
                             // tag 7
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
-                                Text("Tag")
+                                Text("Toys & Games")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)
