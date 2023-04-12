@@ -24,6 +24,7 @@ struct ContentView: View {
                 .font(.system(size: 30, weight: .bold, design: .rounded)) .tabItem {
                     Image(systemName: "circle.grid.3x3.fill")
                     Text("Browse")
+                    
                 }
         }
     }

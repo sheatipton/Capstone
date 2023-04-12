@@ -14,7 +14,7 @@ struct Login: View {
     var body: some View {
         
         ZStack {
-            Color(red: 230/255, green: 190/255, blue: 150/255).opacity(0.6)
+            Color(red: 255/255, green: 249/255, blue: 245/255)
                 .ignoresSafeArea()
             
             VStack(alignment: .center, spacing: 30) {

@@ -20,7 +20,7 @@ struct DonorSignUp: View {
     var body: some View {
         
         ZStack {
-            Color(red: 230/255, green: 190/255, blue: 150/255).opacity(0.6)
+            Color(red: 255/255, green: 249/255, blue: 245/255)
                 .ignoresSafeArea()
             
             VStack(alignment: .center, spacing: 30) {
@@ -89,19 +89,6 @@ struct DonorSignUp: View {
                     
                     NavigationLink(destination: Login()) {
                         Text("Sign in").underline()
-                            .font(.system(.body, design: .rounded)).bold()
-                            .foregroundColor(Color(red: 251/255, green: 128/255, blue: 128/255))
-                        
-                    }
-                }
-                
-                HStack {
-                    Text("Are you an nonprofit?")
-                        .font(.system(.body, design: .rounded))
-                        .bold()
-                    
-                    NavigationLink(destination: NonprofitSignUp().navigationBarBackButtonHidden(true)) {
-                        Text("Register here").underline()
                             .font(.system(.body, design: .rounded)).bold()
                             .foregroundColor(Color(red: 251/255, green: 128/255, blue: 128/255))
                         
