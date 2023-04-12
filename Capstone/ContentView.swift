@@ -35,6 +35,7 @@ struct ContentView: View {
             ContentView()
         }
     }
+    
     func writeData() {
         let db = Firestore.firestore()
         
