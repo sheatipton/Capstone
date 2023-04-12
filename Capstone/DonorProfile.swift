@@ -16,8 +16,9 @@ struct DonorProfile: View {
     @Environment(\.dismiss) private var dismiss
     
     @State private var selected = 0
-    @State private var name = ""
-    @State private var userName = ""
+    @State private var fullName = "Shea Tipton"
+    @State private var username = "set58568"
+    // matthew pull these vars
     
     var body: some View {
         
@@ -28,9 +29,13 @@ struct DonorProfile: View {
                 
                 VStack {
                     
+                    Spacer()
+                        .frame(height: 20)
+                    
                     Text("Profile")
+                        .font(Font.custom("Norwester", size: 35))
                         .frame(maxWidth: .infinity, alignment: .center)
-                        .font(.largeTitle).bold()
+                        
                     
                     HStack {
                         
@@ -39,34 +44,37 @@ struct DonorProfile: View {
                             .resizable()
                             .clipShape(Circle())
                             .scaledToFit()
-                            .frame(width: 150, height: 140, alignment: .center)
+                            .frame(width: 140, height: 140, alignment: .center)
                             .offset(x: -50, y: 0)
                         
                         Spacer()
-                            .frame(width: 40)
+                            .frame(width: 20)
                         VStack {
-                            Text("Name")
-                                .font(.system(size: 25)).bold()
+                            Text(fullName)
+                                .font(Font.custom("Circe", size: 25))
                             
                             
-                            Text("Username")
-                                .font(.system(size: 25)).bold()
+                            Text(username)
+                                .font(Font.custom("Circe", size: 25))
                         }
                         
                     }
                     
                     Spacer()
-                        .frame(height: 50)
+                        .frame(height: 30)
                     
                     Text("Image Uploads")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.leading, 25)
+                        .font(Font.custom("Circe", size: 25))
+                        .foregroundColor(Color(red: 196/255, green: 87/255, blue: 47/255))
+                        .frame(maxWidth: .infinity, alignment: .center)
                     
                     Picker("Image Uploads", selection: $selected) {
                         Text("Currently Needed").tag(0)
-                            .font(.system(size: 16))
+                            .font(Font.custom("Circe", size: 30))
                         Text("Not Needed").tag(1)
+                            .font(Font.custom("Circe", size: 30))
                         Text("Donated").tag(2)
+                            .font(Font.custom("Circe", size: 30))
                     }
                     .pickerStyle(.segmented)
                     .frame(height: 60)
@@ -74,18 +82,18 @@ struct DonorProfile: View {
                     .scaledToFit()
                     
                     if (selected == 0) {
-                        Text("Currently Needed")
+                        Text("Item(s) currently needed")
                     }
                     
                     if (selected == 1) {
                         VStack {
-                            Text("Not Currently Needed")
+                            Text("Item(s) Not Currently Needed")
                             Text("We will notify you when an organization needs your item")
                         }
                     }
                     
                     if (selected == 2) {
-                        Text("Donated Items")
+                        Text("Previously Donated Items")
                     }
                     
                     Spacer()
@@ -107,8 +115,8 @@ struct DonorProfile: View {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         NavigationLink(destination: ProfileSettings().navigationBarBackButtonHidden()) {
                             Image(systemName: "gearshape.fill")
-                                .font(.system(size: 35))
-                                .foregroundColor(.black)
+                                .font(.system(size: 30))
+                                .foregroundColor(Color(red: 196/255, green: 87/255, blue: 47/255))
                             
                         }
                     }

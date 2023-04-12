@@ -31,9 +31,9 @@ struct ImagesView: View {
                     VStack {
                         
                         Text("Uploaded Items")
+                            .font(Font.custom("Norwester", size: 35))
                             .frame(maxWidth: .infinity, alignment: .center)
-                            .font(.largeTitle).bold()
-                        
+                           
                         ForEach(retrievedImages, id: \.self) { image in
                             
                                 NavigationLink(destination: ItemView().navigationBarBackButtonHidden(true)) {

@@ -23,15 +23,12 @@ struct Home: View {
                 
                 ScrollView {
                     
-                    NavigationLink(destination: Home().navigationBarBackButtonHidden(true)) {
-                        Image("FawnLogo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 150)
-                            .offset(x: 0, y: -15)
-                    }
+                    Image("FawnLogo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 150)
+                        .offset(x: 0, y: -15)
                     
-                    Divider()
                     Spacer()
                         .frame(height: 10)
                     
@@ -115,7 +112,7 @@ struct Home: View {
                         
                         NavigationLink(destination: PostView().navigationBarBackButtonHidden(true)) {
                             Text("Help ensure every child gets a gift this Christmas!")
-                                 //Toys for Tots is providing a toy drive from now until December 24 at our Athens location. Drop off new and used toys to make a positive impact on the children who need it most in the community!")
+                            //Toys for Tots is providing a toy drive from now until December 24 at our Athens location. Drop off new and used toys to make a positive impact on the children who need it most in the community!")
                                 .padding(30)
                                 .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 1.5)
                                 .foregroundColor(.black)
@@ -144,7 +141,7 @@ struct Home: View {
                         
                         NavigationLink(destination: PostView().navigationBarBackButtonHidden(true)) {
                             Text("Have extra pencils and paper?")
-                                 //The Kids in Need Foundation is holding a back-to-school drive in your area! Donate school supplies to our backpack drive to directly support the surrounding public schools.")
+                            //The Kids in Need Foundation is holding a back-to-school drive in your area! Donate school supplies to our backpack drive to directly support the surrounding public schools.")
                                 .padding(30)
                                 .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 1.5)
                                 .foregroundColor(.black)
@@ -182,7 +179,7 @@ struct Home: View {
                         NavigationLink(destination: ImagesView().navigationBarBackButtonHidden(true)) {
                             Image(systemName: "photo.on.rectangle.angled")
                                 .font(.system(size: 30))
-                                .foregroundColor(Color(red: 196/255, green: 87/255, blue: 47/255))
+                                .foregroundColor(.black)
                         }
                     }
                     
@@ -191,40 +188,40 @@ struct Home: View {
                         NavigationLink(destination: setProfileIconDest(thebool: mybool).navigationBarBackButtonHidden(true)) {
                             Image(systemName: "person.circle")
                                 .font(.system(size: 35))
-                                .foregroundColor(Color(red: 196/255, green: 87/255, blue: 47/255))
+                                .foregroundColor(.black)
                         }
                     }
                 }
             }
         }
-//        .onAppear {
-//            Auth.auth().addStateDidChangeListener { auth, user in
-//              // ...
-//                if user != nil {
-//                    self.mybool = true
-//                  // User is signed in. Show home screen
-//
-//                } else {
-//                    self.mybool = false
-//                  // No User is signed in. Show user the login screen
-//                }
-//
-//            }
-//        }
+        //        .onAppear {
+        //            Auth.auth().addStateDidChangeListener { auth, user in
+        //              // ...
+        //                if user != nil {
+        //                    self.mybool = true
+        //                  // User is signed in. Show home screen
+        //
+        //                } else {
+        //                    self.mybool = false
+        //                  // No User is signed in. Show user the login screen
+        //                }
+        //
+        //            }
+        //        }
     }
 }
 
 @ViewBuilder
 func setProfileIconDest(thebool : Bool) -> some View {
-        
+    
     if Auth.auth().currentUser != nil  {
-            // User is signed in.
-            // ...
-            DonorProfile()
-
-        } else {
-            // No user is signed in.
-            Login()
+        // User is signed in.
+        // ...
+        DonorProfile()
+        
+    } else {
+        // No user is signed in.
+        Login()
     }
     
 }
@@ -232,18 +229,18 @@ func setProfileIconDest(thebool : Bool) -> some View {
 func checkAuthState()  ->  Bool {
     var myVar = false
     Auth.auth().addStateDidChangeListener { auth, user in
-      // ...
+        // ...
         if user != nil {
             myVar = true
-          // User is signed in. Show home screen
-         
+            // User is signed in. Show home screen
+            
         } else {
-          // No User is signed in. Show user the login screen
+            // No User is signed in. Show user the login screen
             myVar = false
         }
         
     }
-
+    
     return myVar
     
 }

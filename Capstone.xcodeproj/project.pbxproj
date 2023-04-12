@@ -146,7 +146,9 @@
 		37BD937329C7B595003F01D9 /* Browsing Pages */ = {
 			isa = PBXGroup;
 			children = (
+				37BD936929C3ADE6003F01D9 /* PostView.swift */,
 				37BFE20E29B111A90065979D /* OrganizationListView.swift */,
+				37BD935D29C148F7003F01D9 /* Results.swift */,
 				374BE89B29A7DF4100C425B4 /* Browse.swift */,
 				37BD935F29C24420003F01D9 /* TagView.swift */,
 				37BFE21029B122510065979D /* TagListView.swift */,
@@ -225,8 +227,6 @@
 				37D567F62988596E0004AF45 /* CapstoneApp.swift */,
 				37D567F82988596E0004AF45 /* ContentView.swift */,
 				37CF335F299DB84E005D788E /* Home.swift */,
-				37BD935D29C148F7003F01D9 /* Results.swift */,
-				37BD936929C3ADE6003F01D9 /* PostView.swift */,
 				37BD937329C7B595003F01D9 /* Browsing Pages */,
 				37BFE21629BFE6BA0065979D /* Item Pages */,
 				37BFE21729BFE6DB0065979D /* Login Pages */,

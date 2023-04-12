@@ -14,6 +14,7 @@ struct ItemDescription: View {
     @State private var item: String?
     
     // matthew : can you add these vars to the images database?
+    // matthew!! the error is here somewhere where the item variable is the first item scanned, if the user takes multiple attempts choosing a photo it won't show up right here
     @State private var id = "" // auto increment variable?
     // maybe move id to upload view so it is easier to identify on this view
     
@@ -27,76 +28,80 @@ struct ItemDescription: View {
     var body: some View {
         
         NavigationView {
-        
+            
             ZStack {
                 Color(red: 255/255, green: 249/255, blue: 245/255)
                     .ignoresSafeArea()
                 
-                VStack {
+                ScrollView {
                     
-                    Text("Item Information")
-                        .font(.largeTitle).foregroundColor(Color.black)
-                        .padding(.top, 20)
-                    
-                    Image(uiImage: uiImage!)
-                    //Image("ImagePlaceholder")
-                        .resizable()
-                        .frame(width: 200, height: 250)
-                        //.padding(.top, 10)
-                    
-                    Spacer()
-                        .frame(height: 30)
-                    
-                    Text(imageString!)
-                        .padding()
-                        .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
-                        .frame(minWidth: 0, maxWidth: 340)
-                        .background(Color(red: 244, green: 244, blue: 244))
-                    
-                    TextField("Color", text: self.$color)
-                        .padding()
-                        .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
-                        .frame(minWidth: 0, maxWidth: 340)
-                        .background(Color(red: 244, green: 244, blue: 244))
-                    
-                    TextField("Size", text: self.$size)
-                        .padding()
-                        .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
-                        .frame(minWidth: 0, maxWidth: 340)
-                        .background(Color(red: 244, green: 244, blue: 244))
-                    
-                    TextField("Condition", text: self.$condition)
-                        .padding()
-                        .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
-                        .frame(minWidth: 0, maxWidth: 340)
-                        .background(Color(red: 244, green: 244, blue: 244))
-                    
-                    Spacer()
-                        .frame(height: 40)
-                    
-                    NavigationLink(destination: Results().navigationBarBackButtonHidden(true).onAppear {
-                        uploadData()
-                        getResults()}) {
-                        Text("Continue")
-                            .font(.system(.body, design: .rounded))
-                            .foregroundColor(.white).bold()
+                    VStack {
+                        
+                        Spacer()
+                            .frame(height: 20)
+                        
+                        Text("Item Information")
+                            .font(Font.custom("Norwester", size: 35))
+                        
+                        Image(uiImage: uiImage!)
+                        //Image("ImagePlaceholder")  // use this one for simulator
+                            .resizable()
+                            .frame(width: 200, height: 250)
+                            .border(Color(red: 196/255, green: 87/255, blue: 47/255), width: 2)
+                        
+                        Spacer()
+                            .frame(height: 30)
+                        
+                        Text(imageString!)
+                        //Text("item") // use this one for simulator
                             .padding()
-                            .frame(minWidth: 0, maxWidth: 150)
-                            .background(LinearGradient(gradient: Gradient(colors: [Color(red: 251/255, green: 128/255, blue: 128/255), Color(red: 253/255, green: 193/255, blue: 104/255)]), startPoint: .leading, endPoint: .trailing))
-                            .cornerRadius(30.0)
-                            .padding(.horizontal)
+                            .font(Font.custom("Circe", size: 20))
+                            .frame(minWidth: 0, maxWidth: 340)
+                            .background(Color(red: 244, green: 244, blue: 244))
+                        
+                        TextField("Color", text: self.$color)
+                            .padding()
+                            .font(Font.custom("Circe", size: 20))
+                            .frame(minWidth: 0, maxWidth: 340)
+                            .background(Color(red: 244, green: 244, blue: 244))
+                        
+                        TextField("Size", text: self.$size)
+                            .padding()
+                            .font(Font.custom("Circe", size: 20))
+                            .frame(minWidth: 0, maxWidth: 340)
+                            .background(Color(red: 244, green: 244, blue: 244))
+                        
+                        TextField("Condition", text: self.$condition)
+                            .padding()
+                            .font(Font.custom("Circe", size: 20))
+                            .frame(minWidth: 0, maxWidth: 340)
+                            .background(Color(red: 244, green: 244, blue: 244))
+                        
+                        Spacer()
+                            .frame(height: 40)
+                        
+                        NavigationLink(destination: Results().navigationBarBackButtonHidden(true).onAppear {
+                            getResults()}) {
+                                Text("Continue")
+                                    .font(Font.custom("Circe", size: 20))
+                                    .foregroundColor(.white).bold()
+                                    .padding()
+                                    .frame(minWidth: 0, maxWidth: 150)
+                                    .background(Color(red: 196/255, green: 87/255, blue: 47/255))
+                                    .cornerRadius(30.0)
+                                    .padding(.horizontal)
+                            }
                     }
-                    Spacer()
-                }
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button {
-                            dismiss()
-                            
-                        } label: {
-                            Image(systemName: "arrow.uturn.backward")
-                                .font(.system(size: 30))
-                                .foregroundColor(.black)
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            Button {
+                                dismiss()
+                                
+                            } label: {
+                                Image(systemName: "arrow.uturn.backward")
+                                    .font(.system(size: 30))
+                                    .foregroundColor(.black)
+                            }
                         }
                     }
                 }
@@ -104,13 +109,8 @@ struct ItemDescription: View {
         }
     }
     
-    func uploadData () {
-        // matthew : can you upload the other data to the database?
-        // ex: item, color, size, condition
-    }
-    
     func getResults() {
-        // todo : get results
+        // matthew todo : get results for nonprofits accepting "item"
     }
 }
 
