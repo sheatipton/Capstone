@@ -50,13 +50,15 @@ struct UploadView: View {
                                 Image(uiImage: uiImage!)
                                     .resizable()
                                     .scaledToFit()
-                                //.aspectRatio(contentMode: .fit)
+                                    .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                                     .frame(width: 350, height: 420)
+                                    
                             }
                             else {
                                 Image("ImagePlaceholder")
                                     .resizable()
                                     .scaledToFit()
+                                    .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                                     .frame(width: 350, height: 450)
                             }
                         }
@@ -75,6 +77,8 @@ struct UploadView: View {
                                         .font(Font.custom("Circe", size: 20))
                                         .foregroundColor(.black)
                                 }
+                                .padding()
+                                .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                                 .onAppear{
                                     self.imageString = imageClass
                                 }
@@ -199,6 +203,8 @@ struct UploadView: View {
                     
                     Spacer()
                     
+                }.onDisappear {
+                    isShowingHelp = false
                 }
                 
                 .sheet(isPresented: $pickerPresented, onDismiss: nil) {
