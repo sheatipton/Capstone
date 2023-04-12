@@ -164,7 +164,7 @@ struct Home: View {
                         Spacer()
                             .frame(height: 30)
                         Text("You're all caught up!")
-                            .font(.system(size: 25)).bold()
+                            .font(Font.custom("Circe", size: 30))
                             .padding(.top, 20)
                         Spacer()
                             .frame(height: 25)

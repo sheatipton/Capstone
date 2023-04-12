@@ -21,11 +21,13 @@ struct ProfileSettings: View {
                 
                 VStack(alignment: .leading) {
                     
+                    Spacer()
+                        .frame(height: 20)
+                    
                     Text("Settings")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .font(.largeTitle).bold()
-                        .padding(.leading, 40)
-                        .padding(.top, 30)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .font(Font.custom("Norwester", size: 35))
+
                     
                     Spacer()
                         .frame(height: 50)
@@ -35,25 +37,26 @@ struct ProfileSettings: View {
                             Image(systemName: "person.fill")
                                 .font(.system(size: 35))
                             Text("Edit Profile")
-                                .font(.system(size: 22))
+                                .font(Font.custom("Circe", size: 24))
                         }
                         .foregroundColor(.black)
-                        .padding(.leading, 40)
+                        .padding(.leading, 130)
                     }
-                    
+            
                     Spacer()
-                        .frame(height: 20)
+                        .frame(height: 30)
                     
+                    // matthew : should we take notifications out or get it working?
                     HStack {
                         Image(systemName: "bell.fill")
                             .font(.system(size: 35))
                         Text("Notifications")
-                            .font(.system(size: 22))
+                            .font(Font.custom("Circe", size: 24))
                     }
-                    .padding(.leading, 40)
+                    .padding(.leading, 130)
                     
                     Spacer()
-                        .frame(height: 20)
+                        .frame(height: 30)
                     
                     HStack {
                         NavigationLink(destination:
@@ -64,12 +67,12 @@ struct ProfileSettings: View {
                             Image(systemName: "rectangle.portrait.and.arrow.right")
                                 .font(.system(size: 35))
                             Text("Logout")
-                                .font(.system(size: 22))
+                                .font(Font.custom("Circe", size: 24))
                             
                         }
                         .foregroundColor(.black)
                     }
-                    .padding(.leading, 40)
+                    .padding(.leading, 130)
                     Spacer()
                 }
 

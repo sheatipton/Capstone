@@ -11,11 +11,15 @@ struct EditProfile: View {
     
     @Environment(\.dismiss) private var dismiss
     
-    @State private var fullName = ""
-    @State private var username = ""
+    // matthew pull these vars from the user table
+    @State private var id = "0"
+    @State private var fullName = "Shea Tipton"
+    @State private var username = "set58568"
+    @State private var email = "set58568@uga.edu"
+    @State private var imgPath = "ProfilePlaceholder"
     
     var body: some View {
-       
+        
         NavigationView {
             
             ZStack {
@@ -24,32 +28,60 @@ struct EditProfile: View {
                 
                 VStack {
                     
-                    Text("Edit Profile")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .font(.largeTitle).bold()
-                        .padding(.leading, 25)
+                    Spacer()
+                        .frame(height: 20)
                     
-                    Image("ProfilePlaceholder")
+                    Text("Edit Profile")
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .font(Font.custom("Norwester", size: 35))
+                    
+                    Image(imgPath)
                         .resizable()
                         .clipShape(Circle())
                         .scaledToFit()
-                        .frame(width: 150, height: 150, alignment: .center)
-                        .offset(x: -105, y: 0)
+                        .frame(width: 150, height: 140, alignment: .center)
                     
-                    TextField("Name", text: self.$fullName)
-                        .padding()
-                        .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
-                        .frame(minWidth: 0, maxWidth: 340)
-                        .background(Color(red: 244, green: 244, blue: 244))
-                        .cornerRadius(10.0)
+                    VStack {
+                        Text("Full Name")
+                            .font(Font.custom("Norwester", size: 20)).foregroundColor(Color.black)
+                            .offset(x: -100, y: 10)
+                        TextField("", text: self.$fullName)
+                            .font(Font.custom("Circe", size: 20))
+                            .frame(minWidth: 0, maxWidth: 300, maxHeight: 50)
+                            .background(Color(red: 248/255, green: 190/255, blue: 169/255))
+                            .cornerRadius(15.0)
+                            .padding(.bottom, 5)
+                        
+                        Text("Username")
+                            .font(Font.custom("Norwester", size: 20)).foregroundColor(Color.black)
+                            .offset(x: -100, y: 10)
+                        TextField("", text: self.$username)
+                            .font(Font.custom("Circe", size: 20))
+                            .frame(minWidth: 0, maxWidth: 300, maxHeight: 50)
+                            .background(Color(red: 248/255, green: 190/255, blue: 169/255))
+                            .cornerRadius(15.0)
+                            .padding(.bottom, 5)
+                        
+                        Text("Email")
+                            .font(Font.custom("Norwester", size: 20)).foregroundColor(Color.black)
+                            .offset(x: -120, y: 10)
+                        TextField("", text: self.$email)
+                            .font(Font.custom("Circe", size: 20))
+                            .frame(minWidth: 0, maxWidth: 300, maxHeight: 50)
+                            .background(Color(red: 248/255, green: 190/255, blue: 169/255))
+                            .cornerRadius(15.0)
+                            .padding(.bottom, 40)
+                    }
                     
-                    TextField("Username", text: self.$username)
-                        .padding()
-                        .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
-                        .frame(minWidth: 0, maxWidth: 340)
-                        .background(Color(red: 244, green: 244, blue: 244))
-                        .cornerRadius(10.0)
-                     
+                    Button("Save Changes") {
+                        // matthew : save all fields to the user
+                    }
+                    .font(Font.custom("Circe", size: 20))
+                    .foregroundColor(.white)
+                    .frame(maxWidth: 250, maxHeight: 50)
+                    .background(Color(red: 196/255, green: 87/255, blue: 47/255))
+                    .cornerRadius(25.0)
+                    Spacer()
                 }
             }
         }

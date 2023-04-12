@@ -29,7 +29,7 @@ struct Login: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 150)
-                            .offset(x: 0, y: -50)
+                            .offset(x: 0, y: -60)
                     }
                      
                     Text("Login")
