@@ -21,7 +21,7 @@ struct ImagesView: View {
         NavigationView {
         
             ZStack {
-                Color(red: 230/255, green: 190/255, blue: 150/255).opacity(0.6)
+                Color(red: 255/255, green: 249/255, blue: 245/255)
                     .ignoresSafeArea()
                 
                 ScrollView(.vertical) {
@@ -31,9 +31,9 @@ struct ImagesView: View {
                     VStack {
                         
                         Text("Uploaded Items")
+                            .font(Font.custom("Norwester", size: 35))
                             .frame(maxWidth: .infinity, alignment: .center)
-                            .font(.largeTitle).bold()
-                        
+                           
                         ForEach(retrievedImages, id: \.self) { image in
                             
                                 NavigationLink(destination: ItemView().navigationBarBackButtonHidden(true)) {

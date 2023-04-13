@@ -14,102 +14,68 @@ struct ItemView: View {
     
     @State private var item = "item" // matthew : pull item name from database
     @State private var imgPath = "ImagePlaceholder" // pull imgPath from db
-    @State private var date = "03/19/2023" // pull date from db
-    @State private var status = false // pull status from db
     
     var body: some View {
         
         NavigationView {
             
             ZStack {
-                Color(red: 230/255, green: 190/255, blue: 150/255).opacity(0.6)
+                Color(red: 255/255, green: 249/255, blue: 245/255)
                     .ignoresSafeArea()
                 
                 VStack {
                     
+                    Spacer()
+                        .frame(height: 20)
+                    
                     Text("Item Details")
+                        .font(Font.custom("Norwester", size: 35))
                         .frame(maxWidth: .infinity, alignment: .center)
-                        .font(.largeTitle).bold()
-                    
+                       
                     Spacer()
                         .frame(height: 50)
-                    
-                    HStack {
-                        Text(item).underline().bold()
-                        Text("was uploaded on")
-                        Text(date)
-                    }
-                    .font(.system(size: 20))
-                    
-                    Spacer()
-                        .frame(height: 50)
-                    
+                   
                     Image(imgPath)
                         .resizable()
                         .frame(width: 350, height: 375)
                     
-                    
                     Spacer()
-                        .frame(height: 5)
+                        .frame(height: 50)
                     
-                    // if not donated
-                    if (!status) {
-                        
-                        Button("Mark as Donated") {
-                            status = true
-                            // matthew : change status to true in database, replace line above
-                        }
-                        .font(.system(size: 18))
-                        .frame(width: 200, height: 100, alignment: .trailing)
-                        .offset(x: 50, y: 0)
-                        .foregroundColor(.black)
-                        
-                    } else {
-                        
-                        Button("Donated") {
-                            status = false
-                            // matthew : change status to false in database, replace line above
-                        }
-                        .font(.system(size: 18))
-                        .bold()
-                        .frame(width: 200, height: 100, alignment: .trailing)
-                        .offset(x: 50, y: 0)
-                        .foregroundColor(.black)
+                    Button("Mark as Donated") {
+                        isShowingConfirmDelete = true
                     }
-                }
-            }
-            
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        dismiss()
-                        
-                    } label: {
-                        Image(systemName: "arrow.uturn.backward")
-                            .font(.system(size: 30))
-                            .foregroundColor(.black)
-                    }
+                    .font(Font.custom("Circe", size: 20))
+                    .foregroundColor(.white)
+                    .frame(maxWidth: 250, maxHeight: 50)
+                    .background(Color(red: 196/255, green: 87/255, blue: 47/255))
+                    .cornerRadius(25.0)
+                    Spacer()
                 }
                 
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        isShowingConfirmDelete = true
-                    } label: {
-                        Image(systemName: "trash.fill")
-                            .font(.system(size: 25))
-                            .foregroundColor(.black)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button {
+                            dismiss()
+                            
+                        } label: {
+                            Image(systemName: "arrow.uturn.backward")
+                                .font(.system(size: 30))
+                                .foregroundColor(.black)
+                        }
                     }
+                    
                 }
-            }
-            
-            .alert(isPresented: $isShowingConfirmDelete) {
-                Alert(
-                    title: Text("Are you sure you want to delete this item?"),
-                    primaryButton: .destructive(Text("Delete")) {
-                        // matthew : delete the item from the database
-                        dismiss()
-                    },
-                    secondaryButton: .cancel())
+                
+                .alert(isPresented: $isShowingConfirmDelete) {
+                    Alert(
+                        title: Text("Are you sure? This image will be deleted."),
+                        primaryButton: .destructive(Text("Delete")) {
+                            // matthew : delete the item from the database
+                            dismiss()
+                        },
+                        secondaryButton: .cancel())
+                }
             }
         }
     }

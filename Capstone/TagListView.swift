@@ -18,29 +18,23 @@ struct TagListView: View {
         NavigationView {
             
             ZStack {
-                Color(red: 230/255, green: 190/255, blue: 150/255).opacity(0.6)
+                Color(red: 255/255, green: 249/255, blue: 245/255)
                     .ignoresSafeArea()
                 
                 ScrollView {
                     Spacer()
-                        .frame(height: 30)
+                        .frame(height: 40)
                     
                     VStack {
-                        /*HStack {
-                            NavigationLink(destination: Browse()) {
-                                Image(systemName: "arrow.uturn.backward")
-                                    .foregroundColor(.black)
-                                    .font(.system(size: 28))
-                                    .padding(.leading, 20)
-                            }*/
-                            Text("Browse Tags")
-                                .frame(maxWidth: .infinity, alignment: .center)
-                                .font(.largeTitle).bold()
-                       // }
+                        Text("Browse Tags")
+                            .font(Font.custom("Norwester", size: 20)).bold()
+                            .frame(maxWidth: .infinity, alignment: .center)
+                        
+                        // }
                         
                         Spacer()
                             .frame(height: 50)
-                        }
+                    }
                     
                     VStack {
                         HStack {
@@ -50,9 +44,9 @@ struct TagListView: View {
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("Men's Clothing")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
-                                    .font(.system(size: 18))
+                                    .font(Font.custom("Circe", size: 20)).bold()
                                     .foregroundColor(.black)
-                                    .border(Color.black, width: 1)
+                                    .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                             } // end tag 1
                             
                             Spacer()
@@ -63,9 +57,9 @@ struct TagListView: View {
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("Women's Clothing")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
-                                    .font(.system(size: 18))
+                                    .font(Font.custom("Circe", size: 20)).bold()
                                     .foregroundColor(.black)
-                                    .border(Color.black, width: 1)
+                                    .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                             } // end tag 2
                             
                         }
@@ -79,9 +73,9 @@ struct TagListView: View {
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("School Supplies")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
-                                    .font(.system(size: 18))
+                                    .font(Font.custom("Circe", size: 20)).bold()
                                     .foregroundColor(.black)
-                                    .border(Color.black, width: 1)
+                                    .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                             } // end tag 3
                             
                             Spacer()
@@ -91,9 +85,9 @@ struct TagListView: View {
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("Home")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
-                                    .font(.system(size: 18))
+                                    .font(Font.custom("Circe", size: 20)).bold()
                                     .foregroundColor(.black)
-                                    .border(Color.black, width: 1)
+                                    .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                             } // end tag 4
                             
                         }
@@ -107,9 +101,9 @@ struct TagListView: View {
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("Accessories")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
-                                    .font(.system(size: 18))
+                                    .font(Font.custom("Circe", size: 20)).bold()
                                     .foregroundColor(.black)
-                                    .border(Color.black, width: 1)
+                                    .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                             } // end tag 5
                             
                             Spacer()
@@ -119,9 +113,9 @@ struct TagListView: View {
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("Arts & Crafts")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
-                                    .font(.system(size: 18))
+                                    .font(Font.custom("Circe", size: 20)).bold()
                                     .foregroundColor(.black)
-                                    .border(Color.black, width: 1)
+                                    .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                             } // end tag 6
                             
                         }
@@ -135,9 +129,9 @@ struct TagListView: View {
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("Toys & Games")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
-                                    .font(.system(size: 18))
+                                    .font(Font.custom("Circe", size: 20)).bold()
                                     .foregroundColor(.black)
-                                    .border(Color.black, width: 1)
+                                    .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                             } // end tag 7
                             
                             Spacer()
@@ -147,9 +141,9 @@ struct TagListView: View {
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("Kitchen")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
-                                    .font(.system(size: 18))
+                                    .font(Font.custom("Circe", size: 20)).bold()
                                     .foregroundColor(.black)
-                                    .border(Color.black, width: 1)
+                                    .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                             } // end tag 8
                         }
                         
@@ -162,9 +156,9 @@ struct TagListView: View {
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("Hygiene")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
-                                    .font(.system(size: 18))
+                                    .font(Font.custom("Circe", size: 20)).bold()
                                     .foregroundColor(.black)
-                                    .border(Color.black, width: 1)
+                                    .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                             } // end tag 7
                             
                             Spacer()
@@ -174,9 +168,9 @@ struct TagListView: View {
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("Baby")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
-                                    .font(.system(size: 18))
+                                    .font(Font.custom("Circe", size: 20)).bold()
                                     .foregroundColor(.black)
-                                    .border(Color.black, width: 1)
+                                    .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                             } // end tag 8
                         }
                     }

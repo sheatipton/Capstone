@@ -8,81 +8,99 @@
 import SwiftUI
 
 struct Login: View {
+    
+    @Environment(\.dismiss) private var dismiss
+    
     @State private var email = ""
     @State private var password = ""
-    @Environment(\.dismiss) private var dismiss
+
     var body: some View {
         
-        ZStack {
-            Color(red: 230/255, green: 190/255, blue: 150/255).opacity(0.6)
-                .ignoresSafeArea()
+        NavigationView {
             
-            VStack(alignment: .center, spacing: 30) {
-                Text("Sign in to your account")
-                    .font(.largeTitle).foregroundColor(Color.black)
-                    .padding([.top, .bottom], 40)
-                Spacer()
-                    .frame(height: 70)
+            ZStack {
+                Color(red: 255/255, green: 249/255, blue: 245/255)
+                    .ignoresSafeArea()
                 
-                TextField("Email", text: self.$email)
-                    .padding()
-                    .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
-                    .frame(minWidth: 0, maxWidth: 340)
-                    .background(Color(red: 244, green: 244, blue: 244))
-                    .cornerRadius(20.0)
-                
-                SecureField("Password", text: self.$password)
-                    .padding()
-                    .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
-                    .foregroundColor(.black)
+                VStack() {
                     
-                    .frame(minWidth: 0, maxWidth: 340)
-                    .background(Color(red: 244, green: 244, blue: 244))
-                    .cornerRadius(20.0)
-                
-                Button("Login") {
-                    
-                    // matthew : add login functionality here
-                    //NavigationLink(destination: Home()) {}
-                        signInDonor(email: email, password: password)
-                    
-                    dismiss()
-                }
-                    .font(.system(.body, design: .rounded))
-                    .foregroundColor(.white).bold()
-                    .padding()
-                    .frame(minWidth: 0, maxWidth: 300)
-                    .background(LinearGradient(gradient: Gradient(colors: [Color(red: 251/255, green: 128/255, blue: 128/255), Color(red: 253/255, green: 193/255, blue: 104/255)]), startPoint: .leading, endPoint: .trailing))
-                    .cornerRadius(15.0)
-                    .padding(.horizontal)
-                
-                Spacer()
-                    .frame(height: 50)
-                
-                HStack {
-                    Text("Don't have an account?")
-                        .font(.system(.body, design: .rounded))
-                        .bold()
-                    
-                    NavigationLink(destination: DonorSignUp()) {
-                        Text("Create one").underline()
-                            .font(.system(.body, design: .rounded)).bold()
-                            .foregroundColor(Color(red: 251/255, green: 128/255, blue: 128/255))
+                    NavigationLink(destination: Home().navigationBarBackButtonHidden(true)) {
+                        Image("FawnLogo")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 150)
+                            .offset(x: 0, y: -60)
                     }
-                }
-            } .padding([.top, .bottom], 50)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button {
-                            dismiss()
-                            
-                        } label: {
-                            Image(systemName: "arrow.uturn.backward")
-                                .font(.system(size: 30))
-                                .foregroundColor(.black)
+                     
+                    Text("Login")
+                        .font(Font.custom("Norwester", size: 45)).foregroundColor(Color.black)
+                    
+                    Spacer()
+                        .frame(height: 50)
+                    
+                        Text("Username")
+                            .font(Font.custom("Norwester", size: 20)).foregroundColor(Color.black)
+                            .offset(x: -100, y: 5)
+                        TextField("", text: self.$email)
+                            .padding()
+                            .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
+                            .frame(minWidth: 0, maxWidth: 300)
+                            .background(Color(red: 248/255, green: 190/255, blue: 169/255))
+                            .cornerRadius(15.0)
+                            .padding(.bottom, 20)
+                        
+                    Text("Password")
+                        .font(Font.custom("Norwester", size: 20)).foregroundColor(Color.black)
+                        .offset(x: -100, y: 5)
+                    SecureField("", text: self.$password)
+                        .padding()
+                        .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
+                        .foregroundColor(.black)
+                    
+                        .frame(minWidth: 0, maxWidth: 300)
+                        .background(Color(red: 248/255, green: 190/255, blue: 169/255))
+                        .cornerRadius(15.0)
+                        .padding(.bottom, 50)
+                    
+                    Button("Sign In") {
+                        signInDonor(email: email, password: password)
+                        dismiss()
+                    }
+                    .font(Font.custom("Circe", size: 20))
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(maxWidth: 250, maxHeight: 50)
+                    .background(Color(red: 196/255, green: 87/255, blue: 47/255))
+                    .cornerRadius(25.0)
+                    
+                    Spacer()
+                        //.frame(height:)
+                    
+                    HStack {
+                        Text("Don't have an account?")
+                            .font(Font.custom("Norwester", size: 20)).foregroundColor(Color.black)
+
+                        
+                        NavigationLink(destination: SignUp().navigationBarBackButtonHidden(true)) {
+                            Text("Create one").underline()
+                                .font(Font.custom("Norwester", size: 20))
+                                .foregroundColor(Color(red: 196/255, green: 87/255, blue: 47/255))
                         }
                     }
-                }
+                } .padding([.top, .bottom], 50)
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            Button {
+                                dismiss()
+                                
+                            } label: {
+                                Image(systemName: "arrow.uturn.backward")
+                                    .font(.system(size: 30))
+                                    .foregroundColor(.black)
+                            }
+                        }
+                    }
+            }
         }
     }
 }

@@ -18,26 +18,30 @@ struct Browse: View {
         NavigationView {
             
             ZStack {
-                Color(red: 230/255, green: 190/255, blue: 150/255).opacity(0.6)
+                Color(red: 255/255, green: 249/255, blue: 245/255)
                     .ignoresSafeArea()
                 
                 ScrollView {
+                    
                     Spacer()
-                        .frame(height: 30)
+                        .frame(height: 20)
+                    
+                    Image("FawnLogo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 150)
+                        .offset(x: 0, y: -15)
                     
                     VStack {
-                        Text("Browse")
-                            .frame(maxWidth: .infinity, alignment: .center)
-                            .font(.largeTitle).bold()
                         
                         Spacer()
                             .frame(height: 20)
-                        
+                       
                         HStack {
                             TextField("Search by item, organization, ...                    ", text: $search)
-                                .font(.headline)
+                                .font(Font.custom("Circe", size: 20)).bold()
                                 .padding(20)
-                                .border(Color.black, width: 1)
+                                .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 2)
                                 .frame(maxWidth: 300)
                                 .padding()
                             
@@ -56,13 +60,13 @@ struct Browse: View {
                         NavigationLink(destination: OrganizationListView().navigationBarBackButtonHidden(true)) {
                             HStack {
                                 Text("Browse Organizations").bold()
-                                    .font(.headline)
+                                    .font(Font.custom("Norwester", size: 22))
                                     .foregroundColor(Color.black)
-                                    .offset(x: -75)
+                                    .offset(x: -50)
                                 Image(systemName: "arrow.forward")
                                     .foregroundColor(.black)
                                     .font(.system(size: 20))
-                                    .offset(x: -75)
+                                    .offset(x: -55)
                             }
                         }
                         
@@ -81,9 +85,9 @@ struct Browse: View {
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("Men's Clothing")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
-                                    .font(.system(size: 18))
+                                    .font(Font.custom("Circe", size: 20))
                                     .foregroundColor(.black)
-                                    .border(Color.black, width: 1)
+                                    .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                             } // end tag 1
                             
                             Spacer()
@@ -93,9 +97,9 @@ struct Browse: View {
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("Women's Clothing")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
-                                    .font(.system(size: 18))
+                                    .font(Font.custom("Circe", size: 22))
                                     .foregroundColor(.black)
-                                    .border(Color.black, width: 1)
+                                    .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                             } // end tag 2
                             
                         }
@@ -109,9 +113,9 @@ struct Browse: View {
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("School Supplies")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
-                                    .font(.system(size: 18))
+                                    .font(Font.custom("Circe", size: 22))
                                     .foregroundColor(.black)
-                                    .border(Color.black, width: 1)
+                                    .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                             } // end tag 3
                             
                             Spacer()
@@ -121,9 +125,9 @@ struct Browse: View {
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("Home")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
-                                    .font(.system(size: 18))
+                                    .font(Font.custom("Circe", size: 22))
                                     .foregroundColor(.black)
-                                    .border(Color.black, width: 1)
+                                    .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                             } // end tag 4
                             
                         }
@@ -137,9 +141,9 @@ struct Browse: View {
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("Accessories")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
-                                    .font(.system(size: 18))
+                                    .font(Font.custom("Circe", size: 22))
                                     .foregroundColor(.black)
-                                    .border(Color.black, width: 1)
+                                    .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                             } // end tag 5
                             
                             Spacer()
@@ -149,9 +153,9 @@ struct Browse: View {
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("Arts & Crafts")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
-                                    .font(.system(size: 18))
+                                    .font(Font.custom("Circe", size: 22))
                                     .foregroundColor(.black)
-                                    .border(Color.black, width: 1)
+                                    .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                             } // end tag 6
                             
                         }
@@ -165,9 +169,9 @@ struct Browse: View {
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
                                 Text("Toys & Games")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
-                                    .font(.system(size: 18))
+                                    .font(Font.custom("Circe", size: 22))
                                     .foregroundColor(.black)
-                                    .border(Color.black, width: 1)
+                                    .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                             } // end tag 7
                             
                             Spacer()
@@ -175,11 +179,15 @@ struct Browse: View {
                             
                             // tag 8
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
+<<<<<<< HEAD
                                 Text("Kitchen")
+=======
+                                Text("Hygiene")
+>>>>>>> 20117b083a2c8d23972d35c2ec4bdc743778a73b
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
-                                    .font(.system(size: 18))
+                                    .font(Font.custom("Circe", size: 22))
                                     .foregroundColor(.black)
-                                    .border(Color.black, width: 1)
+                                    .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                             } // end tag 8
                         }
                     }

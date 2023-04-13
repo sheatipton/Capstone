@@ -18,24 +18,25 @@ struct OrganizationListView: View {
         NavigationView {
             
             ZStack {
-                Color(red: 230/255, green: 190/255, blue: 150/255).opacity(0.6)
+                Color(red: 255/255, green: 249/255, blue: 245/255)
                     .ignoresSafeArea()
                 
                 ScrollView {
                     Spacer()
-                        .frame(height: 40)
+                        .frame(height: 20)
                     
                     VStack {
-                       
-                        Text("Browse Nonprofits")
-                            .frame(maxWidth: .infinity, alignment: .center)
-                            .font(.largeTitle).bold()
                         
+                        Text("Browse Nonprofits")
+                            .font(Font.custom("Norwester", size: 35))
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            
                         HStack {
                             Text("in your area: ")
-                            Text("Athens, GA").bold()
+                            Text("Athens, GA").underline()
                         }
-                        .font(.system(size: 20))
+                        .font(Font.custom("Norwester", size: 25))
+                        .foregroundColor(Color(red: 196/255, green: 87/255, blue: 47/255))
                         .padding(.top, 5)
                         
                         Spacer()
@@ -50,9 +51,9 @@ struct OrganizationListView: View {
                             NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
                                 Text("Toys for Tots")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
-                                    .font(.system(size: 18))
+                                    .font(Font.custom("Circe", size: 20)).bold()
                                     .foregroundColor(.black)
-                                    .border(Color.black, width: 1)
+                                    .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                                 
                                 
                             } // end org 1
@@ -65,9 +66,9 @@ struct OrganizationListView: View {
                             NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
                                 Text("Project Safe")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
-                                    .font(.system(size: 18))
+                                    .font(Font.custom("Circe", size: 20)).bold()
                                     .foregroundColor(.black)
-                                    .border(Color.black, width: 1)
+                                   .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                             } // end org 2
                             
                         }
@@ -81,9 +82,9 @@ struct OrganizationListView: View {
                             NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
                                 Text("Acceptance Recovery Center")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
-                                    .font(.system(size: 18))
+                                    .font(Font.custom("Circe", size: 20)).bold()
                                     .foregroundColor(.black)
-                                    .border(Color.black, width: 1)
+                                   .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                                 
                             } // end org 3
                             
@@ -94,9 +95,9 @@ struct OrganizationListView: View {
                             NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
                                 Text("Family Promise")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
-                                    .font(.system(size: 18))
+                                    .font(Font.custom("Circe", size: 20)).bold()
                                     .foregroundColor(.black)
-                                    .border(Color.black, width: 1)
+                                   .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                             } // end org 4
                         }
                         
@@ -109,9 +110,9 @@ struct OrganizationListView: View {
                             NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
                                 Text("Athens Land Trust")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
-                                    .font(.system(size: 18))
+                                    .font(Font.custom("Circe", size: 20)).bold()
                                     .foregroundColor(.black)
-                                    .border(Color.black, width: 1)
+                                   .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                                 
                             } // end org 5
                             
@@ -122,9 +123,9 @@ struct OrganizationListView: View {
                             NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
                                 Text("Mercy Health")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
-                                    .font(.system(size: 18))
+                                    .font(Font.custom("Circe", size: 20)).bold()
                                     .foregroundColor(.black)
-                                    .border(Color.black, width: 1)
+                                   .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                             } // end org 6
                         }
                         
@@ -137,9 +138,9 @@ struct OrganizationListView: View {
                             NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
                                 Text("Athens Area Homeless Shelter")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
-                                    .font(.system(size: 18))
+                                    .font(Font.custom("Circe", size: 20)).bold()
                                     .foregroundColor(.black)
-                                    .border(Color.black, width: 1)
+                                   .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                             } // end org 7
                             
                             Spacer()
@@ -149,9 +150,9 @@ struct OrganizationListView: View {
                             NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
                                 Text("Athens Regional Library System")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
-                                    .font(.system(size: 18))
+                                    .font(Font.custom("Circe", size: 20)).bold()
                                     .foregroundColor(.black)
-                                    .border(Color.black, width: 1)
+                                   .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                             } // end org 8
                         }
                         
@@ -164,9 +165,9 @@ struct OrganizationListView: View {
                             NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
                                 Text("College Factory")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
-                                    .font(.system(size: 18))
+                                    .font(Font.custom("Circe", size: 20)).bold()
                                     .foregroundColor(.black)
-                                    .border(Color.black, width: 1)
+                                   .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                                 
                             } // end tag 1
                             
@@ -175,11 +176,11 @@ struct OrganizationListView: View {
                             
                             // tag 2
                             NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
-                                Text("Athens Community Council on Aging")
+                                Text("ACCA")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
-                                    .font(.system(size: 18))
+                                    .font(Font.custom("Circe", size: 20)).bold()
                                     .foregroundColor(.black)
-                                    .border(Color.black, width: 1)
+                                   .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                             } // end tag 2
                         }
                         
