@@ -18,9 +18,9 @@ struct ItemDescription: View {
     // maybe move id to upload view so it is easier to identify on this view
     
     @State var imageString: String?// can you pull this variable from the ai generated
-    @State private var color = ""
-    @State private var size = ""
-    @State private var condition = ""
+    @State private var color = "Color: "
+    @State private var size = "Size: "
+    @State private var condition = "Condition: "
     @State private var date = Date()
     @State private var status = false // this will be false for not donated, true for donated
     
@@ -38,8 +38,9 @@ struct ItemDescription: View {
                         .font(.largeTitle).foregroundColor(Color.black)
                         .padding(.top, 20)
                     
-                    Image(uiImage: uiImage!)
-                    //Image("ImagePlaceholder")
+                    //Image(uiImage: uiImage!)
+                    
+                    Image("ImagePlaceholder")
                         .resizable()
                         .frame(width: 200, height: 250)
                         //.padding(.top, 10)
@@ -47,7 +48,7 @@ struct ItemDescription: View {
                     Spacer()
                         .frame(height: 30)
                     
-                    Text(imageString!)
+                    Text("Item: \(imageString!)")
                         .padding()
                         .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
                         .frame(minWidth: 0, maxWidth: 340)

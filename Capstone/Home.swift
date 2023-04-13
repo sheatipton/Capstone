@@ -28,7 +28,7 @@ struct Home: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 150)
-                            .offset(x: 0, y: -15)
+                            .offset(x: -7, y: -15)
                     }
                     
                     Divider()

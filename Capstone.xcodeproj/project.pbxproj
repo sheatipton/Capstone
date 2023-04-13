@@ -189,7 +189,6 @@
 				37BD936329C37FEB003F01D9 /* EditProfile.swift */,
 				37BFE21829BFE7010065979D /* DonorProfile.swift */,
 				37BFE21A29BFE72C0065979D /* NonprofitProfile.swift */,
-				37BD937529D0E6BB003F01D9 /* Utilities */,
 			);
 			name = "Login Pages";
 			sourceTree = "<group>";
@@ -230,6 +229,7 @@
 				37BD937329C7B595003F01D9 /* Browsing Pages */,
 				37BFE21629BFE6BA0065979D /* Item Pages */,
 				37BFE21729BFE6DB0065979D /* Login Pages */,
+				37BD937529D0E6BB003F01D9 /* Utilities */,
 				37D567FA298859720004AF45 /* Assets.xcassets */,
 				37D567FC298859720004AF45 /* Preview Content */,
 			);

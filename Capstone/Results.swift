@@ -58,7 +58,7 @@ struct Results: View {
                         
                         NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
                             HStack {
-                                Text("BooksForKeeps").bold()
+                                Text("ToysForTots").bold()
                                     .font(.headline)
                                     .foregroundColor(Color.black)
                                     //.offset(x: -75)

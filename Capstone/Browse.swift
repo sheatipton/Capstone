@@ -107,7 +107,7 @@ struct Browse: View {
                             
                             // tag 3
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
-                                Text("Shoes")
+                                Text("School Supplies")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)
@@ -175,7 +175,7 @@ struct Browse: View {
                             
                             // tag 8
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
-                                Text("Tag")
+                                Text("Kitchen")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(.system(size: 18))
                                     .foregroundColor(.black)

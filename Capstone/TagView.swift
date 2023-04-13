@@ -12,7 +12,7 @@ struct TagView: View {
     @Environment(\.dismiss) private var dismiss
     
     @State private var id = ""
-    @State private var tag = "Shoes" // matthew : pull from tag database
+    @State private var tag = "School Supplies" // matthew : pull from tag database
     
     var body: some View {
         
