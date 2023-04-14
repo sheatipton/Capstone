@@ -73,8 +73,6 @@ struct DonorProfile: View {
                             .font(Font.custom("Circe", size: 30))
                         Text("Not Needed").tag(1)
                             .font(Font.custom("Circe", size: 30))
-                        Text("Donated").tag(2)
-                            .font(Font.custom("Circe", size: 30))
                     }
                     .pickerStyle(.segmented)
                     .frame(height: 60)

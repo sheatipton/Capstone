@@ -84,7 +84,7 @@ struct Home: View {
                                 
                                 
                                 Text("Athens Humane Society")
-                                    .font(Font.custom("Norwester", size: 25)).bold()
+                                    .font(Font.custom("Circe", size: 25))
                                     .foregroundColor(.black)
                             }
                             

@@ -45,7 +45,8 @@ struct Browse: View {
                                 .frame(maxWidth: 300)
                                 .padding()
                             
-                            NavigationLink(destination: Results().navigationBarBackButtonHidden(true)) {
+                            // matthew send $search to the next page here
+                            NavigationLink(destination: SearchResults().navigationBarBackButtonHidden(true)) {
                                 Image(systemName: "arrow.right.circle")
                                     .font(.system(size: 35))
                                     .foregroundColor(.black)

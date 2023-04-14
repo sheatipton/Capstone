@@ -27,7 +27,7 @@ struct TagListView: View {
                     
                     VStack {
                         Text("Browse Tags")
-                            .font(Font.custom("Norwester", size: 20)).bold()
+                            .font(Font.custom("Norwester", size: 35))
                             .frame(maxWidth: .infinity, alignment: .center)
                         
                         // }

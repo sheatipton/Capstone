@@ -1,5 +1,5 @@
 //
-//  Results.swift
+//  SearchResults.swift
 //  Capstone
 //
 //  Created by Shea Tipton on 3/14/23.
@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct Results: View {
+struct SearchResults: View {
     
     @Environment(\.dismiss) private var dismiss
-
+    @State private var search = "Shoes" // matthew pull search keyword from the browse page
     
     // create results array
     
@@ -25,111 +25,48 @@ struct Results: View {
                 ScrollView {
                     
                     VStack {
-<<<<<<< HEAD
-                        Text("Results")
-                            .frame(maxWidth: .infinity, alignment: .center)
-                            .font(.largeTitle).bold()
+                        // if no results {
+                        /*Text("Uh oh! There are no results.")
+                         .font(Font.custom("Circe", size: 22))
                         
-                        Spacer()
-                            .frame(height: 40)
-                        
-                        Text("Organizations accepting your item:")
-                            .font(.system(size: 20))
-                        
-                        Spacer()
-                            .frame(height: 40)
-                        
-                        NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
-                            HStack {
-                                Text("ToysForTots").bold()
-                                    .font(.headline)
-                                    .foregroundColor(Color.black)
-                                    //.offset(x: -75)
-                                Image(systemName: "arrow.forward")
-                                    .foregroundColor(.black)
-                                    .font(.system(size: 20))
-                                   // .offset(x: -75)
-                            }
-                        }
-                        
-                        Spacer()
-                            .frame(height: 20)
-                        
-                        NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
-                            HStack {
-                                Text("Athens Community Council on Aging").bold()
-                                    .font(.headline)
-                                    .foregroundColor(Color.black)
-                                    //.offset(x: -75)
-                                Image(systemName: "arrow.forward")
-                                    .foregroundColor(.black)
-                                    .font(.system(size: 20))
-                                    //.offset(x: -75)
-                            }
-                        }
-                        
-                        Spacer()
-                            .frame(height: 20)
-                        
-                        NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
-                            HStack {
-                                Text("Acceptance Recovery Center").bold()
-                                    .font(.headline)
-                                    .foregroundColor(Color.black)
-                                   
-                                Image(systemName: "arrow.forward")
-                                    .foregroundColor(.black)
-                                    .font(.system(size: 20))
-                                    //.offset(x: -75)
-                            }
-                        }
-                   
-                        Spacer()
-                            .frame(height: 70)
-                        
-=======
-                        // if no results
->>>>>>> 20117b083a2c8d23972d35c2ec4bdc743778a73b
-                        /*Text("There are no organizations accepting that item right now.")
+                         Text("Try another search or browse")
+                         .font(Font.custom("Circe", size: 22))
+                         
+                         Text("by organization or by tag.")
                          .font(Font.custom("Circe", size: 22))
                          
                          Spacer()
-                         .frame(height: 20)
-                         
-                         Text("We will notify you when an organization is in need of that item.")
-                         .font(Font.custom("Circe", size: 22))
-                         
-                         Spacer()
-                         .frame(height: 50)
+                         .frame(height: 40)
                          */
                         
                         
-                        // if results array != nil
+                        // } else (if results array != nil) {
                         
                         Spacer()
                             .frame(height: 20)
                         
                         VStack {
                             VStack {
-                                Text("Results")
+                                Text("Search Results")
                                     .frame(maxWidth: .infinity, alignment: .center)
                                     .font(Font.custom("Norwester", size: 35))
                                 
                                 Spacer()
                                     .frame(height: 40)
                                 
-                                Text("Organizations currently")
+                                Text("We found results for")
                                     .font(Font.custom("Circe", size: 22))
                                     .foregroundColor(Color(red: 196/255, green: 87/255, blue: 47/255))
-                                Text("accepting the item(s):")
+                                Text("'" + search + "'")
                                     .font(Font.custom("Circe", size: 22))
                                     .foregroundColor(Color(red: 196/255, green: 87/255, blue: 47/255))
                                 
                                 Spacer()
                                     .frame(height: 40)
+                            //}
                             }
                             
-                            // matthew : same concept as tag view page
+                            // matthew : his needs to be replaced within a loop so it's not hard coded for the nonprofit results
                             // start code
                             NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
                                 HStack {
@@ -222,8 +159,8 @@ struct Results: View {
     }
 }
 
-struct Results_Previews: PreviewProvider {
+struct SearchResults_Previews: PreviewProvider {
     static var previews: some View {
-        Results()
+        SearchResults()
     }
 }
