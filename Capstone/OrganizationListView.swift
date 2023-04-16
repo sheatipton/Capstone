@@ -193,7 +193,7 @@ struct OrganizationListView: View {
                             
                         } label: {
                             Image(systemName: "arrow.uturn.backward")
-                                .font(.system(size: 30))
+                                .font(.system(size: 22))
                                 .foregroundColor(.black)
                         }
                     }

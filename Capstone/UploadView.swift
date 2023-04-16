@@ -35,16 +35,7 @@ struct UploadView: View {
                 ScrollView {
                     
                     VStack {
-                        
-                        Image("FawnLogo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 150)
-                            .offset(x: 0, y: -15)
-                        
-                        Spacer()
-                            .frame(height: 10)
-                        
+                      
                         Group {
                             if uiImage != nil {
                                 Image(uiImage: uiImage!)
@@ -162,13 +153,25 @@ struct UploadView: View {
                         ToolbarItem(placement: .navigationBarTrailing) {
                             NavigationLink(destination: ImagesView().navigationBarBackButtonHidden(true)) {
                                 Image(systemName: "photo.on.rectangle.angled")
-                                    .font(.system(size: 35)).foregroundColor(.black)
+                                    .font(.system(size: 30)).foregroundColor(.black)
                             }
                         }
+                        
+                        
+                        ToolbarItem() {
+                            NavigationLink(destination: ImagesView().navigationBarBackButtonHidden(true)) {
+                                Image("FawnLogo")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 210)
+                                    .offset(x: -10, y: 5)
+                            }
+                        }
+                        
                         ToolbarItem(placement: .navigationBarLeading) {
                             NavigationLink(destination: DonorProfile().navigationBarBackButtonHidden(true)) {
                                 Image(systemName: "person.circle")
-                                    .font(.system(size: 35)).foregroundColor(.black)
+                                    .font(.system(size: 30)).foregroundColor(.black)
                             }
                         }
                     } // end toolbar

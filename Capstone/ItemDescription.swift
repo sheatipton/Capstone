@@ -35,55 +35,6 @@ struct ItemDescription: View {
                 
                 ScrollView {
                     
-<<<<<<< HEAD
-                    Text("Item Information")
-                        .font(.largeTitle).foregroundColor(Color.black)
-                        .padding(.top, 20)
-                    
-                    //Image(uiImage: uiImage!)
-                    
-                    Image("ImagePlaceholder")
-                        .resizable()
-                        .frame(width: 200, height: 250)
-                        //.padding(.top, 10)
-                    
-                    Spacer()
-                        .frame(height: 30)
-                    
-                    Text("Item: \(imageString!)")
-                        .padding()
-                        .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
-                        .frame(minWidth: 0, maxWidth: 340)
-                        .background(Color(red: 244, green: 244, blue: 244))
-                    
-                    TextField("Color", text: self.$color)
-                        .padding()
-                        .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
-                        .frame(minWidth: 0, maxWidth: 340)
-                        .background(Color(red: 244, green: 244, blue: 244))
-                    
-                    TextField("Size", text: self.$size)
-                        .padding()
-                        .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
-                        .frame(minWidth: 0, maxWidth: 340)
-                        .background(Color(red: 244, green: 244, blue: 244))
-                    
-                    TextField("Condition", text: self.$condition)
-                        .padding()
-                        .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
-                        .frame(minWidth: 0, maxWidth: 340)
-                        .background(Color(red: 244, green: 244, blue: 244))
-                    
-                    Spacer()
-                        .frame(height: 40)
-                    
-                    NavigationLink(destination: Results().navigationBarBackButtonHidden(true).onAppear {
-                        uploadData()
-                        getResults()}) {
-                        Text("Continue")
-                            .font(.system(.body, design: .rounded))
-                            .foregroundColor(.white).bold()
-=======
                     VStack {
                         
                         Spacer()
@@ -103,8 +54,7 @@ struct ItemDescription: View {
                         
                         Text(imageString!)
                         //Text("item") // use this one for simulator
->>>>>>> 20117b083a2c8d23972d35c2ec4bdc743778a73b
-                            .padding()
+                        //.padding()
                             .font(Font.custom("Circe", size: 20))
                             .frame(minWidth: 0, maxWidth: 340)
                             .background(Color(red: 244, green: 244, blue: 244))
