@@ -12,12 +12,16 @@ public struct User: Codable {
     let name: String?
     let userName: String?
     let role: String?
+    let profileimg: String?
+    let images: [String]?
     
     enum CodingKeys: String, CodingKey {
         case uid
         case name
         case userName
         case role = "donor"
+        case images
+        case profileimg
         
     }
     var dictionary: [String: Any] {

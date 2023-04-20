@@ -71,6 +71,9 @@ struct ProfileSettings: View {
                             
                         }
                         .foregroundColor(.black)
+                        .simultaneousGesture(TapGesture().onEnded{
+                            signOutDonor()
+                        })
                     }
                     .padding(.leading, 130)
                     Spacer()
@@ -94,9 +97,9 @@ struct ProfileSettings: View {
 }
 @ViewBuilder
 func homeNavigator() -> some View {
-    if signOutDonor() {
+    //if signOutDonor() {
         Home()
-    }
+  //  }
   
     
 }
@@ -104,5 +107,6 @@ func homeNavigator() -> some View {
 struct ProfileSettings_Previews: PreviewProvider {
     static var previews: some View {
         ProfileSettings()
+            .environmentObject(AuthState())
     }
 }

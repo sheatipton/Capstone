@@ -4,7 +4,6 @@
 //
 //  Created by Shea Tipton on 3/2/23.
 //
-
 import SwiftUI
 
 struct OrganizationListView: View {
@@ -48,7 +47,8 @@ struct OrganizationListView: View {
                             
                             // loop to list each nonprofit
                             // org 1
-                            NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
+                            NavigationLink(destination:        NonprofitProfile(name: "123 Spring Street Athens, GA 30605", items: ["toys,shoes"], aboutUs: "toys for tots", address: "123 street", site: "toysfortots.org", profileImg: "ToysForTots", operationHours: "8am - 5pm Mon - Fri")
+                                .navigationBarBackButtonHidden(true)) {
                                 Text("Toys for Tots")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(Font.custom("Circe", size: 20)).bold()
@@ -63,7 +63,8 @@ struct OrganizationListView: View {
                             
                             // remove all code below
                             // org 2
-                            NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
+                            NavigationLink(destination:        NonprofitProfile(name: "123 Spring Street Athens, GA 30605", items: ["toys,shoes"], aboutUs: "toys for tots", address: "123 street", site: "toysfortots.org", profileImg: "ToysForTots", operationHours: "8am - 5pm Mon - Fri")
+                                .navigationBarBackButtonHidden(true)) {
                                 Text("Project Safe")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(Font.custom("Circe", size: 20)).bold()
@@ -79,7 +80,8 @@ struct OrganizationListView: View {
                         HStack {
                             
                             // org 3
-                            NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
+                            NavigationLink(destination:        NonprofitProfile(name: "123 Spring Street Athens, GA 30605", items: ["toys,shoes"], aboutUs: "toys for tots", address: "123 street", site: "toysfortots.org", profileImg: "ToysForTots", operationHours: "8am - 5pm Mon - Fri")
+                                .navigationBarBackButtonHidden(true)) {
                                 Text("Acceptance Recovery Center")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(Font.custom("Circe", size: 20)).bold()
@@ -92,7 +94,7 @@ struct OrganizationListView: View {
                                 .frame(width: 35)
                             
                             // org 4
-                            NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
+                            NavigationLink(destination:        NonprofitProfile(name: "123 Spring Street Athens, GA 30605", items: ["toys,shoes"], aboutUs: "toys for tots", address: "123 street", site: "toysfortots.org", profileImg: "ToysForTots", operationHours: "8am - 5pm Mon - Fri").navigationBarBackButtonHidden(true)) {
                                 Text("Family Promise")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(Font.custom("Circe", size: 20)).bold()
@@ -107,7 +109,8 @@ struct OrganizationListView: View {
                         HStack {
                             
                             // org 5
-                            NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
+                            NavigationLink(destination:        NonprofitProfile(name: "123 Spring Street Athens, GA 30605", items: ["toys,shoes"], aboutUs: "toys for tots", address: "123 street", site: "toysfortots.org", profileImg: "ToysForTots", operationHours: "8am - 5pm Mon - Fri")
+                                .navigationBarBackButtonHidden(true)) {
                                 Text("Athens Land Trust")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(Font.custom("Circe", size: 20)).bold()
@@ -120,7 +123,8 @@ struct OrganizationListView: View {
                                 .frame(width: 35)
                             
                             // org 6
-                            NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
+                            NavigationLink(destination:        NonprofitProfile(name: "123 Spring Street Athens, GA 30605", items: ["toys,shoes"], aboutUs: "toys for tots", address: "123 street", site: "toysfortots.org", profileImg: "ToysForTots", operationHours: "8am - 5pm Mon - Fri")
+                                .navigationBarBackButtonHidden(true)) {
                                 Text("Mercy Health")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(Font.custom("Circe", size: 20)).bold()
@@ -135,7 +139,7 @@ struct OrganizationListView: View {
                         HStack {
                             
                             // org 7
-                            NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
+                            NavigationLink(destination:        NonprofitProfile(name: "123 Spring Street Athens, GA 30605", items: ["toys,shoes"], aboutUs: "toys for tots", address: "123 street", site: "toysfortots.org", profileImg: "ToysForTots", operationHours: "8am - 5pm Mon - Fri").navigationBarBackButtonHidden(true)) {
                                 Text("Athens Area Homeless Shelter")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(Font.custom("Circe", size: 20)).bold()
@@ -147,7 +151,8 @@ struct OrganizationListView: View {
                                 .frame(width: 35)
                             
                             // org 8
-                            NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
+                            NavigationLink(destination:        NonprofitProfile(name: "123 Spring Street Athens, GA 30605", items: ["toys,shoes"], aboutUs: "toys for tots", address: "123 street", site: "toysfortots.org", profileImg: "ToysForTots", operationHours: "8am - 5pm Mon - Fri")
+                                .navigationBarBackButtonHidden(true)) {
                                 Text("Athens Regional Library System")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(Font.custom("Circe", size: 20)).bold()
@@ -162,7 +167,8 @@ struct OrganizationListView: View {
                         HStack {
                             
                             // tag 1
-                            NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
+                            NavigationLink(destination:        NonprofitProfile(name: "123 Spring Street Athens, GA 30605", items: ["toys,shoes"], aboutUs: "toys for tots", address: "123 street", site: "toysfortots.org", profileImg: "ToysForTots", operationHours: "8am - 5pm Mon - Fri")
+                                .navigationBarBackButtonHidden(true)) {
                                 Text("College Factory")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(Font.custom("Circe", size: 20)).bold()
@@ -175,7 +181,7 @@ struct OrganizationListView: View {
                                 .frame(width: 35)
                             
                             // tag 2
-                            NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
+                            NavigationLink(destination:        NonprofitProfile(name: "123 Spring Street Athens, GA 30605", items: ["toys,shoes"], aboutUs: "toys for tots", address: "123 street", site: "toysfortots.org", profileImg: "ToysForTots", operationHours: "8am - 5pm Mon - Fri").navigationBarBackButtonHidden(true)) {
                                 Text("ACCA")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(Font.custom("Circe", size: 20)).bold()
@@ -193,7 +199,7 @@ struct OrganizationListView: View {
                             
                         } label: {
                             Image(systemName: "arrow.uturn.backward")
-                                .font(.system(size: 30))
+                                .font(.system(size: 22))
                                 .foregroundColor(.black)
                         }
                     }

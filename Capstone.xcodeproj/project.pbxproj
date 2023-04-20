@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		290B9FE929E89FBA003854FB /* Nonprofit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290B9FE829E89FBA003854FB /* Nonprofit.swift */; };
 		292D1B72298B1439003F7A6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 292D1B71298B1439003F7A6A /* GoogleService-Info.plist */; };
 		292D1B75298B1834003F7A6A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 292D1B74298B1834003F7A6A /* FirebaseFirestore */; };
 		292D1B77298B1834003F7A6A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 292D1B76298B1834003F7A6A /* FirebaseStorage */; };
@@ -66,6 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		290B9FE829E89FBA003854FB /* Nonprofit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nonprofit.swift; sourceTree = "<group>"; };
 		292D1B71298B1439003F7A6A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		292D1B7A298B33D3003F7A6A /* ImageLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLibrary.swift; sourceTree = "<group>"; };
 		2940246629D0F0220000E263 /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				2962B92F29A0B9D800310AFF /* ImagePicker.swift */,
 				292D1B7A298B33D3003F7A6A /* ImageLibrary.swift */,
 				2962B93529A0C2B900310AFF /* ImageClassifier.swift */,
+				290B9FE829E89FBA003854FB /* Nonprofit.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				2962B93429A0C1B000310AFF /* Classifier.swift in Sources */,
 				37BFE21129B122510065979D /* TagListView.swift in Sources */,
 				37F0283E29A2AF12006197A2 /* ImagesView.swift in Sources */,
+				290B9FE929E89FBA003854FB /* Nonprofit.swift in Sources */,
 				37AF19E029E71C7400A122A3 /* SignUp.swift in Sources */,
 				37BD936229C37F3E003F01D9 /* ProfileSettings.swift in Sources */,
 				37F0284029A2AF47006197A2 /* UploadView.swift in Sources */,

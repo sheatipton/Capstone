@@ -13,10 +13,18 @@ struct NonprofitProfile: View {
     @Environment(\.dismiss) private var dismiss
     
     // matthew : pull vars from nonprofit db
-    @State private var name = "Toys For Tots"
-    @State private var address = "123 Spring Street Athens, GA 30605"
-    @State private var imgPath = "ToysForTots"
-    @State private var sitePath = "mysite.net"
+//    @State private var name = "Toys For Tots"
+//    @State private var address = "123 Spring Street Athens, GA 30605"
+//    @State private var imgPath = "ToysForTots"
+//    @State private var sitePath = "mysite.net"
+    @State public var name: String
+    @State public var items: [String]
+    @State public var aboutUs: String
+    @State public var address: String
+    @State public var site: String
+    @State public var profileImg: String
+    @State public var operationHours: String
+    
     
     var body: some View {
         
@@ -48,7 +56,7 @@ struct NonprofitProfile: View {
                     Text("Our Hours")
                         .font(Font.custom("Norwester", size: 20))
                         .foregroundColor(Color(red: 196/255, green: 87/255, blue: 47/255))
-                    Text("8am - 5pm, Monday - Friday")
+                    Text(operationHours)
                         .font(Font.custom("Circe", size: 20))
                     
                     VStack {
@@ -58,24 +66,33 @@ struct NonprofitProfile: View {
                         Text("About Us")
                             .font(Font.custom("Norwester", size: 22))
                             .foregroundColor(Color(red: 196/255, green: 87/255, blue: 47/255))
-                        Text("97% of your donation goes to our mission of providing toys, books and other gifts to less fortunate children. The 3% spent on support principally covers fundraising expenses – not one donated dollar goes to pay for salaries or any other manpower costs.")
+                        Text(aboutUs)
                             .padding([.leading, .trailing, .bottom], 30)
                             .font(Font.custom("Circe", size: 20))
                         
                         Text("We're looking for...")
                             .foregroundColor(Color(red: 196/255, green: 87/255, blue: 47/255))
                             .font(Font.custom("Norwester", size: 22))
-                        Text("Children's clothing, shoes, toys, etc.")
+                        
+                        ForEach(items, id: \.self) { item in
+                            Text(item)
                             .font(Font.custom("Circe", size: 20))
                             .padding([.leading, .trailing, .bottom], 30)
+                        }
+                      
                     }
                     
                     HStack {
-                        Image(imgPath)
-                            .resizable()
-                            .clipped()
-                            .scaledToFit()
-                            .frame(width: 165, height: 150, alignment: .center)
+                
+                        AsyncImage(url: URL(string: profileImg), content: { img in
+                            img
+                                .resizable()
+                                .clipped()
+                                .scaledToFit()
+                                .frame(width: 165, height: 150, alignment: .center)
+                        }, placeholder: {
+                            
+                        }  )
                         
                         Spacer()
                             .frame(width: 20)
@@ -83,7 +100,7 @@ struct NonprofitProfile: View {
                             Text("Learn more at")
                                 .foregroundColor(Color(red: 196/255, green: 87/255, blue: 47/255))
                                 .font(Font.custom("Norwester", size: 20))
-                            Text(sitePath)
+                            Text(site)
                                 .font(Font.custom("Circe", size: 20))
                         }
                     }
@@ -115,6 +132,6 @@ struct NonprofitProfile: View {
 
 struct NonprofitProfile_Previews: PreviewProvider {
     static var previews: some View {
-        NonprofitProfile()
+        NonprofitProfile(name: "123 Spring Street Athens, GA 30605", items: ["toys,shoes"], aboutUs: "toys for tots", address: "123 street", site: "toysfortots.org", profileImg: "ToysForTots", operationHours: "8am - 5pm Mon - Fri")
     }
 }

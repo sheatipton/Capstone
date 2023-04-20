@@ -45,7 +45,8 @@ struct Browse: View {
                                 .frame(maxWidth: 300)
                                 .padding()
                             
-                            NavigationLink(destination: Results().navigationBarBackButtonHidden(true)) {
+                            NavigationLink(destination: Results(item: "string")
+                                .navigationBarBackButtonHidden(true)) {
                                 Image(systemName: "arrow.right.circle")
                                     .font(.system(size: 35))
                                     .foregroundColor(.black)
@@ -179,11 +180,7 @@ struct Browse: View {
                             
                             // tag 8
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
-<<<<<<< HEAD
-                                Text("Kitchen")
-=======
                                 Text("Hygiene")
->>>>>>> 20117b083a2c8d23972d35c2ec4bdc743778a73b
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(Font.custom("Circe", size: 22))
                                     .foregroundColor(.black)

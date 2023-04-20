@@ -24,7 +24,11 @@ func registerDonor(email:String, password:String, userName: String, fullName: St
             let userObj = User(uid: uid,
                             name: fullName,
                             userName: userName,
-                            role: "donor"
+                            role: "donor",
+                            profileimg: "ProfilePlaceholder",
+                            images: []
+                            
+                            
                             
             )
             do {

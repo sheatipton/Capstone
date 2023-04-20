@@ -6,6 +6,11 @@
 //
 
 import SwiftUI
+import FirebaseStorage
+import FirebaseFirestore
+import FirebaseAuth
+import FirebaseFirestoreSwift
+import Firebase
 
 struct Results: View {
     
@@ -13,6 +18,8 @@ struct Results: View {
 
     
     // create results array
+    @State public var item: String
+    @State public var matchedNonprofits: [Nonprofit] = []
     
     var body: some View {
         
@@ -25,71 +32,7 @@ struct Results: View {
                 ScrollView {
                     
                     VStack {
-<<<<<<< HEAD
-                        Text("Results")
-                            .frame(maxWidth: .infinity, alignment: .center)
-                            .font(.largeTitle).bold()
-                        
-                        Spacer()
-                            .frame(height: 40)
-                        
-                        Text("Organizations accepting your item:")
-                            .font(.system(size: 20))
-                        
-                        Spacer()
-                            .frame(height: 40)
-                        
-                        NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
-                            HStack {
-                                Text("ToysForTots").bold()
-                                    .font(.headline)
-                                    .foregroundColor(Color.black)
-                                    //.offset(x: -75)
-                                Image(systemName: "arrow.forward")
-                                    .foregroundColor(.black)
-                                    .font(.system(size: 20))
-                                   // .offset(x: -75)
-                            }
-                        }
-                        
-                        Spacer()
-                            .frame(height: 20)
-                        
-                        NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
-                            HStack {
-                                Text("Athens Community Council on Aging").bold()
-                                    .font(.headline)
-                                    .foregroundColor(Color.black)
-                                    //.offset(x: -75)
-                                Image(systemName: "arrow.forward")
-                                    .foregroundColor(.black)
-                                    .font(.system(size: 20))
-                                    //.offset(x: -75)
-                            }
-                        }
-                        
-                        Spacer()
-                            .frame(height: 20)
-                        
-                        NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
-                            HStack {
-                                Text("Acceptance Recovery Center").bold()
-                                    .font(.headline)
-                                    .foregroundColor(Color.black)
-                                   
-                                Image(systemName: "arrow.forward")
-                                    .foregroundColor(.black)
-                                    .font(.system(size: 20))
-                                    //.offset(x: -75)
-                            }
-                        }
-                   
-                        Spacer()
-                            .frame(height: 70)
-                        
-=======
                         // if no results
->>>>>>> 20117b083a2c8d23972d35c2ec4bdc743778a73b
                         /*Text("There are no organizations accepting that item right now.")
                          .font(Font.custom("Norwester", size: 35))
                          
@@ -131,67 +74,76 @@ struct Results: View {
                             
                             // matthew : same concept as tag view page
                             // start code
-                            NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
-                                HStack {
-                                    Text("BooksForKeeps").bold()
-                                        .font(Font.custom("Circe", size: 24))
-                                        .foregroundColor(Color.black)
-                                    //.offset(x: -75)
-                                    Image(systemName: "arrow.forward")
-                                        .foregroundColor(.black)
-                                        .font(.system(size: 20))
-                                    // .offset(x: -75)
-                                }
-                            }
-                            
-                            Spacer()
-                                .frame(height: 20)
-                            // end code
-                            
-                            NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
-                                HStack {
-                                    Text("ACCA").bold()
-                                        .font(Font.custom("Circe", size: 24))
-                                        .foregroundColor(Color.black)
-                                    //.offset(x: -75)
-                                    Image(systemName: "arrow.forward")
-                                        .foregroundColor(.black)
-                                        .font(.system(size: 20))
-                                    //.offset(x: -75)
-                                }
-                            }
-                            
-                            Spacer()
-                                .frame(height: 20)
-                            
-                            NavigationLink(destination: NonprofitProfile().navigationBarBackButtonHidden(true)) {
-                                HStack {
-                                    Text("Acceptance Recovery Center").bold()
-                                        .font(Font.custom("Circe", size: 24))
-                                        .foregroundColor(Color.black)
+                            if matchedNonprofits.count > 0 {
+                                ForEach(matchedNonprofits) { np in
+                                    NavigationLink(destination: NonprofitProfile(name: np.name!, items: np.items!,aboutUs: np.aboutUs!, address: np.address!, site: np.site!, profileImg: np.profileImg!, operationHours:np.operationHours!)
+                                        .navigationBarBackButtonHidden(true)) {
+                                            HStack {
+                                                Text(np.name!).bold()
+                                                    .font(Font.custom("Circe", size: 24))
+                                                    .foregroundColor(Color.black)
+                                                //.offset(x: -75)
+                                                Image(systemName: "arrow.forward")
+                                                    .foregroundColor(.black)
+                                                    .font(.system(size: 20))
+                                                // .offset(x: -75)
+                                            }
+                                        }
                                     
-                                    Image(systemName: "arrow.forward")
-                                        .foregroundColor(.black)
-                                        .font(.system(size: 20))
-                                    //.offset(x: -75)
+                                    Spacer()
+                                        .frame(height: 20)
                                 }
+                                // end code
+                                
+                                //                            NavigationLink(destination: NonprofitProfile(name: "123 Spring Street Athens, GA 30605", items: ["toys,shoes"], aboutUs: "toys for tots", address: "123 street", site: "toysfortots.org", profileImg: "ToysForTots", operationHours: "8am - 5pm Mon - Fri")
+                                //                                .navigationBarBackButtonHidden(true)) {
+                                //                                HStack {
+                                //                                    Text("ACCA").bold()
+                                //                                        .font(Font.custom("Circe", size: 24))
+                                //                                        .foregroundColor(Color.black)
+                                //                                    //.offset(x: -75)
+                                //                                    Image(systemName: "arrow.forward")
+                                //                                        .foregroundColor(.black)
+                                //                                        .font(.system(size: 20))
+                                //                                    //.offset(x: -75)
+                                //                                }
+                                //                            }
+                                //
+                                //                            Spacer()
+                                //                                .frame(height: 20)
+                                //
+                                //                            NavigationLink(destination: NonprofitProfile(name: "123 Spring Street Athens, GA 30605", items: ["toys,shoes"], aboutUs: "toys for tots", address: "123 street", site: "toysfortots.org", profileImg: "ToysForTots", operationHours: "8am - 5pm Mon - Fri")
+                                //                                .navigationBarBackButtonHidden(true)) {
+                                //                                HStack {
+                                //                                    Text("Acceptance Recovery Center").bold()
+                                //                                        .font(Font.custom("Circe", size: 24))
+                                //                                        .foregroundColor(Color.black)
+                                //
+                                //                                    Image(systemName: "arrow.forward")
+                                //                                        .foregroundColor(.black)
+                                //                                        .font(.system(size: 20))
+                                //                                    //.offset(x: -75)
+                                //                                }
+                                //                            }
+                                //
+                                //                            Spacer()
+                                //                                .frame(height: 70)
+                            } else {
+                                Text("There are no organizations accepting that item right now.")
+                                    .font(Font.custom("Circe", size: 22))
+                                    .foregroundColor(Color.black)
                             }
-                            
-                            Spacer()
-                                .frame(height: 70)
-                            
-                            /*Text("There are no organizations accepting that item right now.")
-                             .font(.system(size: 16))
                              
                              Spacer()
                              .frame(height: 20)
                              
-                             Text("We will notify you when an organization is in need of that item.")
-                             .font(.system(size: 16))
+//                             Text("We will notify you when an organization is in need of that item.")
+//                                .font(Font.custom("Circe", size: 22))
+//                                .foregroundColor(Color(red: 196/255, green: 87/255, blue: 47/255))
                              
                              Spacer()
                              .frame(height: 50)
-                             */
+                             
                         }
                         
                         VStack {
@@ -232,11 +184,93 @@ struct Results: View {
                 }
             }
         }
+        .onAppear {
+            matchItem()
+        }
+    }
+    func matchItem() {
+        let db = Firestore.firestore()
+        let collectionRef = db.collection("Nonprofits")
+        
+        collectionRef.getDocuments() { (querySnapshot, error) in
+            if error == nil {
+                let filterDocuments = querySnapshot!.documents.filter { document in
+                    guard let items = document.get("items") as? [String] else {
+                        return false
+                    }
+                    return items.contains { items in
+                        return items.contains(item.lowercased())
+                    }
+                    
+                }
+                DispatchQueue.main.async {
+                    
+                    self.matchedNonprofits = filterDocuments.map { d in
+                        
+                        return Nonprofit(
+                            nid: d["nid"] as? String ?? "",
+                            name: d["name"] as? String ?? "",
+                            items: d["items"] as? [String] ?? [],
+                            headline: d["headline"] as? String ?? "",
+                            headlineImage: d["headlineImage"] as? String ?? "",
+                            aboutUs: d["aboutUs"] as? String ?? "",
+                            address: d["address"] as? String ?? "",
+                            site: d["site"] as? String ?? "",
+                            profileImg: d["profileImg"] as? String ?? "",
+                            operationHours: d["operationHours"] as? String ?? ""
+                        )
+                    }
+                    
+                }
+
+                
+                
+            } else {
+                
+            }
+            
+            
+        }
+        
+//        let query = collectionRef.whereField("items", arrayContains: item)
+        
+        // Execute the query
+//        query.getDocuments() { (querySnapshot, error) in
+//            if error == nil {
+//                if let querySnapshot = querySnapshot {
+//
+//                    DispatchQueue.main.async {
+//
+//                        self.matchedNonprofits = querySnapshot.documents.map { d in
+//
+//                            return Nonprofit(
+//                                nid: d["nid"] as? String ?? "",
+//                                name: d["name"] as? String ?? "",
+//                                items: d["items"] as? [String] ?? [],
+//                                headline: d["headline"] as? String ?? "",
+//                                headlineImage: d["headlineImage"] as? String ?? "",
+//                                aboutUs: d["aboutUs"] as? String ?? "",
+//                                address: d["address"] as? String ?? "",
+//                                site: d["site"] as? String ?? "",
+//                                profileImg: d["profileImg"] as? String ?? "",
+//                                operationHours: d["operationHours"] as? String ?? ""
+//                            )
+//                        }
+//
+//                    }
+//                }
+//            } else {
+//
+//            }
+//
+//
+//        }
+        
     }
 }
 
 struct Results_Previews: PreviewProvider {
     static var previews: some View {
-        Results()
+        Results(item: "water bottle")
     }
 }

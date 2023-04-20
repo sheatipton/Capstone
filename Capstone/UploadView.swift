@@ -8,6 +8,8 @@
 import SwiftUI
 import FirebaseStorage
 import FirebaseFirestore
+import FirebaseAuth
+import FirebaseFirestoreSwift
 
 struct UploadView: View {
     
@@ -95,9 +97,9 @@ struct UploadView: View {
                             Spacer()
                                 .frame(height: 15)
                             
-                            NavigationLink(destination: ItemDescription(uiImage: uiImage, imageString: imageString).navigationBarBackButtonHidden(true).onAppear {
+                            NavigationLink(destination: ItemDescription(uiImage: uiImage, imageString: imageString).navigationBarBackButtonHidden(true).simultaneousGesture(TapGesture().onEnded {
                                 uploadPhoto()
-                            }) {
+                            })) {
                                 Text("Upload")
                                     .font(Font.custom("Circe", size: 20))
                                     .foregroundColor(.white).bold()
@@ -239,11 +241,18 @@ struct UploadView: View {
             
             if error == nil && metadata != nil {
                 let db = Firestore.firestore()
-                db.collection("images").document().setData(["imgPath":path]) { error in
-                    if error == nil {
-                        DispatchQueue.main.async {
-                            //retrievedImages.append(self.uiImage!)
-                            ImagesView().appendImage(image: self.uiImage!)
+                if let user = Auth.auth().currentUser {
+                    
+                    let dataToUpdate: [String: Any] = [
+                        "images": FieldValue.arrayUnion([path])
+                    ]
+                    
+                    db.collection("Users").document(user.uid  ).setData(dataToUpdate, merge: true) { error in
+                        if error == nil {
+                            print("no error")
+                        } else {
+                            print("error")
+                            
                         }
                     }
                 }

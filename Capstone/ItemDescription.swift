@@ -35,55 +35,6 @@ struct ItemDescription: View {
                 
                 ScrollView {
                     
-<<<<<<< HEAD
-                    Text("Item Information")
-                        .font(.largeTitle).foregroundColor(Color.black)
-                        .padding(.top, 20)
-                    
-                    //Image(uiImage: uiImage!)
-                    
-                    Image("ImagePlaceholder")
-                        .resizable()
-                        .frame(width: 200, height: 250)
-                        //.padding(.top, 10)
-                    
-                    Spacer()
-                        .frame(height: 30)
-                    
-                    Text("Item: \(imageString!)")
-                        .padding()
-                        .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
-                        .frame(minWidth: 0, maxWidth: 340)
-                        .background(Color(red: 244, green: 244, blue: 244))
-                    
-                    TextField("Color", text: self.$color)
-                        .padding()
-                        .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
-                        .frame(minWidth: 0, maxWidth: 340)
-                        .background(Color(red: 244, green: 244, blue: 244))
-                    
-                    TextField("Size", text: self.$size)
-                        .padding()
-                        .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
-                        .frame(minWidth: 0, maxWidth: 340)
-                        .background(Color(red: 244, green: 244, blue: 244))
-                    
-                    TextField("Condition", text: self.$condition)
-                        .padding()
-                        .font(.system(size: 20, design: .rounded)) .padding(.horizontal)
-                        .frame(minWidth: 0, maxWidth: 340)
-                        .background(Color(red: 244, green: 244, blue: 244))
-                    
-                    Spacer()
-                        .frame(height: 40)
-                    
-                    NavigationLink(destination: Results().navigationBarBackButtonHidden(true).onAppear {
-                        uploadData()
-                        getResults()}) {
-                        Text("Continue")
-                            .font(.system(.body, design: .rounded))
-                            .foregroundColor(.white).bold()
-=======
                     VStack {
                         
                         Spacer()
@@ -92,8 +43,8 @@ struct ItemDescription: View {
                         Text("Item Information")
                             .font(Font.custom("Norwester", size: 35))
                         
-                        Image(uiImage: uiImage!)
-                        //Image("ImagePlaceholder")  // use this one for simulator
+                        //Image(uiImage: uiImage!)
+                        Image("ImagePlaceholder")  // use this one for simulator
                             .resizable()
                             .frame(width: 200, height: 250)
                             .border(Color(red: 196/255, green: 87/255, blue: 47/255), width: 2)
@@ -101,9 +52,8 @@ struct ItemDescription: View {
                         Spacer()
                             .frame(height: 30)
                         
-                        Text(imageString!)
+                        Text(imageString ?? " item ")
                         //Text("item") // use this one for simulator
->>>>>>> 20117b083a2c8d23972d35c2ec4bdc743778a73b
                             .padding()
                             .font(Font.custom("Circe", size: 20))
                             .frame(minWidth: 0, maxWidth: 340)
@@ -130,8 +80,8 @@ struct ItemDescription: View {
                         Spacer()
                             .frame(height: 40)
                         
-                        NavigationLink(destination: Results().navigationBarBackButtonHidden(true).onAppear {
-                            getResults()}) {
+                        NavigationLink(destination: Results(item: imageString ?? "")
+                            .navigationBarBackButtonHidden(true)) {
                                 Text("Continue")
                                     .font(Font.custom("Circe", size: 20))
                                     .foregroundColor(.white).bold()

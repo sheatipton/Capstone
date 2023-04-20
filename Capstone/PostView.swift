@@ -12,10 +12,14 @@ struct PostView: View {
     @Environment(\.dismiss) private var dismiss
     
     // matthew : pull vars from posts table
-    @State private var postid = "0"
-    @State private var postImage = "PostImage" // optional
-    @State private var postCreator = "Project Hope"
-    @State private var postContent = "Help after the Hurricane! Project HOPE is taking donations for water, food, and general emergency supplies to those affected by Hurricane Ida. Donations are being accepted at our Athens location until the end of this month."
+//    @State private var postid = "0"
+//    @State private var postImage = "PostImage" // optional
+//    @State private var postCreator = "Project Hope"
+//    @State private var postContent = "Help after the Hurricane! Project HOPE is taking donations for water, food, and general emergency supplies to those affected by Hurricane Ida. Donations are being accepted at our Athens location until the end of this month."
+    @State public var postImage: String
+    @State public var postCreator: String
+    @State public var postContent: String
+
   
     var body: some View {
         
@@ -54,11 +58,16 @@ struct PostView: View {
                             .frame(height: 30)
                         
                         if (postImage != nil) {
-                            Image(postImage)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(maxWidth: 350, maxHeight: 350)
-                                .border(Color(red: 196/255, green: 87/255, blue: 47/255), width: 5)
+                            AsyncImage(url: URL(string: postImage), content: { img in
+                                img
+                                    .resizable()
+                                    .clipped()
+                                    .scaledToFit()
+                                    .frame(width: 165, height: 150, alignment: .center)
+                            }, placeholder: {
+                                
+                            }  )
+                             
                         }
                     }
                     
@@ -82,6 +91,6 @@ struct PostView: View {
 
 struct PostView_Previews: PreviewProvider {
     static var previews: some View {
-        PostView()
+        PostView(postImage: "https://w7.pngwing.com/pngs/39/192/png-transparent-santa-claus-christmas-gift-christmas-gift-christmas-presents-plush-toys-and-gift-box-illustration-toy-block-christmas-toy.png", postCreator: "Project Hope", postContent: "Help after the Hurricane! Project HOPE is taking donations for water, food, and general emergency supplies to those affected by Hurricane Ida. Donations are being accepted at our Athens location until the end of this month")
     }
 }

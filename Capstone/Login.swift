@@ -13,7 +13,7 @@ struct Login: View {
     
     @State private var email = ""
     @State private var password = ""
-
+    @State private var loginFailure = false
     var body: some View {
         
         NavigationView {
@@ -22,9 +22,10 @@ struct Login: View {
                 Color(red: 255/255, green: 249/255, blue: 245/255)
                     .ignoresSafeArea()
                 
-                VStack() {
+                VStack {
                     
-                    NavigationLink(destination: Home().navigationBarBackButtonHidden(true)) {
+                    NavigationLink(destination: Home()
+                        .navigationBarBackButtonHidden(true)) {
                         Image("FawnLogo")
                             .resizable()
                             .scaledToFit()
@@ -38,6 +39,7 @@ struct Login: View {
                     Spacer()
                         .frame(height: 50)
                     
+                         
                         Text("Username")
                             .font(Font.custom("Norwester", size: 20)).foregroundColor(Color.black)
                             .offset(x: -100, y: 5)
@@ -61,10 +63,12 @@ struct Login: View {
                         .background(Color(red: 248/255, green: 190/255, blue: 169/255))
                         .cornerRadius(15.0)
                         .padding(.bottom, 50)
-                    
                     Button("Sign In") {
-                        signInDonor(email: email, password: password)
-                        dismiss()
+                       // DispatchQueue.main.async {
+                            signInDonor(email: email, password: password)
+                            dismiss()
+                        
+                        //}
                     }
                     .font(Font.custom("Circe", size: 20))
                     .foregroundColor(.white)
@@ -74,14 +78,14 @@ struct Login: View {
                     .cornerRadius(25.0)
                     
                     Spacer()
-                        //.frame(height:)
                     
+                        //.frame(height:)
                     HStack {
                         Text("Don't have an account?")
                             .font(Font.custom("Norwester", size: 20)).foregroundColor(Color.black)
-
                         
-                        NavigationLink(destination: SignUp().navigationBarBackButtonHidden(true)) {
+                        NavigationLink(destination: SignUp()
+                            .navigationBarBackButtonHidden(true)) {
                             Text("Create one").underline()
                                 .font(Font.custom("Norwester", size: 20))
                                 .foregroundColor(Color(red: 196/255, green: 87/255, blue: 47/255))
