@@ -15,7 +15,7 @@ import Firebase
 struct Results: View {
     
     @Environment(\.dismiss) private var dismiss
-
+    
     
     // create results array
     @State public var item: String
@@ -133,21 +133,13 @@ struct Results: View {
                                     .font(Font.custom("Circe", size: 22))
                                     .foregroundColor(Color.black)
                             }
-                             
-                             Spacer()
-                             .frame(height: 20)
-                             
-//                             Text("We will notify you when an organization is in need of that item.")
-//                                .font(Font.custom("Circe", size: 22))
-//                                .foregroundColor(Color(red: 196/255, green: 87/255, blue: 47/255))
-                             
-                             Spacer()
-                             .frame(height: 50)
-                             
-                        }
-                        
-                        VStack {
                             
+                            Spacer()
+                                .frame(height: 20)
+                            
+                            //                             Text("We will notify you when an organization is in need of that item.")
+                            //                                .font(Font.custom("Circe", size: 22))
+                            //                                .foregroundColor(Color(red: 196/255, green: 87/255, blue: 47/255))
                             NavigationLink(destination: OrganizationListView().navigationBarBackButtonHidden(true)) {
                                 Text("Browse Organizations")
                                     .frame(minWidth: 170,  maxWidth: 220, minHeight: 85,  maxHeight: 85)
@@ -157,7 +149,7 @@ struct Results: View {
                             }
                             
                             Spacer()
-                                .frame(height: 20)
+                                .frame(height: 50)
                             
                             NavigationLink(destination: TagListView().navigationBarBackButtonHidden(true)) {
                                 Text("Browse Tags")
@@ -166,6 +158,8 @@ struct Results: View {
                                     .foregroundColor(.black)
                                     .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                             }
+                            
+                            
                         }
                         Spacer()
                     }
@@ -176,97 +170,97 @@ struct Results: View {
                                 
                             } label: {
                                 Image(systemName: "arrow.uturn.backward")
-                                    .font(.system(size: 30))
+                                    .font(.system(size: 22))
                                     .foregroundColor(.black)
                             }
                         }
                     }
                 }
             }
-        }
-        .onAppear {
-            matchItem()
+            .onAppear {
+                matchItem()
+            }
         }
     }
-    func matchItem() {
-        let db = Firestore.firestore()
-        let collectionRef = db.collection("Nonprofits")
-        
-        collectionRef.getDocuments() { (querySnapshot, error) in
-            if error == nil {
-                let filterDocuments = querySnapshot!.documents.filter { document in
-                    guard let items = document.get("items") as? [String] else {
-                        return false
-                    }
-                    return items.contains { items in
-                        return items.contains(item.lowercased())
-                    }
-                    
-                }
-                DispatchQueue.main.async {
-                    
-                    self.matchedNonprofits = filterDocuments.map { d in
+        func matchItem() {
+            let db = Firestore.firestore()
+            let collectionRef = db.collection("Nonprofits")
+            
+            collectionRef.getDocuments() { (querySnapshot, error) in
+                if error == nil {
+                    let filterDocuments = querySnapshot!.documents.filter { document in
+                        guard let items = document.get("items") as? [String] else {
+                            return false
+                        }
+                        return items.contains { items in
+                            return items.contains(item.lowercased())
+                        }
                         
-                        return Nonprofit(
-                            nid: d["nid"] as? String ?? "",
-                            name: d["name"] as? String ?? "",
-                            items: d["items"] as? [String] ?? [],
-                            headline: d["headline"] as? String ?? "",
-                            headlineImage: d["headlineImage"] as? String ?? "",
-                            aboutUs: d["aboutUs"] as? String ?? "",
-                            address: d["address"] as? String ?? "",
-                            site: d["site"] as? String ?? "",
-                            profileImg: d["profileImg"] as? String ?? "",
-                            operationHours: d["operationHours"] as? String ?? ""
-                        )
+                    }
+                    DispatchQueue.main.async {
+                        
+                        self.matchedNonprofits = filterDocuments.map { d in
+                            
+                            return Nonprofit(
+                                nid: d["nid"] as? String ?? "",
+                                name: d["name"] as? String ?? "",
+                                items: d["items"] as? [String] ?? [],
+                                headline: d["headline"] as? String ?? "",
+                                headlineImage: d["headlineImage"] as? String ?? "",
+                                aboutUs: d["aboutUs"] as? String ?? "",
+                                address: d["address"] as? String ?? "",
+                                site: d["site"] as? String ?? "",
+                                profileImg: d["profileImg"] as? String ?? "",
+                                operationHours: d["operationHours"] as? String ?? ""
+                            )
+                        }
+                        
                     }
                     
+                    
+                    
+                } else {
+                    
                 }
-
                 
-                
-            } else {
                 
             }
             
+            //        let query = collectionRef.whereField("items", arrayContains: item)
+            
+            // Execute the query
+            //        query.getDocuments() { (querySnapshot, error) in
+            //            if error == nil {
+            //                if let querySnapshot = querySnapshot {
+            //
+            //                    DispatchQueue.main.async {
+            //
+            //                        self.matchedNonprofits = querySnapshot.documents.map { d in
+            //
+            //                            return Nonprofit(
+            //                                nid: d["nid"] as? String ?? "",
+            //                                name: d["name"] as? String ?? "",
+            //                                items: d["items"] as? [String] ?? [],
+            //                                headline: d["headline"] as? String ?? "",
+            //                                headlineImage: d["headlineImage"] as? String ?? "",
+            //                                aboutUs: d["aboutUs"] as? String ?? "",
+            //                                address: d["address"] as? String ?? "",
+            //                                site: d["site"] as? String ?? "",
+            //                                profileImg: d["profileImg"] as? String ?? "",
+            //                                operationHours: d["operationHours"] as? String ?? ""
+            //                            )
+            //                        }
+            //
+            //                    }
+            //                }
+            //            } else {
+            //
+            //            }
+            //
+            //
+            //        }
             
         }
-        
-//        let query = collectionRef.whereField("items", arrayContains: item)
-        
-        // Execute the query
-//        query.getDocuments() { (querySnapshot, error) in
-//            if error == nil {
-//                if let querySnapshot = querySnapshot {
-//
-//                    DispatchQueue.main.async {
-//
-//                        self.matchedNonprofits = querySnapshot.documents.map { d in
-//
-//                            return Nonprofit(
-//                                nid: d["nid"] as? String ?? "",
-//                                name: d["name"] as? String ?? "",
-//                                items: d["items"] as? [String] ?? [],
-//                                headline: d["headline"] as? String ?? "",
-//                                headlineImage: d["headlineImage"] as? String ?? "",
-//                                aboutUs: d["aboutUs"] as? String ?? "",
-//                                address: d["address"] as? String ?? "",
-//                                site: d["site"] as? String ?? "",
-//                                profileImg: d["profileImg"] as? String ?? "",
-//                                operationHours: d["operationHours"] as? String ?? ""
-//                            )
-//                        }
-//
-//                    }
-//                }
-//            } else {
-//
-//            }
-//
-//
-//        }
-        
-    }
 }
 
 struct Results_Previews: PreviewProvider {

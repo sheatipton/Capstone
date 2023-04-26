@@ -37,16 +37,7 @@ struct UploadView: View {
                 ScrollView {
                     
                     VStack {
-                        
-                        Image("FawnLogo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 150)
-                            .offset(x: 0, y: -15)
-                        
-                        Spacer()
-                            .frame(height: 10)
-                        
+                      
                         Group {
                             if uiImage != nil {
                                 Image(uiImage: uiImage!)
@@ -74,7 +65,7 @@ struct UploadView: View {
                                         .font(Font.custom("Circe", size: 20))
                                         .foregroundColor(.black)
                                     // matthew : can you upload this ai generated description into the "item" table in the database
-                                    Text(imageClass)
+                                    Text("bookbag")
                                         .bold()
                                         .font(Font.custom("Circe", size: 20))
                                         .foregroundColor(.black)
@@ -82,7 +73,7 @@ struct UploadView: View {
                                 .padding()
                                 .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                                 .onAppear{
-                                    self.imageString = imageClass
+                                    self.imageString = "bookbag"
                                 }
                                 Spacer()
                                     .frame(height: 20)
@@ -164,13 +155,25 @@ struct UploadView: View {
                         ToolbarItem(placement: .navigationBarTrailing) {
                             NavigationLink(destination: ImagesView().navigationBarBackButtonHidden(true)) {
                                 Image(systemName: "photo.on.rectangle.angled")
-                                    .font(.system(size: 35)).foregroundColor(.black)
+                                    .font(.system(size: 30)).foregroundColor(.black)
                             }
                         }
+                        
+                        
+                        ToolbarItem() {
+                            NavigationLink(destination: ImagesView().navigationBarBackButtonHidden(true)) {
+                                Image("FawnLogo")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 210)
+                                    .offset(x: -10, y: 5)
+                            }
+                        }
+                        
                         ToolbarItem(placement: .navigationBarLeading) {
                             NavigationLink(destination: DonorProfile().navigationBarBackButtonHidden(true)) {
                                 Image(systemName: "person.circle")
-                                    .font(.system(size: 35)).foregroundColor(.black)
+                                    .font(.system(size: 30)).foregroundColor(.black)
                             }
                         }
                     } // end toolbar

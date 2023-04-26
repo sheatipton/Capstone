@@ -70,15 +70,15 @@ struct NonprofitProfile: View {
                             .padding([.leading, .trailing, .bottom], 30)
                             .font(Font.custom("Circe", size: 20))
                         
-                        Text("We're looking for...")
-                            .foregroundColor(Color(red: 196/255, green: 87/255, blue: 47/255))
-                            .font(Font.custom("Norwester", size: 22))
-                        
-                        ForEach(items, id: \.self) { item in
-                            Text(item)
-                            .font(Font.custom("Circe", size: 20))
-                            .padding([.leading, .trailing, .bottom], 30)
-                        }
+//                        Text("We're looking for...")
+//                            .foregroundColor(Color(red: 196/255, green: 87/255, blue: 47/255))
+//                            .font(Font.custom("Norwester", size: 22))
+//                        
+//                        ForEach(items, id: \.self) { item in
+//                            Text(item)
+//                            .font(Font.custom("Circe", size: 20))
+//                            .padding([.leading, .trailing, .bottom], 30)
+//                        }
                       
                     }
                     
@@ -120,7 +120,7 @@ struct NonprofitProfile: View {
                             
                         } label: {
                             Image(systemName: "arrow.uturn.backward")
-                                .font(.system(size: 30))
+                                .font(.system(size: 22))
                                 .foregroundColor(.black)
                         }
                     }

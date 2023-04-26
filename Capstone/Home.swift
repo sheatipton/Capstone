@@ -28,14 +28,8 @@ struct Home: View {
                 
                 ScrollView {
                     
-                    Image("FawnLogo")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 150)
-                        .offset(x: 0, y: -15)
-                    
                     Spacer()
-                        .frame(height: 10)
+                        .frame(height: 20)
                     
                     VStack {
                         //Text(authState.isUserAuthenticated ? "User is authenticated" : "User is not authenticated")
@@ -48,32 +42,60 @@ struct Home: View {
                                 NavigationLink(destination: NonprofitProfile(name: np.name!, items: np.items!,aboutUs: np.aboutUs!, address: np.address!, site: np.site!, profileImg: np.profileImg!, operationHours:np.operationHours!)
                                     .navigationBarBackButtonHidden(true)) {
                                         AsyncImage(url: URL(string: np.profileImg!), content: { img in
-                                            img
-                                                .resizable()
-                                                .scaledToFit()
-                                                .clipShape(Circle())
-                                                .padding()
-                                                .frame(width: 100, height: 100)
+                                            HStack {
+                                                img
+                                                    .resizable()
+//                                                    .scaledToFit()
+                                                    .clipShape(Circle())
+                                                    .padding()
+                                                   
+                                                    .frame(width: 100, height: 100)
+                                                
+                                                Text(np.name!)
+                                                    .font(Font.custom("Circe-Bold", size: 25)).bold()
+                                                    .foregroundColor(.black)
+                                                    .offset(x: -5, y: 0)
+                                                
+                                            }
+                                            .padding(.leading, 20)
+                                            
                                         }, placeholder: {
                                             
                                         }  )
+                                        
                                 }
                                 
-                                Text(np.name!)
-                                    .font(Font.custom("Norwester", size: 25)).bold()
+//                                Text(np.name!)
+//                                    .font(Font.custom("Norwester", size: 25)).bold()
                                 
                                 Spacer()
+  
                             }
                             
-                            NavigationLink(destination: PostView(postImage: np.headlineImage!, postCreator: np.name!, postContent: np.headline! ).navigationBarBackButtonHidden(true)) {
-                                Text(np.headline!)
-                                    .padding(30)
-                                    .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 1.5)
-                                    .foregroundColor(.black)
-                                    .font(Font.custom("Circe", size: 20))
-                                    .padding(.leading, 20)
-                                    .padding(.trailing, 20)
-                                    .padding(.bottom, 10)
+                            NavigationLink( destination: PostView(postImage: np.headlineImage!, postCreator: np.name!, postContent: np.headline! ).navigationBarBackButtonHidden(true)) {
+                                VStack {
+                                    Text(np.headline!)
+                                        .padding([.leading, .trailing], 20)
+                                    //                                    .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 1.5)
+                                        .foregroundColor(.black)
+                                        .font(Font.custom("Circe", size: 20))
+                                        .padding(.leading, 20)
+                                        .padding(.trailing, 20)
+                                        .padding(.bottom, 10)
+                                        .multilineTextAlignment(.leading)
+                                    
+                                    AsyncImage(url: URL(string: np.headlineImage!), content: { img in
+                                        img
+                                            .resizable()
+                                            .clipped()
+                                            .scaledToFit()
+                                            .frame(width: 350, height: 250, alignment: .center)
+                                    }, placeholder: {
+                                        
+                                    }  )
+
+                                    
+                                }
                             }
                         }
                     }
@@ -87,14 +109,14 @@ struct Home: View {
                             .frame(height: 30)
                         Text("You're all caught up!")
                             .font(Font.custom("Circe", size: 30))
-                            .padding(.top, 20)
+                            .padding(.top, 30)
                         Spacer()
                             .frame(height: 25)
                         Image(systemName: "checkmark")
                             .font(.system(size: 35))
                             .foregroundColor(Color(red: 196/255, green: 87/255, blue: 47/255))
                         Spacer()
-                            .frame(height: 25)
+                            .frame(height: 50)
                     }
                 }
                 
@@ -108,12 +130,22 @@ struct Home: View {
                         }
                     }
                     
+                    ToolbarItem() {
+                        NavigationLink(destination: ImagesView().navigationBarBackButtonHidden(true)) {
+                            Image("FawnLogo")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 210)
+                                .offset(x: -10, y: 5)
+                        }
+                    }
+                    
                     ToolbarItem(placement: .navigationBarLeading) {
                         
                         NavigationLink(destination: setProfileIconDest(auth: authState.isUserAuthenticated)
                             .navigationBarBackButtonHidden(true)) {
                             Image(systemName: "person.circle")
-                                .font(.system(size: 35))
+                                .font(.system(size: 30))
                                 .foregroundColor(.black)
                         }
                   

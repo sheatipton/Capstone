@@ -54,7 +54,7 @@ struct ItemDescription: View {
                         
                         Text(imageString ?? " item ")
                         //Text("item") // use this one for simulator
-                            .padding()
+                        //.padding()
                             .font(Font.custom("Circe", size: 20))
                             .frame(minWidth: 0, maxWidth: 340)
                             .background(Color(red: 244, green: 244, blue: 244))

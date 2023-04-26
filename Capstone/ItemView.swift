@@ -37,6 +37,7 @@ struct ItemView: View {
                    
                     Image(imgPath)
                         .resizable()
+                        .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                         .frame(width: 350, height: 375)
                     
                     Spacer()
@@ -60,7 +61,7 @@ struct ItemView: View {
                             
                         } label: {
                             Image(systemName: "arrow.uturn.backward")
-                                .font(.system(size: 30))
+                                .font(.system(size: 22))
                                 .foregroundColor(.black)
                         }
                     }

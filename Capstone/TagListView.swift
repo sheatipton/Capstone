@@ -27,7 +27,7 @@ struct TagListView: View {
                     
                     VStack {
                         Text("Browse Tags")
-                            .font(Font.custom("Norwester", size: 20)).bold()
+                            .font(Font.custom("Norwester", size: 35))
                             .frame(maxWidth: .infinity, alignment: .center)
                         
                         // }
@@ -42,7 +42,7 @@ struct TagListView: View {
                             // loop to list each tag
                             // tag 1
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
-                                Text("Men's Clothing")
+                                Text("Women's Clothing")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(Font.custom("Circe", size: 20)).bold()
                                     .foregroundColor(.black)
@@ -55,7 +55,7 @@ struct TagListView: View {
                             // remove code below
                             // tag 2
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
-                                Text("Women's Clothing")
+                                Text("Men's Clothing")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(Font.custom("Circe", size: 20)).bold()
                                     .foregroundColor(.black)
@@ -71,7 +71,7 @@ struct TagListView: View {
                             
                             // tag 3
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
-                                Text("School Supplies")
+                                Text("Children's Clothing")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(Font.custom("Circe", size: 20)).bold()
                                     .foregroundColor(.black)
@@ -83,7 +83,7 @@ struct TagListView: View {
                             
                             // tag 4
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
-                                Text("Home")
+                                Text("Shoes")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(Font.custom("Circe", size: 20)).bold()
                                     .foregroundColor(.black)
@@ -99,7 +99,7 @@ struct TagListView: View {
                             
                             // tag 5
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
-                                Text("Accessories")
+                                Text("Food Items")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(Font.custom("Circe", size: 20)).bold()
                                     .foregroundColor(.black)
@@ -111,7 +111,7 @@ struct TagListView: View {
                             
                             // tag 6
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
-                                Text("Arts & Crafts")
+                                Text("Baby")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(Font.custom("Circe", size: 20)).bold()
                                     .foregroundColor(.black)
@@ -127,7 +127,7 @@ struct TagListView: View {
                             
                             // tag 7
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
-                                Text("Toys & Games")
+                                Text("Kitchen")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(Font.custom("Circe", size: 20)).bold()
                                     .foregroundColor(.black)
@@ -139,7 +139,7 @@ struct TagListView: View {
                             
                             // tag 8
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
-                                Text("Kitchen")
+                                Text("Toys & Games")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(Font.custom("Circe", size: 20)).bold()
                                     .foregroundColor(.black)
@@ -154,7 +154,7 @@ struct TagListView: View {
                             
                             // tag 7
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
-                                Text("Hygiene")
+                                Text("Health & Beauty")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(Font.custom("Circe", size: 20)).bold()
                                     .foregroundColor(.black)
@@ -166,7 +166,91 @@ struct TagListView: View {
                             
                             // tag 8
                             NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
-                                Text("Baby")
+                                Text("Accessories")
+                                    .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
+                                    .font(Font.custom("Circe", size: 20)).bold()
+                                    .foregroundColor(.black)
+                                    .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
+                            } // end tag 8
+                        }
+                    }
+                    
+                    VStack {
+                        
+                        Spacer()
+                            .frame(height: 25)
+                        
+                        HStack {
+                            
+                            // tag 7
+                            NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
+                                Text("Pets")
+                                    .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
+                                    .font(Font.custom("Circe", size: 20)).bold()
+                                    .foregroundColor(.black)
+                                    .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
+                            } // end tag 7
+                            
+                            Spacer()
+                                .frame(width: 35)
+                            
+                            // tag 8
+                            NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
+                                Text("Bed & Bath")
+                                    .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
+                                    .font(Font.custom("Circe", size: 20)).bold()
+                                    .foregroundColor(.black)
+                                    .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
+                            } // end tag 8
+                        }
+                        
+                        Spacer()
+                            .frame(height: 25)
+                        
+                        HStack {
+                            
+                            // tag 7
+                            NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
+                                Text("Home & Furniture")
+                                    .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
+                                    .font(Font.custom("Circe", size: 20)).bold()
+                                    .foregroundColor(.black)
+                                    .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
+                            } // end tag 7
+                            
+                            Spacer()
+                                .frame(width: 35)
+                            
+                            // tag 8
+                            NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
+                                Text("School Supplies")
+                                    .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
+                                    .font(Font.custom("Circe", size: 20)).bold()
+                                    .foregroundColor(.black)
+                                    .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
+                            } // end tag 8
+                        }
+                        
+                        Spacer()
+                            .frame(height: 25)
+                        
+                        HStack {
+                            
+                            // tag 7
+                            NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
+                                Text("Books")
+                                    .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
+                                    .font(Font.custom("Circe", size: 20)).bold()
+                                    .foregroundColor(.black)
+                                    .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
+                            } // end tag 7
+                            
+                            Spacer()
+                                .frame(width: 35)
+                            
+                            // tag 8
+                            NavigationLink(destination: TagView().navigationBarBackButtonHidden(true)) {
+                                Text("Electronics")
                                     .frame(minWidth: 170,  maxWidth: 170, minHeight: 85,  maxHeight: 85)
                                     .font(Font.custom("Circe", size: 20)).bold()
                                     .foregroundColor(.black)
@@ -183,7 +267,7 @@ struct TagListView: View {
                             
                         } label: {
                             Image(systemName: "arrow.uturn.backward")
-                                .font(.system(size: 30))
+                                .font(.system(size: 22))
                                 .foregroundColor(.black)
                         }
                     }
