@@ -64,7 +64,6 @@ struct UploadView: View {
                                     Text("Item Scanned: ")
                                         .font(Font.custom("Circe", size: 20))
                                         .foregroundColor(.black)
-                                    // matthew : can you upload this ai generated description into the "item" table in the database
                                     Text("bookbag")
                                         .bold()
                                         .font(Font.custom("Circe", size: 20))
@@ -193,15 +192,23 @@ struct UploadView: View {
                         .padding(.bottom, 20)
                     
                     VStack {
-                        Text("To get started, take or upload a clear photo of the item you want to donate.")
+                        Text("Fawn uses AI image recognition software to identify your photos. To ensure optimal results, there are some basic guidelines to follow when taking the picture. These guidelines include:")
                             .padding(.bottom, 5)
                             
-                        Text("Fawn will use AI to analyze your item and provide you with a description.")
+                        Text("1. Ensure that the object you want to be identified is in clear view and properly lit. Make sure there are no obstructions blocking the object or casting shadows on it.")
                             .padding(.bottom, 5)
                         
-                        Text("If the description is inaccurate, try using a photo with brighter lighting or at a different angle.")
+                        Text("2. Take the photo from a good angle that captures the object in its entirety, and with sufficient resolution to ensure that details are visible.")
                             .padding(.bottom, 5)
                         
+                        Text("3. If the object is part of a group or in a busy environment, try to isolate it by positioning the camera in a way that eliminates other distracting elements in the frame.")
+                            .padding(.bottom, 5)
+                            
+                        Text("4. Avoid blurring or distortion by holding the camera steady and avoiding any unnecessary movements.")
+                            .padding(.bottom, 5)
+                        
+                        Text("By following these instructions, you can increase the chances of the AI image recognition software being able to accurately identify the object in your photo.")
+                            .padding(.bottom, 5)
                     }.font(Font.custom("Circe", size: 25))
                         .padding([.leading, .trailing], 35)
                         

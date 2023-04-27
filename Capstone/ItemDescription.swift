@@ -12,18 +12,12 @@ struct ItemDescription: View {
     @Environment(\.dismiss) private var dismiss
     @State var uiImage: UIImage?
     @State private var item: String?
-    
-    // matthew : can you add these vars to the images database?
-    // matthew!! the error is here somewhere where the item variable is the first item scanned, if the user takes multiple attempts choosing a photo it won't show up right here
-    @State private var id = "" // auto increment variable?
-    // maybe move id to upload view so it is easier to identify on this view
-    
-    @State var imageString: String?// can you pull this variable from the ai generated
+    @State private var id = ""
+    @State var imageString: String?
     @State private var color = "Color: "
     @State private var size = "Size: "
     @State private var condition = "Condition: "
     @State private var date = Date()
-    @State private var status = false // this will be false for not donated, true for donated
     
     var body: some View {
         
@@ -107,10 +101,6 @@ struct ItemDescription: View {
                 }
             }
         }
-    }
-    
-    func getResults() {
-        // matthew todo : get results for nonprofits accepting "item"
     }
 }
 

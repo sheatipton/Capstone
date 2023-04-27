@@ -84,29 +84,13 @@ struct DonorProfile: View {
                         Text("Pending Donation").tag(0)
                             .font(Font.custom("Circe", size: 30))
                         Text("Donated").tag(1)
-                            .font(Font.custom("Circe", size: 30))
-//                        Text("Donated").tag(2)
-//                            .font(Font.custom("Circe", size: 30))
+                            .font(Font.custom("Circe", size: 30))                   
                     }
                     .pickerStyle(.segmented)
                     .frame(height: 60)
                     .scaleEffect(CGSize(width: 1, height: 1))
                     .scaledToFit()
-                    
-//                    if (selected == 0) {
-//                        Text("Item(s) currently needed")
-//                    }
-//
-//                    if (selected == 1) {
-//                        VStack {
-//                            Text("Item(s) Not Currently Needed")
-//                            Text("We will notify you when an organization needs your item")
-//                        }
-//                    }
-//
-//                    if (selected == 2) {
-//                        Text("Previously Donated Items")
-//                    }
+                 
                     ScrollView {
                         LazyVGrid(columns: gridItems, spacing: 20) {
                             ForEach(images, id: \.self) { image in

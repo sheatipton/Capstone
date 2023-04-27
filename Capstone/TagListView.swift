@@ -11,8 +11,6 @@ struct TagListView: View {
     
     @Environment(\.dismiss) private var dismiss
     
-    // matthew : pull the list of tags from tags database, put into tag array
-    
     var body: some View {
         
         NavigationView {
