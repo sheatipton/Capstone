@@ -78,10 +78,10 @@ struct Home: View {
                                             .padding(.bottom, 10)
                                             .multilineTextAlignment(.leading)
                                         
-                                        if (np.headlineImage == "") {
-                                            Spacer()
-                                                .frame(height: 10)
-                                        }
+                                       // if (np.headlineImage == "") {
+                                          //  Spacer()
+                                          //      .frame(height: 10)
+                                       // } else {
                                         
                                         AsyncImage(url: URL(string: np.headlineImage!), content: { img in
                                             img
@@ -92,12 +92,13 @@ struct Home: View {
                                         }, placeholder: {
                                             
                                         }  )
+                                    }
                                         
                                     }
                                 }
                             }
                         }
-                    }
+                    //}
                     
                     VStack {
                         
@@ -159,6 +160,7 @@ struct Home: View {
         }
         
     }
+    
     func retrieveNonprofits() {
         let db = Firestore.firestore()
         
@@ -195,7 +197,6 @@ struct Home: View {
     }
     
 }
-
 
 @ViewBuilder
 func setProfileIconDest(auth: Bool) -> some View {
