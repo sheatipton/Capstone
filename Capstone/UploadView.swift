@@ -192,25 +192,26 @@ struct UploadView: View {
                         .padding(.bottom, 20)
                     
                     VStack {
-                        Text("Fawn uses AI image recognition software to identify your photos. To ensure optimal results, there are some basic guidelines to follow when taking the picture. These guidelines include:")
+                        Text("Fawn uses AI image recognition software to identify your photos. To ensure optimal results, there are some basic guidelines to follow when taking the picture. These guidelines include:").lineLimit(10)
                             .padding(.bottom, 5)
                             
-                        Text("1. Ensure that the object you want to be identified is in clear view and properly lit. Make sure there are no obstructions blocking the object or casting shadows on it.")
+                        Text("1. Ensure that the object you want to be identified is in clear view and properly lit. Make sure there are no obstructions blocking the object or casting shadows on it.").lineLimit(10)
                             .padding(.bottom, 5)
                         
-                        Text("2. Take the photo from a good angle that captures the object in its entirety, and with sufficient resolution to ensure that details are visible.")
+                        Text("2. Take the photo from a good angle that captures the object in its entirety, and with sufficient resolution to ensure that details are visible.").lineLimit(10)
                             .padding(.bottom, 5)
                         
-                        Text("3. If the object is part of a group or in a busy environment, try to isolate it by positioning the camera in a way that eliminates other distracting elements in the frame.")
+                        Text("3. If the object is part of a group or in a busy environment, try to isolate it by positioning the camera in a way that eliminates other distracting elements in the frame.").lineLimit(10)
                             .padding(.bottom, 5)
                             
-                        Text("4. Avoid blurring or distortion by holding the camera steady and avoiding any unnecessary movements.")
+                        Text("4. Avoid blurring or distortion by holding the camera steady and avoiding any unnecessary movements.").lineLimit(10)
                             .padding(.bottom, 5)
                         
-                        Text("By following these instructions, you can increase the chances of the AI image recognition software being able to accurately identify the object in your photo.")
+                        Text("By following these instructions, you can increase the chances of the AI image recognition software being able to accurately identify the object in your photo.").lineLimit(10)
                             .padding(.bottom, 5)
-                    }.font(Font.custom("Circe", size: 25))
+                    }.font(Font.custom("Circe", size: 22))
                         .padding([.leading, .trailing], 35)
+                        .multilineTextAlignment(.leading)
                         
                     
                     Spacer()

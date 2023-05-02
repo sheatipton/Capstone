@@ -44,7 +44,7 @@ struct DonorProfile: View {
                     Text("Profile")
                         .font(Font.custom("Norwester", size: 35))
                         .frame(maxWidth: .infinity, alignment: .center)
-                        
+                    
                     HStack {
                         
                         
@@ -80,17 +80,16 @@ struct DonorProfile: View {
                         .frame(maxWidth: .infinity, alignment: .center)
                     
                     Picker("Image Uploads", selection: $selected) {
-                        //Text("Currently Needed").tag(0)
                         Text("Pending Donation").tag(0)
                             .font(Font.custom("Circe", size: 30))
                         Text("Donated").tag(1)
-                            .font(Font.custom("Circe", size: 30))                   
+                            .font(Font.custom("Circe", size: 30))
                     }
                     .pickerStyle(.segmented)
                     .frame(height: 60)
                     .scaleEffect(CGSize(width: 1, height: 1))
                     .scaledToFit()
-                 
+                    
                     ScrollView {
                         LazyVGrid(columns: gridItems, spacing: 20) {
                             ForEach(images, id: \.self) { image in
@@ -155,7 +154,7 @@ struct DonorProfile: View {
             docRef.getDocument(as: User.self) { result in
                 
                 switch result {
-                    case .success(let user):
+                case .success(let user):
                     self.fullName = user.name ?? ""
                     self.username = user.userName ?? ""
                     imagePaths = user.images ?? []
@@ -166,9 +165,9 @@ struct DonorProfile: View {
                         fileRef.getData(maxSize: 5 * 1024 * 1024) { data, error in
                             if error == nil && data != nil {
                                 if let image = UIImage(data: data!) {
-             
-                                        self.selectedImage = image
-
+                                    
+                                    self.selectedImage = image
+                                    
                                 }
                             }
                         }
@@ -179,9 +178,9 @@ struct DonorProfile: View {
                         fileRef.getData(maxSize: 5 * 1024 * 1024) { data, error in
                             if error == nil && data != nil {
                                 if let image = UIImage(data: data!) {
-             
+                                    
                                     images.append(image)
-
+                                    
                                 }
                             }
                         }
@@ -190,7 +189,7 @@ struct DonorProfile: View {
                     
                     
                 case .failure(let error):
-                        print("error\(error)")
+                    print("error\(error)")
                 }
                 
             }
@@ -217,7 +216,7 @@ struct DonorProfile: View {
         }
         let path = UUID().uuidString
         let fileRef = storageRef.child("images/\(path).jpg")
-      
+        
         let uploadTask = fileRef.putData(imageData!, metadata: nil) {
             metadata,error in
             
