@@ -65,7 +65,7 @@ struct UploadView: View {
                                         .font(Font.custom("Circe", size: 20))
                                         .foregroundColor(.black)
                                     // matthew : can you upload this ai generated description into the "item" table in the database
-                                    Text("bookbag")
+                                    Text(imageClass)
                                         .bold()
                                         .font(Font.custom("Circe", size: 20))
                                         .foregroundColor(.black)
@@ -73,7 +73,7 @@ struct UploadView: View {
                                 .padding()
                                 .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 3)
                                 .onAppear{
-                                    self.imageString = "bookbag"
+                                    self.imageString = imageClass
                                 }
                                 Spacer()
                                     .frame(height: 20)
@@ -89,7 +89,7 @@ struct UploadView: View {
                                 .frame(height: 15)
                             
                             NavigationLink(destination: ItemDescription(uiImage: uiImage, imageString: imageString).navigationBarBackButtonHidden(true).simultaneousGesture(TapGesture().onEnded {
-                                uploadPhoto()
+                                //uploadPhoto()
                             })) {
                                 Text("Upload")
                                     .font(Font.custom("Circe", size: 20))

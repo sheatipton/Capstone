@@ -43,8 +43,8 @@ struct ItemDescription: View {
                         Text("Item Information")
                             .font(Font.custom("Norwester", size: 35))
                         
-                        //Image(uiImage: uiImage!)
-                        Image("ImagePlaceholder")  // use this one for simulator
+                        Image(uiImage: uiImage ?? UIImage(named: "ImagePlaceholder")!)
+                        //Image("ImagePlaceholder")  // use this one for simulator
                             .resizable()
                             .frame(width: 200, height: 250)
                             .border(Color(red: 196/255, green: 87/255, blue: 47/255), width: 2)

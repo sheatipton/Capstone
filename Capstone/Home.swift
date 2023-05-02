@@ -36,67 +36,67 @@ struct Home: View {
                         
                         // create for each using all nonprofit accounts in our database
                         ForEach(NonprofitList) { np in
-                            
-                            
-                            HStack {
-                                NavigationLink(destination: NonprofitProfile(name: np.name!, items: np.items!,aboutUs: np.aboutUs!, address: np.address!, site: np.site!, profileImg: np.profileImg!, operationHours:np.operationHours!)
-                                    .navigationBarBackButtonHidden(true)) {
-                                        AsyncImage(url: URL(string: np.profileImg!), content: { img in
-                                            HStack {
-                                                img
-                                                    .resizable()
-//                                                    .scaledToFit()
-                                                    .clipShape(Circle())
-                                                    .padding()
-                                                   
-                                                    .frame(width: 100, height: 100)
+                            if np.headline != "" {
+                                HStack {
+                                    NavigationLink(destination: NonprofitProfile(name: np.name!, items: np.items!,aboutUs: np.aboutUs!, address: np.address!, site: np.site!, profileImg: np.profileImg!, operationHours:np.operationHours!)
+                                        .navigationBarBackButtonHidden(true)) {
+                                            AsyncImage(url: URL(string: np.profileImg!), content: { img in
+                                                HStack {
+                                                    img
+                                                        .resizable()
+                                                    //                                                    .scaledToFit()
+                                                        .clipShape(Circle())
+                                                        .padding()
+                                                    
+                                                        .frame(width: 100, height: 100)
+                                                    
+                                                    Text(np.name!)
+                                                        .font(Font.custom("Circe-Bold", size: 25)).bold()
+                                                        .foregroundColor(.black)
+                                                        .offset(x: -5, y: 0)
+                                                    
+                                                }
+                                                .padding(.leading, 20)
                                                 
-                                                Text(np.name!)
-                                                    .font(Font.custom("Circe-Bold", size: 25)).bold()
-                                                    .foregroundColor(.black)
-                                                    .offset(x: -5, y: 0)
+                                            }, placeholder: {
                                                 
-                                            }
-                                            .padding(.leading, 20)
+                                            }  )
                                             
+                                        }
+                                    
+                                    //                                Text(np.name!)
+                                    //                                    .font(Font.custom("Norwester", size: 25)).bold()
+                                    
+                                    Spacer()
+                                    
+                                }
+                                
+                                NavigationLink( destination: PostView(postImage: np.headlineImage!, postCreator: np.name!, postContent: np.headline! ).navigationBarBackButtonHidden(true)) {
+                                    VStack {
+                                        Text(np.headline!)
+                                            .padding([.leading, .trailing], 20)
+                                        //                                    .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 1.5)
+                                            .foregroundColor(.black)
+                                            .font(Font.custom("Circe", size: 20))
+                                            .padding(.leading, 20)
+                                            .padding(.trailing, 20)
+                                            .padding(.bottom, 10)
+                                            .multilineTextAlignment(.leading)
+                                        
+                                        AsyncImage(url: URL(string: np.headlineImage!), content: { img in
+                                            img
+                                                .resizable()
+                                                .clipped()
+                                                .scaledToFit()
+                                                .frame(width: 350, height: 250, alignment: .center)
                                         }, placeholder: {
                                             
                                         }  )
                                         
-                                }
-                                
-//                                Text(np.name!)
-//                                    .font(Font.custom("Norwester", size: 25)).bold()
-                                
-                                Spacer()
-  
-                            }
-                            
-                            NavigationLink( destination: PostView(postImage: np.headlineImage!, postCreator: np.name!, postContent: np.headline! ).navigationBarBackButtonHidden(true)) {
-                                VStack {
-                                    Text(np.headline!)
-                                        .padding([.leading, .trailing], 20)
-                                    //                                    .border(Color(red: 248/255, green: 190/255, blue: 169/255), width: 1.5)
-                                        .foregroundColor(.black)
-                                        .font(Font.custom("Circe", size: 20))
-                                        .padding(.leading, 20)
-                                        .padding(.trailing, 20)
-                                        .padding(.bottom, 10)
-                                        .multilineTextAlignment(.leading)
-                                    
-                                    AsyncImage(url: URL(string: np.headlineImage!), content: { img in
-                                        img
-                                            .resizable()
-                                            .clipped()
-                                            .scaledToFit()
-                                            .frame(width: 350, height: 250, alignment: .center)
-                                    }, placeholder: {
                                         
-                                    }  )
-
-                                    
+                                    }
                                 }
-                            }
+                            }// under here
                         }
                     }
                     
