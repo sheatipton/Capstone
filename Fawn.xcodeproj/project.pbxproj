@@ -99,14 +99,14 @@
 		37BFE21829BFE7010065979D /* DonorProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonorProfile.swift; sourceTree = "<group>"; };
 		37BFE21A29BFE72C0065979D /* NonprofitProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonprofitProfile.swift; sourceTree = "<group>"; };
 		37CF335F299DB84E005D788E /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
-		37D567F32988596E0004AF45 /* Capstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capstone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37D567F32988596E0004AF45 /* Fawn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fawn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37D567F62988596E0004AF45 /* CapstoneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapstoneApp.swift; sourceTree = "<group>"; };
 		37D567F82988596E0004AF45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		37D567FA298859720004AF45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37D567FD298859720004AF45 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		37D56803298859730004AF45 /* CapstoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CapstoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		37D56803298859730004AF45 /* FawnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FawnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37D56807298859730004AF45 /* CapstoneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapstoneTests.swift; sourceTree = "<group>"; };
-		37D5680D298859730004AF45 /* CapstoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CapstoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		37D5680D298859730004AF45 /* FawnUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FawnUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37D56811298859730004AF45 /* CapstoneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapstoneUITests.swift; sourceTree = "<group>"; };
 		37D56813298859730004AF45 /* CapstoneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapstoneUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		37F0283D29A2AF12006197A2 /* ImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesView.swift; sourceTree = "<group>"; };
@@ -215,9 +215,9 @@
 		37D567F42988596E0004AF45 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				37D567F32988596E0004AF45 /* Capstone.app */,
-				37D56803298859730004AF45 /* CapstoneTests.xctest */,
-				37D5680D298859730004AF45 /* CapstoneUITests.xctest */,
+				37D567F32988596E0004AF45 /* Fawn.app */,
+				37D56803298859730004AF45 /* FawnTests.xctest */,
+				37D5680D298859730004AF45 /* FawnUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -273,9 +273,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		37D567F22988596E0004AF45 /* Capstone */ = {
+		37D567F22988596E0004AF45 /* Fawn */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 37D56817298859730004AF45 /* Build configuration list for PBXNativeTarget "Capstone" */;
+			buildConfigurationList = 37D56817298859730004AF45 /* Build configuration list for PBXNativeTarget "Fawn" */;
 			buildPhases = (
 				37D567EF2988596E0004AF45 /* Sources */,
 				37D567F02988596E0004AF45 /* Frameworks */,
@@ -285,7 +285,7 @@
 			);
 			dependencies = (
 			);
-			name = Capstone;
+			name = Fawn;
 			packageProductDependencies = (
 				292D1B74298B1834003F7A6A /* FirebaseFirestore */,
 				292D1B76298B1834003F7A6A /* FirebaseStorage */,
@@ -293,12 +293,12 @@
 				2940246D29D14AEF0000E263 /* FirebaseFirestoreSwift */,
 			);
 			productName = Capstone;
-			productReference = 37D567F32988596E0004AF45 /* Capstone.app */;
+			productReference = 37D567F32988596E0004AF45 /* Fawn.app */;
 			productType = "com.apple.product-type.application";
 		};
-		37D56802298859730004AF45 /* CapstoneTests */ = {
+		37D56802298859730004AF45 /* FawnTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 37D5681A298859730004AF45 /* Build configuration list for PBXNativeTarget "CapstoneTests" */;
+			buildConfigurationList = 37D5681A298859730004AF45 /* Build configuration list for PBXNativeTarget "FawnTests" */;
 			buildPhases = (
 				37D567FF298859730004AF45 /* Sources */,
 				37D56800298859730004AF45 /* Frameworks */,
@@ -309,14 +309,14 @@
 			dependencies = (
 				37D56805298859730004AF45 /* PBXTargetDependency */,
 			);
-			name = CapstoneTests;
+			name = FawnTests;
 			productName = CapstoneTests;
-			productReference = 37D56803298859730004AF45 /* CapstoneTests.xctest */;
+			productReference = 37D56803298859730004AF45 /* FawnTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		37D5680C298859730004AF45 /* CapstoneUITests */ = {
+		37D5680C298859730004AF45 /* FawnUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 37D5681D298859730004AF45 /* Build configuration list for PBXNativeTarget "CapstoneUITests" */;
+			buildConfigurationList = 37D5681D298859730004AF45 /* Build configuration list for PBXNativeTarget "FawnUITests" */;
 			buildPhases = (
 				37D56809298859730004AF45 /* Sources */,
 				37D5680A298859730004AF45 /* Frameworks */,
@@ -327,9 +327,9 @@
 			dependencies = (
 				37D5680F298859730004AF45 /* PBXTargetDependency */,
 			);
-			name = CapstoneUITests;
+			name = FawnUITests;
 			productName = CapstoneUITests;
-			productReference = 37D5680D298859730004AF45 /* CapstoneUITests.xctest */;
+			productReference = 37D5680D298859730004AF45 /* FawnUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -355,7 +355,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 37D567EE2988596E0004AF45 /* Build configuration list for PBXProject "Capstone" */;
+			buildConfigurationList = 37D567EE2988596E0004AF45 /* Build configuration list for PBXProject "Fawn" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -371,9 +371,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				37D567F22988596E0004AF45 /* Capstone */,
-				37D56802298859730004AF45 /* CapstoneTests */,
-				37D5680C298859730004AF45 /* CapstoneUITests */,
+				37D567F22988596E0004AF45 /* Fawn */,
+				37D56802298859730004AF45 /* FawnTests */,
+				37D5680C298859730004AF45 /* FawnUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -467,12 +467,12 @@
 /* Begin PBXTargetDependency section */
 		37D56805298859730004AF45 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 37D567F22988596E0004AF45 /* Capstone */;
+			target = 37D567F22988596E0004AF45 /* Fawn */;
 			targetProxy = 37D56804298859730004AF45 /* PBXContainerItemProxy */;
 		};
 		37D5680F298859730004AF45 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 37D567F22988596E0004AF45 /* Capstone */;
+			target = 37D567F22988596E0004AF45 /* Fawn */;
 			targetProxy = 37D5680E298859730004AF45 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -670,7 +670,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Capstone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Capstone";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fawn.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fawn";
 			};
 			name = Debug;
 		};
@@ -690,7 +690,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Capstone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Capstone";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fawn.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fawn";
 			};
 			name = Release;
 		};
@@ -733,7 +733,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		37D567EE2988596E0004AF45 /* Build configuration list for PBXProject "Capstone" */ = {
+		37D567EE2988596E0004AF45 /* Build configuration list for PBXProject "Fawn" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				37D56815298859730004AF45 /* Debug */,
@@ -742,7 +742,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		37D56817298859730004AF45 /* Build configuration list for PBXNativeTarget "Capstone" */ = {
+		37D56817298859730004AF45 /* Build configuration list for PBXNativeTarget "Fawn" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				37D56818298859730004AF45 /* Debug */,
@@ -751,7 +751,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		37D5681A298859730004AF45 /* Build configuration list for PBXNativeTarget "CapstoneTests" */ = {
+		37D5681A298859730004AF45 /* Build configuration list for PBXNativeTarget "FawnTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				37D5681B298859730004AF45 /* Debug */,
@@ -760,7 +760,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		37D5681D298859730004AF45 /* Build configuration list for PBXNativeTarget "CapstoneUITests" */ = {
+		37D5681D298859730004AF45 /* Build configuration list for PBXNativeTarget "FawnUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				37D5681E298859730004AF45 /* Debug */,
