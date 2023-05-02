@@ -10,8 +10,6 @@ import SwiftUI
 struct EditProfile: View {
     
     @Environment(\.dismiss) private var dismiss
-    
-    // matthew pull these vars from the user table
     @State private var id = "0"
     @State private var fullName = "Shea Tipton"
     @State private var username = "set58568"

@@ -20,7 +20,6 @@ struct Home: View {
     var body: some View {
         
         NavigationView {
-         
             
             ZStack {
                 Color(red: 255/255, green: 249/255, blue: 245/255)
@@ -34,7 +33,6 @@ struct Home: View {
                     VStack {
                         //Text(authState.isUserAuthenticated ? "User is authenticated" : "User is not authenticated")
                         
-                        // create for each using all nonprofit accounts in our database
                         ForEach(NonprofitList) { np in
                             if np.headline != "" {
                                 HStack {
@@ -92,13 +90,14 @@ struct Home: View {
                                         }, placeholder: {
                                             
                                         }  )
+                                    }
                                         
                                         
                                     }
                                 }
                             }// under here
                         }
-                    }
+                    //}
                     
                     VStack {
                         
@@ -144,25 +143,23 @@ struct Home: View {
                         
                         NavigationLink(destination: setProfileIconDest(auth: authState.isUserAuthenticated)
                             .navigationBarBackButtonHidden(true)) {
-                            Image(systemName: "person.circle")
-                                .font(.system(size: 30))
-                                .foregroundColor(.black)
-                        }
-                  
+                                Image(systemName: "person.circle")
+                                    .font(.system(size: 30))
+                                    .foregroundColor(.black)
+                            }
                         
-                    } // toolbar
+                        
+                    }
                 }
-//                .onAppear {
-//                    conditionView = setProfileIconDest(auth: authState.isUserAuthenticated) as! AnyView
-//                }
             }
         }
         .onAppear {
             retrieveNonprofits()
             
         }
-
+        
     }
+    
     func retrieveNonprofits() {
         let db = Firestore.firestore()
         
@@ -191,28 +188,27 @@ struct Home: View {
                     }
                 }
             } else {
-
+                
             }
             
         }
-
+        
     }
     
 }
 
-
 @ViewBuilder
 func setProfileIconDest(auth: Bool) -> some View {
-   
-        if auth {
-            // User is signed in.
-            // ...
-            DonorProfile()
-
-        } else {
-            // No user is signed in.
-            Login()
-        }
+    
+    if auth {
+        // User is signed in.
+        // ...
+        DonorProfile()
+        
+    } else {
+        // No user is signed in.
+        Login()
+    }
     
     
 }

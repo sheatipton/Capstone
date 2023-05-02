@@ -11,12 +11,6 @@ import MapKit
 struct NonprofitProfile: View {
     
     @Environment(\.dismiss) private var dismiss
-    
-    // matthew : pull vars from nonprofit db
-//    @State private var name = "Toys For Tots"
-//    @State private var address = "123 Spring Street Athens, GA 30605"
-//    @State private var imgPath = "ToysForTots"
-//    @State private var sitePath = "mysite.net"
     @State public var name: String
     @State public var items: [String]
     @State public var aboutUs: String
@@ -24,7 +18,6 @@ struct NonprofitProfile: View {
     @State public var site: String
     @State public var profileImg: String
     @State public var operationHours: String
-    
     
     var body: some View {
         
@@ -47,38 +40,42 @@ struct NonprofitProfile: View {
                             .frame(height: 20)
                         
                         Text(address)
-                            .font(Font.custom("Circe", size: 20))
+                            .font(Font.custom("Circe", size: 24))
                     }
                     
                     Spacer()
                         .frame(height: 20)
                     
-                    Text("Our Hours")
-                        .font(Font.custom("Norwester", size: 20))
-                        .foregroundColor(Color(red: 196/255, green: 87/255, blue: 47/255))
-                    Text(operationHours)
-                        .font(Font.custom("Circe", size: 20))
+                    HStack {
+                        Text("Open:")
+                            .font(Font.custom("Norwester", size: 22))
+                            .foregroundColor(Color(red: 196/255, green: 87/255, blue: 47/255))
+                        Text(operationHours)
+                            .font(Font.custom("Circe", size: 22))
+                    }
                     
-                    VStack {
+                    VStack(alignment: .leading) {
                     Spacer()
                         .frame(height: 30)
                     
                         Text("About Us")
-                            .font(Font.custom("Norwester", size: 22))
+                            .font(Font.custom("Norwester", size: 24))
                             .foregroundColor(Color(red: 196/255, green: 87/255, blue: 47/255))
+                            .padding([.leading, .trailing], 30)
                         Text(aboutUs)
                             .padding([.leading, .trailing, .bottom], 30)
-                            .font(Font.custom("Circe", size: 20))
+                            .font(Font.custom("Circe", size: 22))
                         
-//                        Text("We're looking for...")
-//                            .foregroundColor(Color(red: 196/255, green: 87/255, blue: 47/255))
-//                            .font(Font.custom("Norwester", size: 22))
-//                        
-//                        ForEach(items, id: \.self) { item in
-//                            Text(item)
-//                            .font(Font.custom("Circe", size: 20))
-//                            .padding([.leading, .trailing, .bottom], 30)
-//                        }
+                        Text("We're looking for...")
+                            .foregroundColor(Color(red: 196/255, green: 87/255, blue: 47/255))
+                            .font(Font.custom("Norwester", size: 22))
+                            .padding([.leading, .trailing], 30)
+                        
+                        ForEach(items, id: \.self) { item in
+                            Text(item)
+                            .font(Font.custom("Circe", size: 22))
+                          .padding([.leading, .trailing], 30)
+                        }
                       
                     }
                     
@@ -89,7 +86,7 @@ struct NonprofitProfile: View {
                                 .resizable()
                                 .clipped()
                                 .scaledToFit()
-                                .frame(width: 165, height: 150, alignment: .center)
+                                .frame(minWidth: 165, maxWidth: 165, minHeight: 150, maxHeight: 150, alignment: .center)
                         }, placeholder: {
                             
                         }  )
@@ -99,9 +96,9 @@ struct NonprofitProfile: View {
                         VStack {
                             Text("Learn more at")
                                 .foregroundColor(Color(red: 196/255, green: 87/255, blue: 47/255))
-                                .font(Font.custom("Norwester", size: 20))
+                                .font(Font.custom("Norwester", size: 22))
                             Text(site)
-                                .font(Font.custom("Circe", size: 20))
+                                .font(Font.custom("Circe", size: 22))
                         }
                     }
                     Spacer()

@@ -26,7 +26,7 @@ struct ImagesView: View {
                 
                 ScrollView(.vertical) {
                     Spacer()
-                        .frame(height: 30)
+                        .frame(height: 20)
                     
                     VStack {
                         

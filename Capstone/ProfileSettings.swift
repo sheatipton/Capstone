@@ -46,7 +46,6 @@ struct ProfileSettings: View {
                     Spacer()
                         .frame(height: 30)
                     
-                    // matthew : should we take notifications out or get it working?
                     HStack {
                         Image(systemName: "bell.fill")
                             .font(.system(size: 35))
