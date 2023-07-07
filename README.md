@@ -10,12 +10,12 @@ An iOS application created to connect users with local nonprofits that provide h
 - [Images](#images)
 
 ## Description
-Fawn is an innovative app designed to connect users to nonprofits in their area, streamlining the donation process and making it easier, faster, and more effective for supporting those in need. Fawn leverages AI photo recognition for item identification and reveals greater potential of the AI features as the tech improves.
+**Fawn** is an innovative app designed to connect users to nonprofits in their area, streamlining the donation process and making it easier, faster, and more effective for supporting those in need. **Fawn** leverages AI photo recognition for item identification and reveals greater potential of the AI features as the tech improves.
 
 ## Features
-* User Accounts: Users can create an account and login, allowing them to access personalized features and track their donation history.
-* Browse: Users can browse nonprofits in their area or browse specific donation item categories.
-* AI Photo Recognition: Users can take or upload photos of their donation item. Fawn uses Apple's AI-powered photo recognition software to identify the item and suggest relevant nonprofits in the area that are currently accepting the item.
+* **User Accounts**: Users can create an account and login, allowing them to access personalized features and track their donation history.
+* **Browse**: Users can browse nonprofits in their area or browse specific donation item categories.
+* **AI Photo Recognition**: Users can take or upload photos of their donation item. Fawn uses Apple's AI-powered photo recognition software to identify the item and suggest relevant nonprofits in the area that are currently accepting the item.
      * AI expanded features: Further enhancements of these features include scanning item quality and size, and providing nonprofits with valuable statistics and frequency of donated items.
 
 ## Installation
