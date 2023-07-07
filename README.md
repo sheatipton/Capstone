@@ -14,16 +14,21 @@ An iOS application created to connect users with local nonprofits that provide h
 
 ## Features
 * **User Accounts**: Users can create an account and login, allowing them to access personalized features and track their donation history.
+  
 * **Browse**: Users can browse nonprofits in their area or browse specific donation item categories.
+  
 * **AI Photo Recognition**: Users can take or upload photos of their donation item. Fawn uses Apple's AI-powered photo recognition software to identify the item and suggest relevant nonprofits in the area that are currently accepting the item.
      * AI expanded features: Further enhancements of these features include scanning item quality and size, and providing nonprofits with valuable statistics and frequency of donated items.
 
 ## Installation
 To run Fawn on your Mac:
 1. Install Xcode: Download Xcode from the [official Apple website](https://developer.apple.com/xcode/)
-2. Clone the repository: `git clone https://github.com/your-username/fawn.git`
-3. Open the Xcode project file (`Fawn.xcodeproj`) using Xcode.
-4. Build and run the project on your iOS device or simulator.
+   
+3. Clone the repository: `git clone https://github.com/your-username/fawn.git`
+   
+5. Open the Xcode project file (`Fawn.xcodeproj`) using Xcode.
+   
+7. Build and run the project on your iOS device or simulator.
 
 ## Tools
 xCode, SwiftUI, Google Firebase, APIs by Apple, Figma, Canva
